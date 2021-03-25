@@ -19,6 +19,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('adminlte_dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('adminlte_dashboard/dist/css/adminlte.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('adminlte_dashboard/plugins/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminlte_dashboard/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
@@ -36,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="{{ route('dashboard.dashboard-home') }}" class="nav-link">Home</a>
+                        <a href="{{ route('panel.panel-home') }}" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Contact</a>
@@ -72,6 +75,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+
+        @if(session('error'))
+
+            <script>
+
+                console.log('555555555');
+
+                window.onload = function() {
+                    toastr.error("{{ session('error') }}")
+                }
+
+            </script>
+        @endif
 
         <!-- Main content -->
         <div class="content ">
@@ -264,5 +280,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('adminlte_dashboard/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte_dashboard/dist/js/adminlte.min.js')}}"></script>
+
+<script src="{{ asset('adminlte_dashboard/plugins/toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('adminlte_dashboard/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+<script>
+    $(function() {
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+
+    });
+</script>
+
 </body>
 </html>
+

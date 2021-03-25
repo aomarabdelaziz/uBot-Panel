@@ -6,31 +6,30 @@ use App\Helpers\DBConnection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\TriviaRequest;
 use App\Models\Events\Trivia;
+use Illuminate\Support\Facades\Gate;
 
 
 class TriviaController extends Controller
 {
-    public function __construct()
-    {
-
-    }
 
     public function index()
     {
-        $this->authorize('access' , Trivia::class);
+        if(Gate::denies('access' , Trivia::class)) {
+            return  redirect()->route('panel.dashboard-home');
+        }
 
         DBConnection::setConnection();
         $data = Trivia::where('EventKey', 'QS')->first();
-        return view('events.trivia.index', compact('data'));
+        return view('dashboard.user.events.trivia.index', compact('data'));
     }
 
     public function save(TriviaRequest $request)
     {
-        $this->authorize('access' , Trivia::class);
+        if(Gate::denies('access' , Trivia::class)) {
+            return  redirect()->route('panel.panel-home');
+        }
         $validated = $request->validated();
         DBConnection::setConnection();
-
-
 
         Trivia::updateOrCreate(
 
@@ -49,7 +48,7 @@ class TriviaController extends Controller
             ]
         );
         session()->flash('success', 'Trivia data has been updated');
-        return redirect()->route('dashboard.event-trivia');
+        return redirect()->route('panel.event-trivia');
 
     }
 }

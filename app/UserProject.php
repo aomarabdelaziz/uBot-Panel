@@ -40,4 +40,9 @@ class UserProject extends Model
         return $query->where('user_id' , auth()->user()->id)->count() > 0;
     }
 
+    public function projectStatus()
+    {
+        return $this->hasOne(ProjectStatus::class);
+    }
+
 }

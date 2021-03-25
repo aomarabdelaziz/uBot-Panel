@@ -41,13 +41,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.sql-settings') }}" class="nav-link">
+                            <a href="{{ route('panel.sql-settings') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>SQL</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.server-settings') }}" class="nav-link">
+                            <a href="{{ route('panel.server-settings') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Server</p>
                             </a>
@@ -66,7 +66,7 @@
                     <ul class="nav nav-treeview">
                         @can('access' , 'App\Models\Events\Trivia')
                             <li class="nav-item">
-                                <a href="{{ route('dashboard.event-trivia') }}" class="nav-link">
+                                <a href="{{ route('panel.event-trivia') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Trivia</p>
                                 </a>

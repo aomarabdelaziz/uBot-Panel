@@ -35,9 +35,19 @@
                     </script>
                 @endif
 
+                @if(session('error'))
+                    <script>
+
+                        window.onload = function() {
+                            toastr.error("{{ session('error') }}")
+                        }
+
+                    </script>
+                @endif
 
 
-                <form method="POST" action="{{ route('dashboard.server-settings') }}">
+
+                <form method="POST" action="{{ route('panel.server-settings') }}">
                     @csrf
                     <div class="card-body">
 

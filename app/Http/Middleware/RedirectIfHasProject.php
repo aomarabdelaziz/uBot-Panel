@@ -19,7 +19,7 @@ class RedirectIfHasProject
         $has_project =  UserProject::userHasProject();
         if($has_project) {
 
-            return redirect()->route('dashboard.dashboard-home');
+            return redirect()->route('panel.panel-home');
         }
 
         return $next($request);

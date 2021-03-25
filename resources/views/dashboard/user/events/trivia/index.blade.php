@@ -37,7 +37,7 @@
 
 
 
-                <form method="POST" action="{{ route('dashboard.event-trivia') }}">
+                <form method="POST" action="{{ route('panel.event-trivia') }}">
                     @csrf
                     <div class="card-body">
 

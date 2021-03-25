@@ -24,6 +24,15 @@ class UserAddProjectPolicy
 
     }
 
+    public function save(User $user)
+    {
+
+        return $user->role == 'premium';
+
+
+    }
+
+
 
 
 

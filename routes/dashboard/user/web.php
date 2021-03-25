@@ -19,11 +19,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
     Route::group(['middleware' => 'userHasProject'] , function () {
 
-        Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.'] , function () {
+        Route::group(['prefix' => 'panel' , 'as' => 'panel.'] , function () {
 
             Route::get('/' , function () {
                 return view('index');
-            })->name('dashboard-home');
+            })->name('panel-home');
 
             Route::get('/sql-settings' , 'SqlController@index')->name('sql-settings');
             Route::post('/sql-settings' , 'SqlController@save')->name('sql-settings');

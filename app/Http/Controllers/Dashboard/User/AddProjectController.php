@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Dashboard\User;
 
+use App\Helpers\ConnectionAvailability;
+use App\Helpers\DBConnection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserAddProjectRequest;
 use App\UserProject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Symfony\Component\Console\Input\Input;
 
 class AddProjectController extends Controller
 {
@@ -23,7 +27,7 @@ class AddProjectController extends Controller
      */
     public function index()
     {
-        return view('dashboard.user.project.create');
+        return view('project.create');
     }
 
     /**
@@ -36,14 +40,31 @@ class AddProjectController extends Controller
     {
 
         if(Gate::denies('create' , UserProject::class)) {
-            return  'ffff';
+            return  redirect()->route('panel.panel-home');
         }
+
+
+        if(!ConnectionAvailability::sqlConnectionAvailability($request->sql_host , $request->sql_username , $request->sql_password)) {
+            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
+            return redirect()->route('panel.sql-settings');
+        }
+
+
+        if(!ConnectionAvailability::serverConnectionAvailability($request->server_host, $request->server_port)) {
+            session()->flash('error', 'Cannot read any server connection , please make sure that your server connection is correct');
+            return redirect()->route('panel.server-settings');
+        }
+
+
+
+
+
         $user_id = auth()->user()->id;
         $validated = $request->validated();
         $validated['user_id'] = $user_id;
         UserProject::create($validated);
 
-        return redirect()->route('dashboard.dashboard-home');
+        return redirect()->route('panel.panel-home');
     }
 
 
