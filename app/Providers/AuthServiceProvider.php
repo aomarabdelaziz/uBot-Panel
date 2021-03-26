@@ -2,12 +2,15 @@
 
 namespace App\Providers;
 
+use App\Models\Events\LuckyStore;
 use App\Models\Events\Trivia;
+use App\Models\Warp;
+use App\Policies\Events\LuckyStorePolicy;
 use App\Policies\Events\TriviaPolicy;
 use App\Policies\UserAddProjectPolicy;
+use App\Policies\WarpPolicy;
 use App\UserProject;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -18,8 +21,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
-            UserProject::class =>  UserAddProjectPolicy::class,
-            Trivia::class => TriviaPolicy::class
+        UserProject::class => UserAddProjectPolicy::class,
+        Trivia::class => TriviaPolicy::class,
+        LuckyStore::class => LuckyStorePolicy::class,
+        Warp::class => WarpPolicy::class
     ];
 
     /**
@@ -30,7 +35,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
         //
     }
 }

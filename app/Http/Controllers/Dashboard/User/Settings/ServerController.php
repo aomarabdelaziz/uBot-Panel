@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard\User;
+namespace App\Http\Controllers\Dashboard\User\Settings;
 
 use App\Helpers\ConnectionAvailability;
 use App\Helpers\DBConnection;

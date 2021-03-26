@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TriviaRequest extends FormRequest
+class WarpRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class TriviaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class TriviaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+
+            'RegionID' => ['required', 'string'],
+            'PosX' => ['required', 'string'],
+            'PosY' => ['required', 'string'],
+            'PosZ' => ['required', 'string'],
+            'WorldID' => ['required', 'string'],
+
         ];
     }
 }
