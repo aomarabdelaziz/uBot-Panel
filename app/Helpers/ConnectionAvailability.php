@@ -36,7 +36,7 @@ class ConnectionAvailability
     {
         try {
 
-            $fp = fsockopen($host, $port, $errno, $errstr, 6);
+            $fp = fsockopen($host, $port, $errno, $errstr, 1);
             return  true;
 
         }
