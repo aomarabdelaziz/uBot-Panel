@@ -33,5 +33,4 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
-
 });

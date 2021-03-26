@@ -86,7 +86,11 @@
                             <span class="fas fa-lock"></span>
                         </div>
                     </div>
+
+
+
                 </div>
+
                 <div class="row">
                     <div class="col-8">
                         <a href="{{ route('login') }}" class="text-center">{{ __('register.I already have a membership') }}</a>

@@ -45,8 +45,8 @@
                            autocomplete="current-password" placeholder="{{ __('login.Password') }}">
                     @error('password')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                     <div class="input-group-append @error('password') d-none @enderror">
                         <div class="input-group-text">
@@ -54,8 +54,26 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="input-group mt-3">
+                   <div class="row">
+                       <div class="col-7">
+                           <input type="text"  class="form-control  @error('captcha') is-invalid @enderror" name="captcha" required placeholder="{{ __('Captcha') }}">
+                       </div>
+                       <div class="col-3">
+                           {!! captcha_img('math') !!}
+
+                           @error('captcha')
+                           <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                            </span>
+                           @enderror
+                       </div>
+                   </div>
+
+                </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-8 mt-3">
                         <div class="icheck-primary">
                             <input type="checkbox" id="remember">
                             <label for="remember">
@@ -64,9 +82,15 @@
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">{{ __('login.Sign In') }}</button>
+                    <div class="col-4 mt-3">
+                        <button type="submit" class=" btn btn-primary btn-block">{{ __('login.Sign In') }}</button>
+
                     </div>
+
+
+
+
+
                     <!-- /.col -->
                 </div>
             </form>
