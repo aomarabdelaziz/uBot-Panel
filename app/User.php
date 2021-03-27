@@ -2,9 +2,11 @@
 
 namespace App;
 
+use App\Helpers\DBConnection;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -40,5 +42,23 @@ class User extends Authenticatable
     public function projects()
     {
         return $this->hasOne(UserProject::class);
+    }
+
+    public function checkSqlConnectionAvailability() : bool
+    {
+
+        DBConnection::setConnection();
+        try {
+
+
+            DB::connection('sqlsrv_user')->getPdo();
+
+            return true;
+
+        }
+        catch (\Exception $ex) {
+
+            return false;
+        }
     }
 }

@@ -7,17 +7,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\LuckyStoreRequest;
 use App\Models\Events\LuckyStore;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 
 class LuckyStoreController extends Controller
 {
     public function index()
     {
-        if(Gate::denies('access' , LuckyStore::class)) {
-            return  redirect()->route('panel.dashboard-home');
+
+        if(!auth()->user()->checkSqlConnectionAvailability()) {
+            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
+            return redirect()->route('panel.panel-home');
         }
 
-        DBConnection::setConnection();
         $data = LuckyStore::where('EventKey', 'LuckyStore')->first();
         return view('dashboard.user.events.lucky.luckystore', compact('data'));
     }
@@ -25,12 +27,11 @@ class LuckyStoreController extends Controller
     public function save(LuckyStoreRequest $request)
     {
 
-        if(Gate::denies('access' , LuckyStore::class)) {
-            return  redirect()->route('panel.panel-home');
-        }
+
 
         $validated = $request->validated();
         DBConnection::setConnection();
+
 
         LuckyStore::updateOrCreate(
 

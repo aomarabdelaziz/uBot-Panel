@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AccessEvent;
 use App\Http\Middleware\RedirectIfHasProject;
 use App\Http\Middleware\UserHasProject;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -66,6 +67,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'userHasProject' => UserHasProject::class,
         'redirectIfHasProject' => RedirectIfHasProject::class,
+        'accessEvent' => AccessEvent::class,
         /**** OTHER MIDDLEWARE ****/
         'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,

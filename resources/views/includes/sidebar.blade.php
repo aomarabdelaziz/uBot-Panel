@@ -26,6 +26,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
 
+                @can('access-event')
                 <div class="nav-header">Main Settings</div>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -51,6 +52,7 @@
                         </li>
                     </ul>
                 </li>
+
 
 
                 <div class="nav-header">Events</div>
@@ -182,6 +184,7 @@
 
 
                 </li>
+
                 <div class="nav-header">Warps</div>
                 <li class="nav-item has-treeview">
 
@@ -206,6 +209,7 @@
 
 
                 </li>
+                @endcan
 
 
 

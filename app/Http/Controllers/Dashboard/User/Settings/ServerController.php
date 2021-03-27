@@ -25,18 +25,10 @@ class ServerController extends Controller
     public function save(ServerRequest $request)
     {
 
-        if(Gate::denies('save' , UserProject::class)) {
-            return redirect()->route('panel.panel-home');
-        }
-
-
-
         if(!ConnectionAvailability::serverConnectionAvailability($request->server_host, $request->server_port)) {
             session()->flash('error', 'Cannot read any server connection , please make sure that your server connection is correct');
             return redirect()->route('panel.server-settings');
         }
-
-
 
 
         $validated = $request->validated();

@@ -25,11 +25,11 @@ class WarpRequest extends FormRequest
     {
         return [
 
-            'RegionID' => ['required', 'string'],
-            'PosX' => ['required', 'string'],
-            'PosY' => ['required', 'string'],
-            'PosZ' => ['required', 'string'],
-            'WorldID' => ['required', 'string'],
+            'RegionID' => ['required', 'integer'],
+            'PosX' => ['required', 'integer'],
+            'PosY' => ['required', 'integer'],
+            'PosZ' => ['required', 'integer'],
+            'WorldID' => ['required', 'integer'],
 
         ];
     }

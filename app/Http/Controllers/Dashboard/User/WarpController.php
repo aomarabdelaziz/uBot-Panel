@@ -18,7 +18,6 @@ class WarpController extends Controller
     public function index(Request $request)
     {
 
-
         $EVENTS =
         [
             'LuckyStaller',
@@ -30,28 +29,26 @@ class WarpController extends Controller
         ];
 
         DBConnection::setConnection();
-        $warps = Warp::when($request->event_name , function ($q) use ($request) {
 
-            return $q->where('EventKey' , $request->event_name);
+        $eventName = trim($request->event_name , FILTER_SANITIZE_STRING);
+
+        $warps = Warp::when($eventName, function ($q) use ($eventName) {
+
+            return $q->where('EventKey' , $eventName);
 
         })->first();
 
-        $eventName = $request->event_name;
+
+
         return view('dashboard.user.warps.index' , compact('EVENTS' , 'warps' ,'eventName'));
     }
 
     public function store(WarpRequest $request)
     {
 
-
-        if(Gate::denies('save' , Warp::class)) {
-            return redirect()->route('panel.panel-home');
-        }
-
         if($request->event === null) {
             return redirect()->route('panel.warps.index');
         }
-
 
         $validated = $request->validated();
         DBConnection::setConnection();
@@ -73,7 +70,6 @@ class WarpController extends Controller
 
 
         session()->flash('success', 'Warps has been updated');
-
         return redirect()->route('panel.warps.index');
     }
 }

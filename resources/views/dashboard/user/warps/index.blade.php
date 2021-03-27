@@ -17,9 +17,9 @@
 @endpush
 @section('title', 'uBot | Warps')
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Link 1</a></li>
-    <li class="breadcrumb-item active">Link 2</li>
+    <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
+    <li class="breadcrumb-item active">Warps</li>
+
 @endsection
 @section('content')
 
@@ -51,6 +51,7 @@
 
                                             <div class="form-group">
                                                 <select class="select2 event-name"  name="event_name" data-placeholder="Any" style="width: 100%;">
+                                                    <option selected disabled>Select event</option>
                                                     @foreach($EVENTS as $event)
                                                         <option  {{ ( $event == $eventName) ? 'selected' : '' }}>{{ $event }}</option>
                                                     @endforeach
@@ -66,7 +67,10 @@
                                 </form>
 
 
-                                @isset($warps)
+                                @if($eventName)
+
+
+
 
                                     <div class="card card-primary">
                                         <div class="card-header ">
@@ -146,7 +150,7 @@
 
 
 
-                                @endisset
+                                @endif
                             </div>
                         </div>
 

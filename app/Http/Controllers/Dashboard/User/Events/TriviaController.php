@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard\User\Events;
 
+use App\Helpers\ConnectionAvailability;
 use App\Helpers\DBConnection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\TriviaRequest;
@@ -14,20 +15,19 @@ class TriviaController extends Controller
 
     public function index()
     {
-        if(Gate::denies('access' , Trivia::class)) {
-            return  redirect()->route('panel.dashboard-home');
+
+        if(!auth()->user()->checkSqlConnectionAvailability()) {
+            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
+            return redirect()->route('panel.panel-home');
         }
 
-        DBConnection::setConnection();
         $data = Trivia::where('EventKey', 'QS')->first();
         return view('dashboard.user.events.trivia.index', compact('data'));
     }
 
     public function save(TriviaRequest $request)
     {
-        if(Gate::denies('access' , Trivia::class)) {
-            return  redirect()->route('panel.panel-home');
-        }
+
         $validated = $request->validated();
         DBConnection::setConnection();
 

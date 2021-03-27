@@ -8,9 +8,8 @@
 @endpush
 @section('title', 'uBot | SQL Settings')
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Link 1</a></li>
-    <li class="breadcrumb-item active">Link 2</li>
+    <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
+    <li class="breadcrumb-item active">Sql Settings</li>
 @endsection
 
 @section('content')

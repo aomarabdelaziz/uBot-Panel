@@ -56,9 +56,6 @@ class AddProjectController extends Controller
         }
 
 
-
-
-
         $user_id = auth()->user()->id;
         $validated = $request->validated();
         $validated['user_id'] = $user_id;

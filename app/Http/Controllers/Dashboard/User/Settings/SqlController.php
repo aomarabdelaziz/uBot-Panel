@@ -26,9 +26,6 @@ class SqlController extends Controller
     public function save(SqlRequest $request)
     {
 
-        if(Gate::denies('save' , UserProject::class)) {
-            return redirect()->route('panel.panel-home');
-        }
 
 
         if(!ConnectionAvailability::sqlConnectionAvailability($request->sql_host , $request->sql_username , $request->sql_password)) {

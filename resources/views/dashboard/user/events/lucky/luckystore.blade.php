@@ -8,9 +8,11 @@
 @endpush
 @section('title', 'uBot | Trivia Settings')
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Link 1</a></li>
-    <li class="breadcrumb-item active">Link 2</li>
+    <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
+    <li class="breadcrumb-item"><a href="#">Events</a></li>
+    <li class="breadcrumb-item"><a href="#">Lucky Events</a></li>
+    <li class="breadcrumb-item active">Lucky Store</li>
+
 @endsection
 
 @section('content')
