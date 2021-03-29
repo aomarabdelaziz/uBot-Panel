@@ -7,12 +7,13 @@
     </a>-->
 
     <!-- Sidebar -->
+
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block mb-1">{{$userName}}</a>
                 <a href="" style="color:#FFF;" class="btn btn-success btn-sm">Upgrade to premium</a>
             </div>
         </div>
@@ -106,20 +107,20 @@
 
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="{{ route('panel.event-lpn') }}" class="nav-link">
                                         <i class="far fa-circle-none nav-icon"></i>
                                         <p>Lucky Party Number</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="{{ route('panel.event-lpm') }}" class="nav-link">
                                         <i class="far fa-circle-none nav-icon"></i>
                                         <p>Lucky Party Member</p>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="{{ route('panel.event-lc') }}" class="nav-link">
                                         <i class="far fa-circle-none nav-icon"></i>
                                         <p>Lucky Critical</p>
                                     </a>

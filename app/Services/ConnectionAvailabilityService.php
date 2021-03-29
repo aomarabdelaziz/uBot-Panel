@@ -5,19 +5,21 @@
  * Time: 11:42 PM
  */
 
-namespace App\Helpers;
+namespace App\Services;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 /**
  * @Author Abdelaziz Omar <Abdelazizomar851@gmail.com>
  * @package App\Helpers
  */
-class ConnectionAvailability
+class ConnectionAvailabilityService
 {
+
     public static function sqlConnectionAvailability($host , $username , $password) : bool
     {
-        DBConnection::validateConnection($host , $username , $password);
+        DBConnectionService::validateConnection($host , $username , $password);
         try {
 
 
@@ -45,5 +47,27 @@ class ConnectionAvailability
             return  false;
 
         }
+    }
+
+
+    public static function checkUserSqlConnectionAvailability() : bool
+    {
+
+        try {
+
+            DBConnectionService::setConnection();
+            DB::connection('sqlsrv_user')->getPdo();
+
+            return true;
+
+
+        }
+        catch (\Exception $ex) {
+
+            return false;
+        }
+
+
+
     }
 }

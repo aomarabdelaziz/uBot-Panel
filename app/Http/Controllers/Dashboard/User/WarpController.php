@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard\User;
 
-use App\Helpers\DBConnection;
+use App\Services\DBConnectionService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WarpRequest;
 use App\Models\Warp;
@@ -28,7 +28,7 @@ class WarpController extends Controller
             'Drunk'
         ];
 
-        DBConnection::setConnection();
+        DBConnectionService::setConnection();
 
         $eventName = trim($request->event_name , FILTER_SANITIZE_STRING);
 
@@ -51,7 +51,7 @@ class WarpController extends Controller
         }
 
         $validated = $request->validated();
-        DBConnection::setConnection();
+        DBConnectionService::setConnection();
         Warp::updateOrCreate(
 
             [

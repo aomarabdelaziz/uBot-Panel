@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Dashboard\User\Events;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Events\LuckyPartyMemberRequest;
+use App\Models\Events\LuckyPartyMember;
+use App\Models\Events\LuckyStore;
 use App\Services\ConnectionAvailabilityService;
 use App\Services\DBConnectionService;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Events\LuckyStoreRequest;
-use App\Models\Events\LuckyStore;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Gate;
 
-class LuckyStoreController extends Controller
+class LuckyPartyMemberController extends Controller
 {
     public function index()
     {
@@ -21,11 +20,11 @@ class LuckyStoreController extends Controller
             return redirect()->route('panel.panel-home');
         }
 
-        $data = LuckyStore::where('EventKey', 'LuckyStore')->first();
-        return view('dashboard.user.events.lucky.luckystore', compact('data'));
+        $data = LuckyPartyMember::where('EventKey', 'LPM')->first();
+        return view('dashboard.user.events.lucky.lpm', compact('data'));
     }
 
-    public function save(LuckyStoreRequest $request)
+    public function save(LuckyPartyMemberRequest $request)
     {
 
         $validated = $request->validated();
@@ -35,7 +34,7 @@ class LuckyStoreController extends Controller
         LuckyStore::updateOrCreate(
 
             [
-                'EventKey' => 'LuckyStore'
+                'EventKey' => 'LPM'
             ],
             [
                 'MaxRounds' => $request->MaxRounds,
@@ -46,8 +45,8 @@ class LuckyStoreController extends Controller
                 'Delay2' => $request->Delay2,
             ]
         );
-        session()->flash('success', 'LuckyStore data has been updated');
-        return redirect()->route('panel.event-luckystore');
+        session()->flash('success', 'LPM data has been updated');
+        return redirect()->route('panel.event-lpm');
 
     }
 }

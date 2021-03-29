@@ -6,9 +6,8 @@
 @section('title', 'uBot | Dashboard')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Link 1</a></li>
-    <li class="breadcrumb-item active">Link 2</li>
+    <li class="breadcrumb-item actv ">Panel</li>
+
 @endsection
 
 @section('content')
@@ -31,6 +30,17 @@
 
         </script>
     @endif
+
+    @if($notify_sqlError)
+        <script>
+
+            window.onload = function() {
+                toastr.error("{{ $notify_sqlError }}")
+            }
+
+        </script>
+    @endisset
+
 @endsection
 
 

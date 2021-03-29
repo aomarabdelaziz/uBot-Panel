@@ -5,20 +5,23 @@
  * Time: 10:19 PM
  */
 
-namespace App\Helpers;
+namespace App\Services;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 /**
  * @Author Abdelaziz Omar <Abdelazizomar851@gmail.com>
  * @package App\Helpers
  */
-class DBConnection
+class DBConnectionService
 {
 
     public static function setConnection(): void
     {
         DB::purge('sqlsrv_user');
+
+
 
         $ip_port = explode(',', auth()->user()->projects->sql_host);
         config(

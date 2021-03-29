@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard\User\Events;
 
-use App\Helpers\ConnectionAvailability;
-use App\Helpers\DBConnection;
+use App\Services\ConnectionAvailabilityService;
+use App\Services\DBConnectionService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\TriviaRequest;
 use App\Models\Events\Trivia;
@@ -16,7 +16,7 @@ class TriviaController extends Controller
     public function index()
     {
 
-        if(!auth()->user()->checkSqlConnectionAvailability()) {
+        if(!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
             session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
             return redirect()->route('panel.panel-home');
         }
@@ -29,7 +29,7 @@ class TriviaController extends Controller
     {
 
         $validated = $request->validated();
-        DBConnection::setConnection();
+        DBConnectionService::setConnection();
 
         Trivia::updateOrCreate(
 

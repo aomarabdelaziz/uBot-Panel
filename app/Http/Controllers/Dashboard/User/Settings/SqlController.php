@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard\User\Settings;
 
-use App\Helpers\ConnectionAvailability;
-use App\Helpers\DBConnection;
+use App\Services\ConnectionAvailabilityService;
+use App\Services\DBConnectionService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SqlRequest;
 use App\User;
@@ -28,7 +28,7 @@ class SqlController extends Controller
 
 
 
-        if(!ConnectionAvailability::sqlConnectionAvailability($request->sql_host , $request->sql_username , $request->sql_password)) {
+        if(!ConnectionAvailabilityService::sqlConnectionAvailability($request->sql_host , $request->sql_username , $request->sql_password)) {
             session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
             return redirect()->route('panel.sql-settings');
         }

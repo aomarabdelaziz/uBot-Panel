@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard\User\Settings;
 
-use App\Helpers\ConnectionAvailability;
-use App\Helpers\DBConnection;
+use App\Services\ConnectionAvailabilityService;
+use App\Services\DBConnectionService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ServerRequest;
 use App\UserProject;
@@ -25,7 +25,7 @@ class ServerController extends Controller
     public function save(ServerRequest $request)
     {
 
-        if(!ConnectionAvailability::serverConnectionAvailability($request->server_host, $request->server_port)) {
+        if(!ConnectionAvailabilityService::serverConnectionAvailability($request->server_host, $request->server_port)) {
             session()->flash('error', 'Cannot read any server connection , please make sure that your server connection is correct');
             return redirect()->route('panel.server-settings');
         }
