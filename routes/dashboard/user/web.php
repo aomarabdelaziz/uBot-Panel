@@ -25,7 +25,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                 return view('index');
             })->name('panel-home');
 
-            Route::group(['middleware' => ['accessEvent' , 'sqlConnection']] , function () {
+            Route::group(['middleware' => 'accessEvent'] , function () {
+
 
 
                 Route::group(['namespace' => 'Settings' ] , function () {
@@ -37,7 +38,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                 });
 
 
-                Route::group(['namespace' => 'Events' ] , function () {
+                Route::group(['namespace' => 'Events' , 'middleware' => 'sqlConnection' ] , function () {
 
                     Route::get('/events/trivia' , 'TriviaController@index')->name('event-trivia');
                     Route::post('/events/trivia' , 'TriviaController@save')->name('event-trivia');

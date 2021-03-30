@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
        view()->composer('includes.sidebar' , ProjectNameComposer::class);
-        view()->composer('*' , SqlConnectionAvailabilityComposer::class);
+       view()->composer('index' , SqlConnectionAvailabilityComposer::class);
 
 
     }
