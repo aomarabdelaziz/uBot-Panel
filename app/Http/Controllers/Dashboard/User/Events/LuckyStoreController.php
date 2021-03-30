@@ -16,11 +16,6 @@ class LuckyStoreController extends Controller
     public function index()
     {
 
-        if(!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
-            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
-            return redirect()->route('panel.panel-home');
-        }
-
         $data = LuckyStore::where('EventKey', 'LuckyStore')->first();
         return view('dashboard.user.events.lucky.luckystore', compact('data'));
     }
@@ -29,7 +24,7 @@ class LuckyStoreController extends Controller
     {
 
         $validated = $request->validated();
-        DBConnectionService::setConnection();
+
 
 
         LuckyStore::updateOrCreate(

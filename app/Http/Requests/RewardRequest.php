@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Services\DBConnectionService;
 use Illuminate\Foundation\Http\FormRequest;
 
-class WarpRequest extends FormRequest
+class RewardRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,16 +26,18 @@ class WarpRequest extends FormRequest
     {
 
 
-
         return [
 
 
+            'RewardType' => ['required', 'string'],
+            'RewardControl' => ['required', 'string'],
+            'SilkType' => ['required', 'string'],
+            'SilkAmount' => ['required', 'integer'],
+            'GoldAmount' => ['required', 'integer'],
+            'ItemCodeName128' => ['required', 'string'],
+            'ItemPlus' => ['required', 'integer'],
+            'ItemAmount' => ['required', 'integer'],
 
-            'RegionID' => ['required', 'integer'],
-            'PosX' => ['required', 'string'],
-            'PosY' => ['required', 'string'],
-            'PosZ' => ['required', 'string'],
-            'WorldID' => ['required', 'integer'],
 
         ];
     }

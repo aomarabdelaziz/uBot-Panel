@@ -13,7 +13,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
             <div class="info">
-                <a href="#" class="d-block mb-1">{{$userName}}</a>
+                <a href="{{ route('panel.panel-home') }}" class="d-block mb-1">{{$userProjectName}}</a>
                 <a href="" style="color:#FFF;" class="btn btn-success btn-sm">Upgrade to premium</a>
             </div>
         </div>
@@ -186,16 +186,27 @@
 
                 </li>
 
-                <div class="nav-header">Warps</div>
-                <li class="nav-item has-treeview">
+                    <div class="nav-header">Warps</div>
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('panel.warps.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-filter"></i>
+                            <p>
+                                Warps
+                            </p>
+                        </a>
+
+                    </li>
+
+                    <div class="nav-header">Reward</div>
+                    <li class="nav-item has-treeview">
 
 
-                    <a href="{{ route('panel.warps.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-tractor"></i>
-                        <p>
-                            Warps
-                        </p>
-                    </a>
+                        <a href="{{ route('panel.rewards.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-award"></i>
+                            <p>
+                                Rewards
+                            </p>
+                        </a>
 
 
 
@@ -209,7 +220,32 @@
 
 
 
-                </li>
+                    </li>
+
+                    <div class="nav-header">Track Rewards</div>
+                    <li class="nav-item has-treeview">
+
+
+                        <a href="{{ route('panel.track-rewards.index') }}" class="nav-link">
+                            <i class="nav-icon fa fa-print"></i>
+                            <p>
+                                Track
+                            </p>
+                        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </li>
                 @endcan
 
 

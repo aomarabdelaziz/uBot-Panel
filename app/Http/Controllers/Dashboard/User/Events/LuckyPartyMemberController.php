@@ -15,11 +15,6 @@ class LuckyPartyMemberController extends Controller
     public function index()
     {
 
-        if(!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
-            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
-            return redirect()->route('panel.panel-home');
-        }
-
         $data = LuckyPartyMember::where('EventKey', 'LPM')->first();
         return view('dashboard.user.events.lucky.lpm', compact('data'));
     }
@@ -28,8 +23,6 @@ class LuckyPartyMemberController extends Controller
     {
 
         $validated = $request->validated();
-        DBConnectionService::setConnection();
-
 
         LuckyStore::updateOrCreate(
 

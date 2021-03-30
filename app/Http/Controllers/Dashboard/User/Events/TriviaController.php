@@ -16,11 +16,6 @@ class TriviaController extends Controller
     public function index()
     {
 
-        if(!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
-            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
-            return redirect()->route('panel.panel-home');
-        }
-
         $data = Trivia::where('EventKey', 'QS')->first();
         return view('dashboard.user.events.trivia.index', compact('data'));
     }
@@ -29,7 +24,7 @@ class TriviaController extends Controller
     {
 
         $validated = $request->validated();
-        DBConnectionService::setConnection();
+
 
         Trivia::updateOrCreate(
 

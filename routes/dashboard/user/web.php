@@ -25,7 +25,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                 return view('index');
             })->name('panel-home');
 
-            Route::group(['middleware' => 'accessEvent'] , function () {
+            Route::group(['middleware' => ['accessEvent' , 'sqlConnection']] , function () {
 
 
                 Route::group(['namespace' => 'Settings' ] , function () {
@@ -57,6 +57,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                 });
 
                 Route::resource('warps' , 'WarpController');
+                Route::resource('rewards' , 'RewardController');
+                Route::resource('track-rewards' , 'TrackRewardController');
 
             });
 

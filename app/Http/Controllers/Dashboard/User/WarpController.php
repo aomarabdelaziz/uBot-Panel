@@ -2,42 +2,34 @@
 
 namespace App\Http\Controllers\Dashboard\User;
 
+use App\Models\Reward;
+use App\Services\ConnectionAvailabilityService;
 use App\Services\DBConnectionService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WarpRequest;
 use App\Models\Warp;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class WarpController extends Controller
 {
 
-
-
+    public function __construct()
+    {
+        $this->middleware('eventSearchableExist');
+    }
 
     public function index(Request $request)
     {
 
-        $EVENTS =
-        [
-            'LuckyStaller',
-            'LuckyCritical',
-            'Madness',
-            'Uniques',
-            'GMKiller',
-            'Drunk'
-        ];
-
-        DBConnectionService::setConnection();
-
-        $eventName = trim($request->event_name , FILTER_SANITIZE_STRING);
-
+        $EVENTS = config('events.warps');
+        $eventName = $request->event_name;
         $warps = Warp::when($eventName, function ($q) use ($eventName) {
 
             return $q->where('EventKey' , $eventName);
 
         })->first();
-
 
 
         return view('dashboard.user.warps.index' , compact('EVENTS' , 'warps' ,'eventName'));
@@ -46,12 +38,8 @@ class WarpController extends Controller
     public function store(WarpRequest $request)
     {
 
-        if($request->event === null) {
-            return redirect()->route('panel.warps.index');
-        }
 
         $validated = $request->validated();
-        DBConnectionService::setConnection();
         Warp::updateOrCreate(
 
             [

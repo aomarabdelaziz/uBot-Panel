@@ -14,11 +14,6 @@ class LuckyCriticalController extends Controller
     public function index()
     {
 
-        if(!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
-            session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
-            return redirect()->route('panel.panel-home');
-        }
-
         $data = LuckyCritical::where('EventKey', 'LuckyCritical')->first();
         return view('dashboard.user.events.lucky.luckycritical', compact('data'));
     }
@@ -27,8 +22,6 @@ class LuckyCriticalController extends Controller
     {
 
         $validated = $request->validated();
-        DBConnectionService::setConnection();
-
 
         LuckyCritical::updateOrCreate(
 
