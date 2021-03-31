@@ -60,6 +60,12 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="col-md-2">
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" value="{{ old('char_name' , $charName) }}" name="char_name" placeholder="Charname">
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-success">Search</button>
                                         </div>
@@ -89,15 +95,15 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($Events as $index=>$event)
-                                                       <p>{{$event->Eventname}}</p>
+                                                    @foreach($all_rewards as $index=>$reward)
+                                                       <p>{{$reward->Eventname}}</p>
                                                         <tr>
                                                             <td>{{$index}}</td>
-                                                            <td>{{ $event->Charname }}</td>
-                                                            <td>{{ $event->RewardType }}</td>
-                                                            <td>{{ $event->Event }}</td>
-                                                            <td>{{ $event->Desc }}</td>
-                                                            <td>{{ $event->DateTime }}</td>
+                                                            <td>{{ $reward->Charname }}</td>
+                                                            <td>{{ $reward->RewardType }}</td>
+                                                            <td>{{ $reward->Event }}</td>
+                                                            <td>{{ $reward->Desc }}</td>
+                                                            <td>{{ $reward->DateTime }}</td>
                                                         </tr>
                                                     @endforeach
 
@@ -107,7 +113,7 @@
                                             <!-- /.card-body -->
                                             <div class="card-footer clearfix">
                                                 <ul class="pagination pagination-sm m-0 float-right">
-                                                    {{ $Events->appends(request()->query())->links() }}
+                                                    {{ $all_rewards->appends(request()->query())->links() }}
                                                 </ul>
                                             </div>
                                         </div>

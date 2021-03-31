@@ -49,4 +49,10 @@ class LoginController extends Controller
             // new rules here
         ]);
     }
+
+    protected function authenticated(Request $request, $user) {
+        if($user->role != "admin") {
+            return redirect()->route('panel.panel-home');
+        }
+    }
 }

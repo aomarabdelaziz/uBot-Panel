@@ -26,16 +26,26 @@ class TrackRewardController extends Controller
         unset($EVENTS[10]);
 
 
-        $eventName = $request->event_name;
 
-        $Events = TrackReward::when($eventName, function ($q) use ($eventName) {
+        $all_rewards = TrackReward::when($request->event_name, function ($q) use ($request) {
 
-                return $q->where('Event', $eventName);
+                return $q->where('Event', $request->event_name);
+
+        })->when($request->char_name , function ($q) use ($request) {
+
+            return $q->where('Charname' , $request->char_name);
 
         })->paginate(50);
 
 
+        return view('dashboard.user.rewards.track-rewards')->with(
+            [
 
-        return view('dashboard.user.rewards.track-rewards', compact('EVENTS', 'Events', 'eventName'));
+                'EVENTS' => $EVENTS ,
+                'all_rewards' => $all_rewards ,
+                'eventName' => $request->event_name ,
+                'charName' => $request->char_name
+            ]
+        );
     }
 }

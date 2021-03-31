@@ -18,7 +18,7 @@ class EventSearchableExist
 
 
         $EVENTS = config('events.all');
-
+        array_push($EVENTS, 'Hide And Seek' , 'Search And Destroy' , 'Stall');
         if(!in_array($request->event_name , $EVENTS) && $request->has('event_name') ){
 
             return redirect()->back();

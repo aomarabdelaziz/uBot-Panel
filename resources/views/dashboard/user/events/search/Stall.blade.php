@@ -6,12 +6,12 @@
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 @endpush
-@section('title', 'uBot | LS Settings')
+@section('title', 'uBot | SnD Settings')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
     <li class="breadcrumb-item"><a href="#">Events</a></li>
-    <li class="breadcrumb-item"><a href="#">Lucky Events</a></li>
-    <li class="breadcrumb-item active">Lucky Store</li>
+    <li class="breadcrumb-item"><a href="#">Search Events</a></li>
+    <li class="breadcrumb-item active">Stall</li>
 
 @endsection
 
@@ -21,7 +21,7 @@
 
             <div class="card card-primary">
                 <div class="card-header ">
-                    <h3 class="card-title ">LuckyStore Settings</h3>
+                    <h3 class="card-title ">Stall Settings</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -39,7 +39,7 @@
 
 
 
-                <form method="POST" action="{{ route('panel.event-luckystore') }}">
+                <form method="POST" action="{{ route('panel.event-stall') }}">
                     @csrf
                     <div class="card-body">
 
@@ -56,26 +56,10 @@
 
 
 
-
                         <div class="form-group">
-                            <label for="exampleInputText">Prevent After Limitation</label>
-
-                            <select class="form-control" name="PreventAfterLimit">
-                                <option value="0" {{ ( $data->PreventAfterLimit == 0) ? 'selected' : '' }}> Disable </option>
-                                <option value="1" {{ ( $data->PreventAfterLimit == 1) ? 'selected' : '' }}> Enable </option>
-
-                            </select>
-                            @error('PreventAfterLimit')
-                            <span class="invalid-feedback" role="alert">
-                               <strong>{{ $message  }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Win Limit</label>
-                            <input type="number" class="form-control @error('WinLimit') is-invalid @enderror" name="WinLimit" value="{{ old('WinLimit' , $data->WinLimit) }}" placeholder="1">
-                            @error('WinLimit')
+                            <label for="exampleInputPassword1">Stall Item ID</label>
+                            <input type="number" class="form-control @error('StallItemID') is-invalid @enderror" name="StallItemID" value="{{ old('StallItemID' , $data->StallItemID) }}" placeholder="1">
+                            @error('StallItemID')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                             </span>
@@ -83,21 +67,6 @@
                         </div>
 
 
-
-                        <div class="form-group">
-                            <label for="exampleInputText">Prevent Player to participate if has same IP/Hwid</label>
-
-                            <select class="form-control" name="PreventPlayerJoinInSameIPOrHwid">
-                                <option value="0" {{ ( $data->PreventPlayerJoinInSameIPOrHwid == 0) ? 'selected' : '' }}> Disable </option>
-                                <option value="1" {{ ( $data->PreventPlayerJoinInSameIPOrHwid == 1) ? 'selected' : '' }}> Enable </option>
-
-                            </select>
-                            @error('PreventPlayerJoinInSameIPOrHwid')
-                            <span class="invalid-feedback" role="alert">
-                               <strong>{{ $message  }}</strong>
-                            </span>
-                            @enderror
-                        </div>
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Delay 1</label>

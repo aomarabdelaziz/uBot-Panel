@@ -4,7 +4,7 @@ namespace App\Models\Events;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LuckyCritical extends Model
+class HideAndSeek extends Model
 {
     public $timestamps = false;
     protected $connection = 'sqlsrv_user';
@@ -15,26 +15,27 @@ class LuckyCritical extends Model
     //protected $visible
     protected $fillable = [
         'EventKey',
-        'RegKey',
-        'MinPlayers',
-        'MaxPlayers',
-        'CapeDetection',
+        'MaxRounds',
+        'WinLimit',
+        'PreventAfterLimit',
         'PreventPlayerJoinInSameIPOrHwid',
-        'CapeType',
         'Delay1',
         'Delay2'
     ];
 
     //protected $hidden
     protected $hidden = [
-        'MaxRounds',
+        'RegKey',
+        'MinPlayers',
+        'MaxPlayers',
         'SendAnswer',
+        'CapeType',
         'WinLimit',
-        'PreventAfterLimit',
         'InCorrentLimit',
         'TargetNumber',
         'CapeDetection',
         'CapeType',
+        'CapeDetection',
         'InTown',
         'LotteryAmount',
         'MinPlayers',

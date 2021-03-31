@@ -6,12 +6,12 @@
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 @endpush
-@section('title', 'uBot | LS Settings')
+@section('title', 'uBot | HnS Settings')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
     <li class="breadcrumb-item"><a href="#">Events</a></li>
-    <li class="breadcrumb-item"><a href="#">Lucky Events</a></li>
-    <li class="breadcrumb-item active">Lucky Store</li>
+    <li class="breadcrumb-item"><a href="#">Search Events</a></li>
+    <li class="breadcrumb-item active">Hide And Seek</li>
 
 @endsection
 
@@ -21,7 +21,7 @@
 
             <div class="card card-primary">
                 <div class="card-header ">
-                    <h3 class="card-title ">LuckyStore Settings</h3>
+                    <h3 class="card-title ">HnS Settings</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -39,7 +39,7 @@
 
 
 
-                <form method="POST" action="{{ route('panel.event-luckystore') }}">
+                <form method="POST" action="{{ route('panel.event-hidenseek') }}">
                     @csrf
                     <div class="card-body">
 

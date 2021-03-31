@@ -6,7 +6,7 @@
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 @endpush
-@section('title', 'uBot | Trivia Settings')
+@section('title', 'uBot | LC Settings')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
     <li class="breadcrumb-item"><a href="#">Events</a></li>

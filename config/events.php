@@ -59,5 +59,10 @@ return
                 'GMKiller',
                 'Drunk'
             ],
+        'search_warps' => [
+            'Hide And Seek',
+            'Search And Destroy',
+            'Stall',
+        ]
 
     ];

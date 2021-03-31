@@ -168,7 +168,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('panel.event-trivia') }}" class="nav-link">
+                                    <a href="{{ route('panel.event-hidenseek') }}" class="nav-link">
                                         <i class="far fa-circle-none nav-icon"></i>
                                         <p>Hide And Seek</p>
                                     </a>
@@ -176,15 +176,22 @@
 
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="{{ route('panel.event-searchndestroy') }}" class="nav-link">
                                         <i class="far fa-circle-none nav-icon"></i>
                                         <p>Search And Destroy</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="{{ route('panel.event-stall') }}" class="nav-link">
                                         <i class="far fa-circle-none nav-icon"></i>
                                         <p>Stall</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ route('panel.search-warps-hints.index') }}" class="nav-link">
+                                        <i class="fas fa-plus nav-icon"></i>
+                                        <p>Add Warps & Hints</p>
                                     </a>
                                 </li>
 
@@ -204,6 +211,7 @@
 
                 </li>
 
+                    <!--Start Warps Events -->
                     <div class="nav-header">Warps</div>
                     <li class="nav-item has-treeview">
                         <a href="{{ route('panel.warps.index') }}" class="nav-link">
@@ -214,40 +222,29 @@
                         </a>
 
                     </li>
+                    <!--End Waps Events -->
 
-                    <div class="nav-header">Reward</div>
+                    <!--Start Rewards Events -->
+                    <div class="nav-header">Rewards</div>
                     <li class="nav-item has-treeview">
 
 
                         <a href="{{ route('panel.rewards.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-award"></i>
                             <p>
-                                Rewards
+                                Add Rewards
                             </p>
                         </a>
 
 
-
-
-
-
-
-
-
-
-
-
-
                     </li>
-
-                    <div class="nav-header">Track Rewards</div>
                     <li class="nav-item has-treeview">
 
 
                         <a href="{{ route('panel.track-rewards.index') }}" class="nav-link">
                             <i class="nav-icon fa fa-print"></i>
                             <p>
-                                Track
+                                Track Rewards
                             </p>
                         </a>
 
@@ -264,6 +261,11 @@
 
 
                     </li>
+                    <!--End Rewards Events -->
+
+
+
+
                 @endcan
 
 
