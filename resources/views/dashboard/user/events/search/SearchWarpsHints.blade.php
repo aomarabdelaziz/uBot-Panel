@@ -179,37 +179,54 @@
                                               <td class="project-actions text-center">
 
 
-                                                  <a data-warp_key="{{ $warp->WarpKey }}"
-                                                     data-url="{{ route('panel.search-warps-hints.destroy' , $warp->WarpKey) }}"
-                                                     class="delete-warp btn btn-danger btn-sm" href="#">
-                                                      <i class="fas fa-trash">
-                                                      </i>
-                                                      Delete
 
-                                                      <form class="delete-form" class="d-none" action="{{ route('panel.search-warps-hints.destroy' , $warp->WarpKey)}}" method="POST" >
-                                                          @csrf
-                                                          @method('delete')
-                                                      </form>
+                                                  <form class="d-inline-block" action="{{ route('panel.search-warps-hints.destroy' , $warp->WarpKey)}}" method="POST" >
+                                                      @csrf
+                                                      @method('delete')
+                                                      <button type="submit"  class="btn {{ ( $warp->Service == 0 ? 'btn-success' : 'btn-danger') }}  btn-sm">
+                                                          <i class="fas fa-trash">
+                                                          </i>
+                                                          Delete
 
-                                                  </a>
+                                                      </button>
 
+                                                  </form>
 
 
 
 
 
                                                   <a  data-warp_key="{{ $warp->WarpKey }}"
+                                                      data-warp_id="{{ $warp->id }}"
+                                                      data-event_name="{{ $warp->EventKey }}"
                                                       data-wregion_id="{{$warp->wRegionID}}"
                                                       data-posx="{{$warp->PosX}}"
                                                       data-posy="{{$warp->PosY}}"
                                                       data-posz="{{$warp->PosZ}}"
                                                       data-worldid="{{$warp->WorldID}}"
                                                       data-service="{{$warp->Service}}"
-                                                      class="btn btn-warning btn-sm" href="#">
-                                                      <i class="fas fa-edit">
+                                                      data-toggle="modal"
+                                                      class="Edit-Warp btn btn-warning btn-sm" href="#modal-default3">
+                                                      <i class=" fas fa-edit">
                                                       </i>
                                                       Edit
                                                   </a>
+
+
+
+                                                  <form class="d-inline-block" action="{{ route('panel.search-warps-update-service' , $warp->id)}}" method="POST" >
+                                                      @csrf
+                                                      @method('put')
+                                                      <button type="submit"  class="btn {{ ( $warp->Service == 0 ? 'btn-success' : 'btn-danger') }}  btn-sm">
+                                                          <i class="fas fa-ban">
+                                                          </i>
+                                                          {{ ( $warp->Service == 0 ? 'Enable' : 'Disable') }}
+
+                                                      </button>
+
+                                                  </form>
+
+
                                               </td>
                                           </tr>
                                       @endforeach
@@ -335,7 +352,7 @@
 
 
         </section>
-        <div class="modal fade" id="modal-default">
+         <div class="modal fade" id="modal-default">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -469,9 +486,8 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Warp Key</label>
                                     <select  required class="select2  @error('WarpKey') is-invalid @enderror"  name="WarpKey" data-placeholder="Any" style="width: 100%;">
-                                        <option  disabled>-- Select WarpKey --</option>
+                                        <option selected  disabled>-- Select WarpKey --</option>
                                         @foreach($WarpKeys as $index=> $warp)
-
                                             <option>{{ $warp->WarpKey }}</option>
                                         @endforeach
                                         @error('WarpKey')
@@ -506,6 +522,99 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
+
+         <div class="modal fade" id="modal-default3">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add New Warp/Hint</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form class="form-route" action="#" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="modal-body">
+
+
+                                <input type="hidden" name="oldWarpKey" class="oldWarpKey" value="">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Warp Key</label>
+                                    <input required type="text" value="{{ old('WarpKey' ?? '') }}" name="WarpKey" class="WarpKey form-control @error('WarpKey') is-invalid @enderror"  placeholder="Enter WarpKey">
+                                    @error('WarpKey')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">wRegionID</label>
+                                    <input required type="number" value="{{ old('wRegionID' ?? '') }}" name="wRegionID" class="RegionID form-control @error('wRegionID') is-invalid @enderror"  placeholder="Enter RegionID">
+                                    @error('wRegionID')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">PosX</label>
+                                    <input required step="any" type="number" value="{{ old('PosX' ?? '') }}" name="PosX" class="PosX form-control @error('PosX') is-invalid @enderror" placeholder="Enter PosX">
+                                    @error('PosX')
+                                    <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message  }}</strong>
+                                      </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">PosY</label>
+                                    <input required step="any" type="number" value="{{ old('PosY' ?? '') }}" name="PosY" class="PosY form-control @error('PosY') is-invalid @enderror"  placeholder="Enter PosY">
+                                    @error('PosY')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">PosZ</label>
+                                    <input required step="any" type="number"  value="{{ old('PosZ' ?? '') }}" name="PosZ" class="PosZ form-control @error('PosZ') is-invalid @enderror"  placeholder="Enter PosZ">
+                                    @error('PosZ')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">WorldID</label>
+                                    <input required type="number"   value="{{ old('WorldID' ?? '') }}"  name="WorldID" class="WorldID form-control  @error('WorldID') is-invalid @enderror"  placeholder="Enter WorldID">
+                                    @error('WorldID')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
     </div>
 
 @endsection
@@ -528,31 +637,6 @@
             $('.select2').select2()
 
 
-            $('.delete-warp').on('click' , function (e) {
-
-
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-
-
-                    if (result.isConfirmed) {
-                        document.getElementsByClassName('delete-form').submit();
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        )
-                    }
-                })
-            })
 
             $('.Add-Warp').on('click' , function () {
                 $('#modal-default').modal('show')
@@ -560,6 +644,52 @@
 
             $('.Add-Hint').on('click' , function () {
                 $('#modal-default2').modal('show')
+            })
+
+
+
+
+            $('#modal-default3').on('show.bs.modal', function(event) {
+
+
+                 var button = $(event.relatedTarget)
+                 let Edit_Button = document.getElementsByClassName('Edit-Warp');
+
+
+                let data_warpID = button.data('warp_id')
+                let data_warpKey = button.data('warp_key')
+                let data_old_warpKey = button.data('warp_key')
+                let data_event_name = button.data('event_name')
+                let data_wregion_id = button.data('wregion_id')
+                let data_posx = button.data('posx')
+                let data_posy = button.data('posy')
+                let data_posz = button.data('posz')
+                let data_worldid = button.data('worldid')
+                let data_service = button.data('service')
+
+
+                 let modal = $(this)
+                 modal.find('.modal-body .WarpKey').val(data_warpKey);
+                 modal.find('.modal-body .oldWarpKey').val(data_warpKey);
+                 modal.find('.modal-body .RegionID').val(data_wregion_id);
+                 modal.find('.modal-body .PosX').val(data_posx);
+                 modal.find('.modal-body .PosY').val(data_posy);
+                 modal.find('.modal-body .PosZ').val(data_posz);
+                 modal.find('.modal-body .WorldID').val(data_worldid);
+                 modal.find('.modal-body .Service').val(data_service);
+
+
+                 //'
+                 modal.find('.form-route').attr('action' , `search-warps-hints/${data_warpID}`)
+
+
+
+
+
+
+
+
+
             })
         });
 

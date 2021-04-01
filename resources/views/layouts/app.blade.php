@@ -24,7 +24,7 @@
             <!-- /.navbar -->
 
             {{-- include main sidebar container --}}
-            @include('includes.sidebar')
+            @include('includes.sidebar', ['role' => auth()->user()->role])
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">

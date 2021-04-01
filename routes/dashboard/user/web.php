@@ -81,6 +81,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                     Route::resource('track-rewards' , 'TrackRewardController');
                     Route::resource('search-warps-hints' , 'SearchWarpHintController');
                     Route::post('search-warps-hints/add-hint' , 'SearchWarpHintController@saveHint')->name('search-warps-add-hints');
+                    Route::put('search-warps-hints/update-service/{id}' , 'SearchWarpHintController@updateService')->name('search-warps-update-service');
+                    Route::put('search-warps-hints/update-hint/{id}' , 'SearchWarpHintController@updateHint')->name('search-warps-update-hint');
 
 
                 });
