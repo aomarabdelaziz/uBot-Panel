@@ -32,7 +32,7 @@ class UserAddProjectRequest extends FormRequest
             'db_account' => ['required', 'string'],
             'db_shard' => ['required', 'string'],
             'db_shardlog' => ['required', 'string'],
-            'server_host' => ['required', 'string' ,'ipv4'],
+            'server_host' => ['required', 'string' ],
             'server_port' => ['required', 'integer'],
             'server_accountid' => ['required', 'string'],
             'server_accountpw' => ['required', 'string'],

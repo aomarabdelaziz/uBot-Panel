@@ -22,4 +22,15 @@ class Warp extends Model
         'WorldID',
 
     ];
+
+    public function scopeSearchByEventKey($query , $eventKey)
+    {
+
+        return $query->when($eventKey , function ($q) use ($eventKey) {
+
+            return $q->where('EventKey' , $eventKey);
+
+        })->first();
+
+    }
 }

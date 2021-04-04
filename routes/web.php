@@ -29,8 +29,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
     Route::get('/home', 'HomeController@index')->name('home');
 
 
+    Route::get('handle-payment', 'PaypalPaymentController@handlePayment')->name('make.payment');
+    Route::get('cancel-payment', 'PaypalPaymentController@paymentCancel')->name('cancel.payment');
+    Route::get('/complete', 'PaypalPaymentController@paymentSuccess')->name('success.payment');
 
 
+    Route::get('/done', function () {
+
+        return 'Hey';
+    });
 
 
 });

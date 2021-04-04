@@ -20,11 +20,29 @@ class SearchWarp extends Model
         return $this->hasMany(SearchHint::class, 'id');
     }
 
+    public function scopeSearchByEventKey($query , $request , $EVENTS)
+    {
+
+        return $query->when($request->event_name , function ($q) use ($request , $EVENTS) {
+
+            return $q->where('EventKey' ,  $request->event_name);
+
+        })->when($request->warp_key , function ($q) use ($request) {
+
+            return $q->where('WarpKey' ,  $request->warp_key);
+
+
+        });
+
+    }
+
     protected static function boot()
     {
         parent::boot();
         self::observe(WarpHintObserver::class);
     }
+
+
 
 
 }

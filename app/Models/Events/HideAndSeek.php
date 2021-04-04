@@ -24,7 +24,7 @@ class HideAndSeek extends Model
     ];
 
     //protected $hidden
-    protected $hidden = [
+/*    protected $hidden = [
         'RegKey',
         'MinPlayers',
         'MaxPlayers',
@@ -43,6 +43,7 @@ class HideAndSeek extends Model
         'UniqueID',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey'.
+        'LMSPlayMethod'
+    ];*/
 }

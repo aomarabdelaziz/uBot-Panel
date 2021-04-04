@@ -22,7 +22,7 @@ class SearchAndDestroy extends Model
     ];
 
     //protected $hidden
-    protected $hidden = [
+/*    protected $hidden = [
         'RegKey',
         'MinPlayers',
         'MaxPlayers',
@@ -43,6 +43,7 @@ class SearchAndDestroy extends Model
         'MaxPlayers',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey',
+        'LMSPlayMethod'
+    ];*/
 }

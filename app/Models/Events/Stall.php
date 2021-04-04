@@ -22,7 +22,7 @@ class Stall extends Model
     ];
 
     //protected $hidden
-    protected $hidden = [
+/*    protected $hidden = [
         'RegKey',
         'MinPlayers',
         'MaxPlayers',
@@ -44,6 +44,7 @@ class Stall extends Model
         'MaxPlayers',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey',
+        'LMSPlayMethod'
+    ];*/
 }

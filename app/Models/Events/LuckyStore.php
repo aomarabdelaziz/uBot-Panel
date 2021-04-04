@@ -24,7 +24,7 @@ class LuckyStore extends Model
     ];
 
     //protected $hidden
-    protected $hidden = [
+/*    protected $hidden = [
         'SendAnswer',
         'InCorrentLimit',
         'TargetNumber',
@@ -37,6 +37,7 @@ class LuckyStore extends Model
         'UniqueID',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey',
+        'LMSPlayMethod'
+    ];*/
 }

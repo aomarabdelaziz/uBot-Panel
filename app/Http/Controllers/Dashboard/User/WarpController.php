@@ -25,12 +25,8 @@ class WarpController extends Controller
 
         $EVENTS = config('events.warps');
         $eventName = $request->event_name;
-        $warps = Warp::when($eventName, function ($q) use ($eventName) {
 
-            return $q->where('EventKey' , $eventName);
-
-        })->first();
-
+        $warps = Warp::SearchByEventKey($eventName);
 
         return view('dashboard.user.warps.index' , compact('EVENTS' , 'warps' ,'eventName'));
     }

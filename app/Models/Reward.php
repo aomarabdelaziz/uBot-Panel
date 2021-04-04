@@ -27,6 +27,17 @@ class Reward extends Model
 
     ];
 
+    public function scopeSearchByEventKey($query , $eventKey)
+    {
+        return $query->when($eventKey , function ($q) use ($eventKey) {
+
+            return $q->where('EventKey' , $eventKey);
+
+        });
+
+
+    }
+
 
 }
 

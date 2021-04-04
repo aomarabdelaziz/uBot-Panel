@@ -22,7 +22,7 @@ class LuckyPartyNumber extends Model
     ];
 
     //protected $hidden
-    protected $hidden = [
+/*    protected $hidden = [
         'SendAnswer',
         'WinLimit',
         'PreventPlayerJoinInSameIPOrHwid',
@@ -38,6 +38,7 @@ class LuckyPartyNumber extends Model
         'UniqueID',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey',
+        'LMSPlayMethod'
+    ];*/
 }

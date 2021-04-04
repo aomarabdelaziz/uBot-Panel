@@ -26,7 +26,7 @@ class LuckyCritical extends Model
     ];
 
     //protected $hidden
-    protected $hidden = [
+/*    protected $hidden = [
         'MaxRounds',
         'SendAnswer',
         'WinLimit',
@@ -42,6 +42,7 @@ class LuckyCritical extends Model
         'UniqueID',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey',
+        'LMSPlayMethod'
+    ];*/
 }

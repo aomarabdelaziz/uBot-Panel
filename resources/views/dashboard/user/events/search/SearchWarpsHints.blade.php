@@ -389,41 +389,15 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">wRegionID</label>
-                                    <input required type="number" value="{{ old('wRegionID' ?? '') }}" name="wRegionID" class="form-control @error('wRegionID') is-invalid @enderror"  placeholder="Enter RegionID">
-                                    @error('wRegionID')
-                                    <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message  }}</strong>
-                                </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PosX</label>
-                                    <input required step="any" type="number" value="{{ old('PosX' ?? '') }}" name="PosX" class="form-control @error('PosX') is-invalid @enderror" placeholder="Enter PosX">
-                                    @error('PosX')
+                                    <label for="exampleInputEmail1">Charname</label>
+                                    <input required type="text" value="{{ old('Charname' ?? '') }}" name="Charname" class="form-control @error('Charname') is-invalid @enderror"  placeholder="Enter Charname">
+                                    @error('Charname')
                                     <span class="invalid-feedback" role="alert">
                                      <strong>{{ $message  }}</strong>
-                                      </span>
+                                  </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PosY</label>
-                                    <input required step="any" type="number" value="{{ old('PosY' ?? '') }}" name="PosY" class="form-control @error('PosY') is-invalid @enderror"  placeholder="Enter PosY">
-                                    @error('PosY')
-                                    <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message  }}</strong>
-                                </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PosZ</label>
-                                    <input required step="any" type="number"  value="{{ old('PosZ' ?? '') }}" name="PosZ" class="form-control @error('PosZ') is-invalid @enderror"  placeholder="Enter PosZ">
-                                    @error('PosZ')
-                                    <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message  }}</strong>
-                                </span>
-                                    @enderror
-                                </div>
+
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">WorldID</label>
                                     <input required type="number"   value="{{ old('WorldID' ?? '') }}"  name="WorldID" class="form-control  @error('WorldID') is-invalid @enderror"  placeholder="Enter WorldID">
@@ -550,44 +524,15 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">wRegionID</label>
-                                    <input required type="number" value="{{ old('wRegionID' ?? '') }}" name="wRegionID" class="RegionID form-control @error('wRegionID') is-invalid @enderror"  placeholder="Enter RegionID">
-                                    @error('wRegionID')
+                                    <label for="exampleInputEmail1">Charname</label>
+                                    <input required type="text" value="{{ old('Charname' ?? '') }}" name="Charname" class="Charname form-control @error('Charname') is-invalid @enderror"  placeholder="Enter Charname">
+                                    @error('Charname')
                                     <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message  }}</strong>
-                                </span>
+                                      <strong>{{ $message  }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PosX</label>
-                                    <input required step="any" type="number" value="{{ old('PosX' ?? '') }}" name="PosX" class="PosX form-control @error('PosX') is-invalid @enderror" placeholder="Enter PosX">
-                                    @error('PosX')
-                                    <span class="invalid-feedback" role="alert">
-                                     <strong>{{ $message  }}</strong>
-                                      </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PosY</label>
-                                    <input required step="any" type="number" value="{{ old('PosY' ?? '') }}" name="PosY" class="PosY form-control @error('PosY') is-invalid @enderror"  placeholder="Enter PosY">
-                                    @error('PosY')
-                                    <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message  }}</strong>
-                                </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">PosZ</label>
-                                    <input required step="any" type="number"  value="{{ old('PosZ' ?? '') }}" name="PosZ" class="PosZ form-control @error('PosZ') is-invalid @enderror"  placeholder="Enter PosZ">
-                                    @error('PosZ')
-                                    <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message  }}</strong>
-                                </span>
-                                    @enderror
-                                </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">WorldID</label>

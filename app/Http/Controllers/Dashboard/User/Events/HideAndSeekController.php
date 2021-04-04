@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\HideAndSeekRequest;
 use App\Models\Events\HideAndSeek;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HideAndSeekController extends Controller
 {
@@ -15,9 +16,15 @@ class HideAndSeekController extends Controller
         return view('dashboard.user.events.search.HideAndSeek', compact('data'));
     }
 
+    /**
+     * @param HideAndSeekRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function save(HideAndSeekRequest $request)
     {
         $validated = $request->validated();
+
+
 
         HideAndSeek::updateOrCreate(
 
@@ -33,7 +40,6 @@ class HideAndSeekController extends Controller
                 'Delay2' => $request->Delay2,
             ]
         );
-
 
         session()->flash('success', 'HideAndSeek data has been updated');
         return redirect()->route('panel.event-hidenseek');

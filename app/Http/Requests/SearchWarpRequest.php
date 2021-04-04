@@ -25,17 +25,11 @@ class SearchWarpRequest extends FormRequest
     public function rules()
     {
 
-
-
-
         return [
 
             'event_name' => ['required' , 'string'],
             'WarpKey' => ['required', 'string' , 'unique:sqlsrv_user._SearchWarps,WarpKey'],
-            'wRegionID' => ['required', 'integer'],
-            'PosX' => ['required', 'string'],
-            'PosY' => ['required', 'string'],
-            'PosZ' => ['required', 'string'],
+            'Charname' => ['required', 'string'],
             'WorldID' => ['required', 'integer'],
             'HintMessage' => ['required', 'string'],
 

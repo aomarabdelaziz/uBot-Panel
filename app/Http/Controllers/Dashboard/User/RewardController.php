@@ -28,11 +28,7 @@ class RewardController extends Controller
 
         $eventName = $request->event_name;
 
-        $data = Reward::when( $request->event_name, function ($q) use ($eventName) {
-
-                return $q->where('EventKey', $eventName);
-
-        })->first();
+        $data = Reward::SearchByEventKey($eventName)->first();;
 
         return view('dashboard.user.rewards.index', compact('EVENTS', 'data', 'eventName'));
     }

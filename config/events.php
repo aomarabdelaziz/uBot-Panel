@@ -34,6 +34,7 @@ return
                 'Uniques',
                 'GMKiller',
                 'Drunk',
+                'LMS',
 
             ],
         'rewards' =>
@@ -49,6 +50,7 @@ return
                 'Madness',
                 'GMKiller',
                 'Drunk',
+                'LMS',
             ],
         'warps' =>
             [
@@ -57,7 +59,8 @@ return
                 'Madness',
                 'Uniques',
                 'GMKiller',
-                'Drunk'
+                'Drunk',
+                'LMS'
             ],
         'search_warps' => [
             'Hide And Seek',

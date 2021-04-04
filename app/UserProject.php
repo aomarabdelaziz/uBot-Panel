@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserProject extends Model
 {
 
+
     protected $primaryKey = 'user_id';
     public $timestamps = false;
     protected $fillable =

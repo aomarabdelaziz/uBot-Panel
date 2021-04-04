@@ -25,7 +25,7 @@ class Trivia extends Model
         'Delay2'
     ];
 
-    //protected $hidden
+/*    //protected $hidden
     protected $hidden = [
         'StallItemCodeName',
         'UniqueID',
@@ -38,6 +38,7 @@ class Trivia extends Model
         'TargetNumber',
         'StallItemID',
         'ReqLevel',
-        'RegKey'
-    ];
+        'RegKey',
+        'LMSPlayMethod'
+    ];*/
 }
