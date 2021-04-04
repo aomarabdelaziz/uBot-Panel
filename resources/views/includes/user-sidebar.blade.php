@@ -158,6 +158,45 @@
             </ul>
             <!--End Search Events -->
 
+            <!--Lottery Events -->
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-stethoscope"></i>
+                        <p>
+                            Lottery Events
+                            <i class="right fas fa-angle-left"></i>
+                            <span class="badge badge-info right">3</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-lotterysilk') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Lottery Silk</p>
+                            </a>
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-lotterygold') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Lottery Gold</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-lotterycoins') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Lottery Coints</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--End Lottery Events -->
+
 
 
 

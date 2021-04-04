@@ -72,6 +72,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                         Route::post('/events/stall' , 'StallController@save')->name('event-stall');
 
 
+                        Route::get('/events/lottery-silk' , 'LotterySilkController@index')->name('event-lotterysilk');
+                        Route::post('/events/lottery-silk' , 'LotterySilkController@save')->name('event-lotterysilk');
+
+                        Route::get('/events/lottery-gold' , 'LotteryGoldController@index')->name('event-lotterygold');
+                        Route::post('/events/lottery-gold' , 'LotteryGoldController@save')->name('event-lotterygold');
+
+                        Route::get('/events/lottery-coins' , 'LotteryCoinsController@index')->name('event-lotterycoins');
+                        Route::post('/events/lottery-coins' , 'LotteryCoinsController@save')->name('event-lotterycoins');
+
+
+
+
 
                     });
 
