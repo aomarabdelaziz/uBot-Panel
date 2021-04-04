@@ -30,6 +30,7 @@ class LotteryGoldRequest extends FormRequest
             'MaxPlayers' => ['required', 'integer'],
             'LotteryAmount' => ['required', 'integer'],
             'InTown' => ['required' , 'integer'],
+            'PreventPlayerJoinInSameIPOrHwid' => ['required' , 'integer'],
             'Delay1' => ['required', 'integer'],
             'Delay2' => ['required', 'integer'],
         ];

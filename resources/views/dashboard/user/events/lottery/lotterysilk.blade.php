@@ -106,6 +106,21 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="exampleInputText">Prevent Player to participate if has same IP/Hwid</label>
+
+                            <select class="form-control" name="PreventPlayerJoinInSameIPOrHwid">
+                                <option value="0" {{ ( $data->PreventPlayerJoinInSameIPOrHwid == 0) ? 'selected' : '' }}> Disable </option>
+                                <option value="1" {{ ( $data->PreventPlayerJoinInSameIPOrHwid == 1) ? 'selected' : '' }}> Enable </option>
+
+                            </select>
+                            @error('PreventPlayerJoinInSameIPOrHwid')
+                            <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message  }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label for="exampleInputPassword1">Delay 1</label>
                             <input type="number" class="form-control @error('Delay1') is-invalid @enderror" name="Delay1" value="{{ old('Delay1' , $data->Delay1) }}" placeholder="1">
                             @error('Delay1')

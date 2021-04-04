@@ -4,7 +4,7 @@ namespace App\Http\Requests\Events;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LotterySilkRequest extends FormRequest
+class MadnessRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,13 @@ class LotterySilkRequest extends FormRequest
     public function rules()
     {
         return [
-            'MaxRounds' => ['required' , 'integer'],
+
             'RegKey' => ['required', 'string'],
             'MinPlayers' => ['required', 'integer'],
             'MaxPlayers' => ['required', 'integer'],
-            'LotteryAmount' => ['required', 'integer'],
+            'CapeDetection' => ['required', 'integer'],
+            'UniqueID' => ['required', 'integer'],
+            'ReqLevel' => ['required', 'integer'],
             'PreventPlayerJoinInSameIPOrHwid' => ['required' , 'integer'],
             'Delay1' => ['required', 'integer'],
             'Delay2' => ['required', 'integer'],

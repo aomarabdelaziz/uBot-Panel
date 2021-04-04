@@ -31,6 +31,7 @@ class LotteryGoldController extends Controller
                 'MinPlayers' => $request->MinPlayers,
                 'MaxPlayers' => $request->MaxPlayers,
                 'LotteryAmount' => $request->LotteryAmount,
+                'PreventPlayerJoinInSameIPOrHwid' => $request->PreventPlayerJoinInSameIPOrHwid,
                 'InTown' => $request->InTown,
                 'Delay1' => $request->Delay1,
                 'Delay2' => $request->Delay2,

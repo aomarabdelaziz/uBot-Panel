@@ -6,12 +6,12 @@
     <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 @endpush
-@section('title', 'uBot | Lottery Gold Settings')
+@section('title', 'uBot | Madness Settings')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
     <li class="breadcrumb-item"><a href="#">Events</a></li>
-    <li class="breadcrumb-item"><a href="#">Lottery Events</a></li>
-    <li class="breadcrumb-item active">Lottery Gold</li>
+    <li class="breadcrumb-item"><a href="#">Uniques Events</a></li>
+    <li class="breadcrumb-item active">Madness</li>
 
 @endsection
 
@@ -21,7 +21,7 @@
 
             <div class="card card-primary">
                 <div class="card-header ">
-                    <h3 class="card-title ">Lottery Gold Settings</h3>
+                    <h3 class="card-title ">Madness Settings</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -39,26 +39,9 @@
 
 
 
-                <form method="POST" action="{{ route('panel.event-lotterygold') }}">
+                <form method="POST" action="{{ route('panel.event-madness') }}">
                     @csrf
-
-
-
-
                     <div class="card-body">
-
-
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Max Rounds</label>
-                            <input type="number" class="form-control @error('MaxRounds') is-invalid @enderror" name="MaxRounds" value="{{ old('MaxRounds' , $data->MaxRounds) }}" placeholder="1">
-                            @error('MaxRounds')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-
-
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Reg Key</label>
@@ -96,9 +79,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Lottery Amount</label>
-                            <input type="number" class="form-control @error('LotteryAmount') is-invalid @enderror" name="LotteryAmount" value="{{ old('LotteryAmount' , $data->LotteryAmount) }}" placeholder="1">
-                            @error('LotteryAmount')
+                            <label for="exampleInputPassword1">UniqueID</label>
+                            <input type="number" class="form-control @error('UniqueID') is-invalid @enderror" name="UniqueID" value="{{ old('UniqueID' , $data->UniqueID) }}" placeholder="1">
+                            @error('UniqueID')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>
                             </span>
@@ -106,19 +89,31 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputText">In Town</label>
+                            <label for="exampleInputPassword1">Required Level</label>
+                            <input type="number" class="form-control @error('ReqLevel') is-invalid @enderror" name="ReqLevel" value="{{ old('ReqLevel' , $data->ReqLevel) }}" placeholder="1">
+                            @error('ReqLevel')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
 
-                            <select class="form-control" name="InTown">
-                                <option value="0" {{ ( $data->InTown == 0) ? 'selected' : '' }}> Disable </option>
-                                <option value="1" {{ ( $data->InTown == 1) ? 'selected' : '' }}> Enable </option>
+                        <div class="form-group">
+                            <label for="exampleInputText">Cape Detection</label>
+
+                            <select class="form-control" name="CapeDetection">
+                                <option value="0" {{ ( $data->CapeDetection == 0) ? 'selected' : '' }}> Disable </option>
+                                <option value="1" {{ ( $data->CapeDetection == 1) ? 'selected' : '' }}> Enable </option>
 
                             </select>
-                            @error('InTown')
+                            @error('CapeDetection')
                             <span class="invalid-feedback" role="alert">
                                <strong>{{ $message  }}</strong>
                             </span>
                             @enderror
                         </div>
+
+
 
                         <div class="form-group">
                             <label for="exampleInputText">Prevent Player to participate if has same IP/Hwid</label>

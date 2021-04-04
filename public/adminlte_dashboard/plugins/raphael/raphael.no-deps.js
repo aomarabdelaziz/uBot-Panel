@@ -6213,7 +6213,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
          * Element.id
          [ property (number) ]
          **
-         * Unique id of the element. Especially useful when you want to listen to events of the element,
+         * UniqueSettings id of the element. Especially useful when you want to listen to events of the element,
          * because all events are fired in format `<module>.<action>.<id>`. Also useful for @Paper.getById method.
         \*/
         this.id = guid();

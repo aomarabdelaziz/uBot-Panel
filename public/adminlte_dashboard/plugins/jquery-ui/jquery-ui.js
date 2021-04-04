@@ -4255,7 +4255,7 @@ var tabbable = $.extend( $.expr[ ":" ], {
 
 
 /*!
- * jQuery UI Unique ID 1.12.1
+ * jQuery UI UniqueSettings ID 1.12.1
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors

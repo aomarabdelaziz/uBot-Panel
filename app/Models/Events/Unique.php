@@ -4,7 +4,7 @@ namespace App\Models\Events;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LotteryCoins extends Model
+class Unique extends Model
 {
     public $timestamps = false;
     protected $connection = 'sqlsrv_user';
@@ -15,14 +15,6 @@ class LotteryCoins extends Model
     //protected $visible
     protected $fillable = [
         'EventKey',
-        'MaxRounds',
-        'RegKey',
-        'WinLimit',
-        'MinPlayers',
-        'MaxPlayers',
-        'LotteryAmount',
-        'PreventPlayerJoinInSameIPOrHwid',
-        'Delay1',
-        'Delay2'
+        'Delay1'
     ];
 }

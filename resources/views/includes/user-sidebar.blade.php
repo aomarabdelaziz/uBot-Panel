@@ -197,6 +197,40 @@
             </ul>
             <!--End Lottery Events -->
 
+            <!--Lottery Events -->
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-stethoscope"></i>
+                        <p>
+                            Uniques Events
+                            <i class="right fas fa-angle-left"></i>
+                            <span class="badge badge-info right">2</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-madness') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Madness Silk</p>
+                            </a>
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.uniques.index') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Uniques</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <!--End Lottery Events -->
+
 
 
 

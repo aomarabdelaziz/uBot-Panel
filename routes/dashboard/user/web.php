@@ -43,7 +43,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                 Route::group(['middleware' => 'sqlConnection'] , function () {
 
 
-                    Route::group(['namespace' => 'Events' , 'middleware' => 'sqlConnection' ] , function () {
+                    Route::group(['namespace' => 'Events'] , function () {
 
                         Route::get('/events/trivia' , 'TriviaController@index')->name('event-trivia');
                         Route::post('/events/trivia' , 'TriviaController@save')->name('event-trivia');
@@ -81,6 +81,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                         Route::get('/events/lottery-coins' , 'LotteryCoinsController@index')->name('event-lotterycoins');
                         Route::post('/events/lottery-coins' , 'LotteryCoinsController@save')->name('event-lotterycoins');
 
+                        Route::get('/events/madness' , 'MadnessController@index')->name('event-madness');
+                        Route::post('/events/madness' , 'MadnessController@save')->name('event-madness');
+
+
+                      /*  Route::get('/events/uniques' , 'UniqueController@index')->name('event-uniques');
+                        Route::post('/events/uniques' , 'UniqueController@save')->name('event-uniques');
+                        Route::delete('/events/uniques/{id}' , 'UniqueController@destroy')->name('event-uniques');*/
+
+
+
+                        Route::resource('/events/uniques' , 'UniqueController');
 
 
 
@@ -95,7 +106,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                     Route::post('search-warps-hints/add-hint' , 'SearchWarpHintController@saveHint')->name('search-warps-add-hints');
                     Route::put('search-warps-hints/update-service/{id}' , 'SearchWarpHintController@updateService')->name('search-warps-update-service');
                     Route::put('search-warps-hints/update-hint/{id}' , 'SearchWarpHintController@updateHint')->name('search-warps-update-hint');
-
 
                 });
 

@@ -84,7 +84,7 @@ var KeyTable = function ( dt, opts ) {
 		/** @type {object} Information about the last cell that was focused */
 		lastFocus: null,
 
-		/** @type {string} Unique namespace per instance */
+		/** @type {string} UniqueSettings namespace per instance */
 		namespace: '.keyTable-'+(namespaceCounter++),
 
 		/** @type {Node} Input element for tabbing into the table */
@@ -510,7 +510,7 @@ $.extend( KeyTable.prototype, {
 	{
 		// If nothing focused, we can't take any action
 		if (! this.s.lastFocus) {
-			return;	
+			return;
 		}
 
 		var that = this;
@@ -668,7 +668,7 @@ $.extend( KeyTable.prototype, {
 				.rows( { filter: 'applied', order: 'applied' } )
 				.indexes()
 				.indexOf( index.row );
-			
+
 			// Don't focus rows that were filtered out.
 			if ( row < 0 ) {
 				return;
@@ -1068,7 +1068,7 @@ $.extend( KeyTable.prototype, {
 
 			div.children().on( 'focus', function (e) {
 				var cell = dt.cell(':eq(0)', that._columns(), {page: 'current'});
-	
+
 				if ( cell.any() ) {
 					that._focus( cell, null, true, e );
 				}

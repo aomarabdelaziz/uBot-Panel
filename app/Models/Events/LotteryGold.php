@@ -22,6 +22,7 @@ class LotteryGold extends Model
         'MaxPlayers',
         'InTown',
         'LotteryAmount',
+        'PreventPlayerJoinInSameIPOrHwid',
         'Delay1',
         'Delay2'
     ];

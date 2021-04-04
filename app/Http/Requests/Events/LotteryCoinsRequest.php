@@ -29,6 +29,7 @@ class LotteryCoinsRequest extends FormRequest
             'MinPlayers' => ['required', 'integer'],
             'MaxPlayers' => ['required', 'integer'],
             'LotteryAmount' => ['required', 'integer'],
+            'PreventPlayerJoinInSameIPOrHwid' => ['required' , 'integer'],
             'Delay1' => ['required', 'integer'],
             'Delay2' => ['required', 'integer'],
         ];

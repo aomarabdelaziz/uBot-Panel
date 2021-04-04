@@ -20,6 +20,7 @@ class LotterySilk extends Model
         'MinPlayers',
         'MaxPlayers',
         'LotteryAmount',
+        'PreventPlayerJoinInSameIPOrHwid',
         'Delay1',
         'Delay2'
     ];

@@ -79,7 +79,7 @@ CodeMirror.defineMode('powershell', function() {
     new RegExp('Get-(Acl|Alias|AuthenticodeSignature|ChildItem|Command|ComputerRestorePoint|Content|ControlPanelItem|Counter|Credential'
       + '|Culture|Date|Event|EventLog|EventSubscriber|ExecutionPolicy|FormatData|Help|History|Host|HotFix|Item|ItemProperty|Job'
       + '|Location|Member|Module|PfxCertificate|Process|PSBreakpoint|PSCallStack|PSDrive|PSProvider|PSSession|PSSessionConfiguration'
-      + '|PSSnapin|Random|Service|TraceSource|Transaction|TypeData|UICulture|Unique|Variable|Verb|WinEvent|WmiObject)'),
+      + '|PSSnapin|Random|Service|TraceSource|Transaction|TypeData|UICulture|UniqueSettings|Variable|Verb|WinEvent|WmiObject)'),
     /Group-Object/,
     /Import-(Alias|Clixml|Counter|Csv|LocalizedData|Module|PSSession)/,
     /ImportSystemModules/,
