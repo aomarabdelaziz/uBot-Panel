@@ -25,6 +25,11 @@ class LuckyCritical extends Model
         'Delay2'
     ];
 
+    public function setMinPlayersAttribute($value)
+    {
+
+        $this->attributes['MinPlayers'] = $value >= 2 ? $value : 2 ;
+    }
     //protected $hidden
 /*    protected $hidden = [
         'MaxRounds',

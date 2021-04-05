@@ -26,4 +26,10 @@ class LotteryGold extends Model
         'Delay1',
         'Delay2'
     ];
+
+    public function setMinPlayersAttribute($value)
+    {
+
+        $this->attributes['MinPlayers'] = $value >= 2 ? $value : 2 ;
+    }
 }

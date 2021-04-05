@@ -34,6 +34,35 @@ class UniqueController extends Controller
     public function update(Request $request , $id)
     {
 
+        $model = UniqueSettings::findOrFail($id);
+        $request->validate([
+
+            'Priority' => ['required', 'integer' , 'unique:sqlsrv_user._UniquesSettings,Priority'],
+            'UniqueID' => ['required' , 'integer'],
+            'UniqueCount' => ['required' , 'integer'],
+            'UniqueDelay' => ['required' , 'integer'],
+            'Points' => ['required' , 'integer'],
+
+        ]);
+
+
+        $model->update([
+
+
+            'Priority' => $request->Priority,
+            'UniqueID' => $request->UniqueID,
+            'UniqueCount' => $request->UniqueCount,
+            'UniqueDelay' => $request->UniqueDelay,
+            'Points' => $request->Points,
+
+
+        ]);
+
+
+
+        session()->flash('success', 'Unique data has been edited');
+        return redirect()->route('panel.uniques.index');
+
     }
 
     public function destroy($id)

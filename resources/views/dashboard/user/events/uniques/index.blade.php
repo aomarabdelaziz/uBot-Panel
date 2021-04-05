@@ -42,7 +42,9 @@
                 window.onload = function () {
                     $('#modal-default').modal('show');
                 }
+
             </script>
+
         @endif
         <section class="content">
             <div class="container-fluid">
@@ -178,7 +180,7 @@
                                                             data-unique_delay="{{$unique->UniqueDelay}}"
                                                             data-points="{{$unique->Points}}"
                                                             data-toggle="modal"
-                                                            class="Edit-Warp btn btn-warning btn-sm" href="#modal-default3">
+                                                            class="Edit-Unique btn btn-warning btn-sm" href="#modal-default2">
                                                             <i class=" fas fa-edit">
                                                             </i>
                                                             Edit
@@ -299,6 +301,84 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
+            <div class="modal fade" id="modal-default2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Unique</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form class="form-route" action="#" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="modal-body">
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Priority</label>
+                                    <input required type="number" value="{{ old('Priority' ?? '') }}" name="Priority" class="priority form-control @error('Priority') is-invalid @enderror"  placeholder="Enter Priority">
+                                    @error('Priority')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">UniqueID</label>
+                                    <input required type="number" value="{{ old('UniqueID' ?? '') }}" name="UniqueID" class="unique_id form-control @error('UniqueID') is-invalid @enderror"  placeholder="Enter UniqueID">
+                                    @error('UniqueID')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">UniqueCount</label>
+                                    <input required type="number" value="{{ old('UniqueCount' ?? '') }}" name="UniqueCount" class="unique_count form-control @error('UniqueCount') is-invalid @enderror"  placeholder="Enter UniqueCount">
+                                    @error('UniqueCount')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">UniqueDelay</label>
+                                    <input required type="number" value="{{ old('UniqueDelay' ?? '') }}" name="UniqueDelay" class="unique_delay form-control @error('UniqueDelay') is-invalid @enderror"  placeholder="Enter UniqueDelay">
+                                    @error('UniqueDelay')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Points</label>
+                                    <input required type="number" value="{{ old('Points' ?? '') }}" name="Points" class="points form-control @error('Points') is-invalid @enderror"  placeholder="Enter Points">
+                                    @error('Points')
+                                    <span class="invalid-feedback" role="alert">
+                                 <strong>{{ $message  }}</strong>
+                                </span>
+                                    @enderror
+                                </div>
+
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
 
     </div>
 
@@ -323,49 +403,31 @@
 
 
 
-          /*  $('.Add-Warp').on('click' , function () {
-                $('#modal-default').modal('show')
-            })
 
-            $('.Add-Hint').on('click' , function () {
-                $('#modal-default2').modal('show')
-            })*/
-
-
-
-
-            $('#modal-default3').on('show.bs.modal', function(event) {
+            $('#modal-default2').on('show.bs.modal', function(event) {
 
 
                 var button = $(event.relatedTarget)
-                let Edit_Button = document.getElementsByClassName('Edit-Warp');
+                let Edit_Button = document.getElementsByClassName('Edit-Unique');
 
 
-                let data_warpID = button.data('warp_id')
-                let data_warpKey = button.data('warp_key')
-                let data_old_warpKey = button.data('warp_key')
-                let data_event_name = button.data('event_name')
-                let data_wregion_id = button.data('wregion_id')
-                let data_posx = button.data('posx')
-                let data_posy = button.data('posy')
-                let data_posz = button.data('posz')
-                let data_worldid = button.data('worldid')
-                let data_service = button.data('service')
+
+                let data_id = button.data('id')
+                let data_priority = button.data('priority')
+                let data_unique_id = button.data('unique_id')
+                let data_unique_count = button.data('unique_count')
+                let data_unique_delay = button.data('unique_delay')
+                let data_points = button.data('points')
 
 
                 let modal = $(this)
-                modal.find('.modal-body .WarpKey').val(data_warpKey);
-                modal.find('.modal-body .oldWarpKey').val(data_warpKey);
-                modal.find('.modal-body .RegionID').val(data_wregion_id);
-                modal.find('.modal-body .PosX').val(data_posx);
-                modal.find('.modal-body .PosY').val(data_posy);
-                modal.find('.modal-body .PosZ').val(data_posz);
-                modal.find('.modal-body .WorldID').val(data_worldid);
-                modal.find('.modal-body .Service').val(data_service);
+                modal.find('.modal-body .priority').val(data_priority);
+                modal.find('.modal-body .unique_id').val(data_unique_id);
+                modal.find('.modal-body .unique_count').val(data_unique_count);
+                modal.find('.modal-body .unique_delay').val(data_unique_delay);
+                modal.find('.modal-body .points').val(data_points);
 
-
-                //'
-                modal.find('.form-route').attr('action' , `search-warps-hints/${data_warpID}`)
+                modal.find('.form-route').attr('action' , `uniques/${data_id}`)
 
 
 

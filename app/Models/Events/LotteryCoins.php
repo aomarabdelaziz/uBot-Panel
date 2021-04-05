@@ -17,7 +17,6 @@ class LotteryCoins extends Model
         'EventKey',
         'MaxRounds',
         'RegKey',
-        'WinLimit',
         'MinPlayers',
         'MaxPlayers',
         'LotteryAmount',
@@ -25,4 +24,11 @@ class LotteryCoins extends Model
         'Delay1',
         'Delay2'
     ];
+
+    public function setMinPlayersAttribute($value)
+    {
+
+        $this->attributes['MinPlayers'] = $value >= 2 ? $value : 2 ;
+    }
+
 }
