@@ -117,17 +117,19 @@ class SearchWarpHintController extends Controller
         ]);
 
 
-        $created_hint = SearchHint::create([
+        $count = SearchHint::where('WarpKey' , $request->WarpKey)
+            ->where('EventKey' , $request->event_name)
+            ->count();
+
+        SearchHint::create([
 
 
-            'HintID' => '1',
+            'HintID' => $count += 1,
             "WarpKey" => $request->WarpKey,
             'HintMessage' => $request->HintMessage,
             'EventKey' => $request->event_name
 
         ]);
-
-        $created_hint->increment('HintID');
 
         session()->flash('success', 'Warps & Hints data has been created');
         return redirect()->route('panel.search-warps-hints.index');
@@ -160,9 +162,33 @@ class SearchWarpHintController extends Controller
     public function destroy($warpKey)
     {
 
-        $data = SearchWarp::where('WarpKey' , $warpKey)->firstOrFail();
-        $data->delete();
+        SearchWarp::where('WarpKey' , $warpKey)->delete();
+        SearchHint::where('WarpKey' , $warpKey)->delete();
+
+
         session()->flash('success', 'Warp has been deleted');
+
+        return redirect()->route('panel.search-warps-hints.index');
+
+    }
+
+    public function destroyHint($id)
+    {
+
+
+
+       $model = SearchHint::findOrFail($id);
+
+       if((int)$model->HintID !== 1) {
+           session()->flash('success', 'Warp hint has been deleted');
+           $model->delete();
+       }
+       else {
+           session()->flash('error', 'Cannot delete this warp');
+       }
+
+
+
 
         return redirect()->route('panel.search-warps-hints.index');
 

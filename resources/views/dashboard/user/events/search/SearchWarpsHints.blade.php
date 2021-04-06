@@ -36,6 +36,18 @@
             </script>
         @endif
 
+
+            @if(session('error'))
+                <script>
+
+                    window.onload = function() {
+                        toastr.error("{{ session('error') }}")
+                    }
+
+                </script>
+            @endif
+
+
         @if($errors->any())
                 <script>
                     window.onload = function () {
@@ -317,6 +329,17 @@
 
                                                     <td class="project-actions text-center">
 
+                                                        <form class="d-inline-block" action="{{ route('panel.search-warps-delete-hint' , $hint->id)}}" method="POST" >
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit"  class="btn btn-danger  btn-sm">
+                                                                <i class="fas fa-trash">
+                                                                </i>
+                                                                Delete
+
+                                                            </button>
+
+                                                        </form>
 
                                                         <a class="btn btn-warning btn-sm" href="#">
                                                             <i class="fas fa-edit">

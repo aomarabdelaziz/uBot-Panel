@@ -36,13 +36,6 @@ class SearchWarp extends Model
 
     }
 
-    protected static function boot()
-    {
-        parent::boot();
-        self::observe(WarpHintObserver::class);
-    }
-
-
 
 
 }

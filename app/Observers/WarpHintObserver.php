@@ -11,6 +11,8 @@ class WarpHintObserver
 {
     public function deleting(SearchWarp $searchWarp)
     {
-        $searchWarp->hints()->delete();
+
     }
 }
+
+
