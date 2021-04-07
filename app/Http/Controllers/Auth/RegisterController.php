@@ -72,6 +72,8 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
+
+        dd($request->all());
         //Validate the incoming request using the already included validator method
         $this->validator($request->all())->validate();
 
