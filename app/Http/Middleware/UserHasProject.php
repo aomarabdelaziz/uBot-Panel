@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\UserProject;
 use Closure;
 
+
 class UserHasProject
 {
     /**

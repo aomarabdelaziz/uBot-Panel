@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password' , 'role',
+        'name', 'email', 'password' , 'role' , 'google2fa_secret' , 'allow_google2fa'
     ];
 
     /**
@@ -42,6 +42,15 @@ class User extends Authenticatable
     public function projects()
     {
         return $this->hasOne(UserProject::class);
+    }
+
+    public function setGoogle2faSecretAttribute($value)
+    {
+        $this->attributes['google2fa_secret'] = encrypt($value);
+    }
+    public function getGoogle2faSecretAttribute($value)
+    {
+        return decrypt($value);
     }
 
 }

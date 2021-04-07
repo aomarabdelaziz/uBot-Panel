@@ -23,6 +23,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
             return view('welcome');
         }
     );
+    Route::get('/complete-registration', 'Auth\RegisterController@completeRegistration');
+
 
     Auth::routes();
 

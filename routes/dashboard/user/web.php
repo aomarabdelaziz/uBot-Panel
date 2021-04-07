@@ -15,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]] , function () {
 
-
+    Route::post('/2fa', function () {
+        return redirect()->route('panel.panel-home');
+    })->name('2fa')->middleware('2fa');
 
     Route::resource('projects', 'AddProjectController');
 
-    Route::group(['middleware' => 'userHasProject'] , function () {
+    //here put 2fa middleware
+
+    Route::group(['middleware' => ['2fa' , 'userHasProject']] , function () {
 
         Route::group(['prefix' => 'panel' , 'as' => 'panel.'] , function () {
 
@@ -83,13 +87,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
                         Route::get('/events/madness' , 'MadnessController@index')->name('event-madness');
                         Route::post('/events/madness' , 'MadnessController@save')->name('event-madness');
-
-
-                      /*  Route::get('/events/uniques' , 'UniqueController@index')->name('event-uniques');
-                        Route::post('/events/uniques' , 'UniqueController@save')->name('event-uniques');
-                        Route::delete('/events/uniques/{id}' , 'UniqueController@destroy')->name('event-uniques');*/
-
-
 
                         Route::resource('/events/uniques' , 'UniqueController');
 

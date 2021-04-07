@@ -130,7 +130,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/clue/stream-filter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/paypal" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/srmklive/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pragmarx/google2fa-qrcode" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pragmarx/google2fa-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pragmarx/google2fa" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bacon/bacon-qr-code" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

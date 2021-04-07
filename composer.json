@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
+        "bacon/bacon-qr-code": "^2.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.5|^7.0.1",
@@ -19,7 +20,8 @@
         "league/omnipay": "3",
         "mcamara/laravel-localization": "^1.6",
         "mews/captcha": "^3.2",
-        "omnipay/paypal": "^3.0"
+        "omnipay/paypal": "^3.0",
+        "pragmarx/google2fa-laravel": "^1.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

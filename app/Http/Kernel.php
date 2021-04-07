@@ -6,6 +6,7 @@ use App\Http\Middleware\AccessEvent;
 use App\Http\Middleware\CheckForSQLConnection;
 use App\Http\Middleware\EventSearchableExist;
 use App\Http\Middleware\RedirectIfHasProject;
+use App\Http\Middleware\TwoFactorAuth;
 use App\Http\Middleware\UserHasProject;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -72,6 +73,7 @@ class Kernel extends HttpKernel
         'accessEvent' => AccessEvent::class,
         'eventSearchableExist' => EventSearchableExist::class,
         'sqlConnection' => CheckForSQLConnection::class,
+        '2fa' => TwoFactorAuth::class,
         /**** OTHER MIDDLEWARE ****/
         'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
