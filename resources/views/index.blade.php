@@ -66,6 +66,141 @@
     @endisset
 
 
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form class="d-inline-block" action="{{ route('panel.panel-start-bot') }}" method="POST" >
+                        @csrf
+
+                        <button type="submit"  class="btn btn-app">
+                            <i class="fa fa-play"></i> Start
+
+                        </button>
+
+                    </form>
+
+                    <form class="d-inline-block" action="{{ route('panel.panel-restart-bot') }}" method="POST" >
+                        @csrf
+
+                        <button type="submit"  class="btn btn-app">
+                            <i class="fa fa-undo"></i> Restart
+
+                        </button>
+
+                    </form>
+
+                    <form class="d-inline-block" action="{{ route('panel.panel-close-bot') }}" method="POST" >
+                        @csrf
+
+                        <button type="submit"  class="btn btn-app">
+                            <i class="fa fa-times"></i> Close
+
+                        </button>
+
+                    </form>
+
+
+
+                </div>
+                <div class="col-md-12">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            <h3 class="card-title">Events</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <table class="table table-striped projects">
+                                <thead>
+                                <tr>
+                                    <th style="width: 15%" class="text-center">
+                                        #
+                                    </th>
+                                    <th style="width: 15%" class="text-center">
+                                        EventName
+                                    </th>
+                                    <th style="width: 15%" class="text-center">
+                                        Running
+                                    </th>
+                                    <th style="width: 15%" class="text-center">
+                                        Active
+                                    </th>
+
+                                    <th style="width: 15%" class="text-center">
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($events as $index => $event)
+                                    <tr>
+                                        <td class="text-center">
+                                            {{ $index }}
+                                        </td>
+                                        <td class="text-center">
+                                            {{ $event->EventName }}
+                                        </td>
+
+
+                                        <td class="text-center">
+                                                  <span class="badge {{ ( $event->Running != 0 ? 'badge-success' : 'badge-danger') }}">
+                                                      {{ ($event->Running != 0 ? 'Running' : 'Not Running') }}
+                                                  </span>
+
+                                        </td>
+                                        <td class="text-center">
+                                                  <span class="badge {{ ( $event->Active != 0 ? 'badge-success' : 'badge-danger') }}">
+                                                      {{ ($event->Active != 0 ? 'Enabled' : 'Disabled') }}
+                                                  </span>
+
+                                        </td>
+                                        <td class="project-actions text-center">
+
+
+
+
+
+                                            <form class="d-inline-block" action="{{ route('panel.panel-home-update' , $event->id)}}" method="POST" >
+                                                @csrf
+                                                @method('put')
+                                                <button type="submit"  class="btn {{ ( $event->Active == 0 ? 'btn-success' : 'btn-danger') }}  btn-sm">
+                                                    <i class="fas fa-ban">
+                                                    </i>
+                                                    {{ ( $event->Active == 0 ? 'Enable' : 'Disable') }}
+
+                                                </button>
+
+                                            </form>
+
+
+                                        </td>
+                                    </tr>
+                                    @endforeach
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
 
 
 

@@ -25,7 +25,7 @@ class UserAddProjectRequest extends FormRequest
     {
         return [
 
-            'project_name' => ['required', 'string' , 'unique:user_projects,project_name'],
+            'project_name' => ['required', 'string' ,  'alpha_dash', 'unique:user_projects,project_name'],
             'sql_host' => ['required', 'string'],
             'sql_username' => ['required', 'string'],
             'sql_password' => ['required', 'string'],

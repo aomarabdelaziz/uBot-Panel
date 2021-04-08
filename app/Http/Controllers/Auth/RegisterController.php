@@ -25,15 +25,15 @@ class RegisterController extends Controller
 
 
     // Ref => https://scotch.io/tutorials/how-to-add-googles-two-factor-authentication-to-laravel
-    //use RegistersUsers ;
+    use RegistersUsers ;
 
 
 
-      use RegistersUsers {
+   /*   use RegistersUsers {
         // change the name of the name of the trait's method in this class
         // so it does not clash with our own register method
         register as registration;
-    }
+    }*/
 
     /**
      * Where to redirect users after registration.
@@ -56,24 +56,24 @@ class RegisterController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
-    public function completeRegistration(Request $request)
+   /* public function completeRegistration(Request $request)
     {
         // add the session data back to the request input
         $request->merge(session('registration_data'));
 
         // Call the default laravel authentication
         return $this->registration($request);
-    }
+    }*/
 
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function register(Request $request)
+/*    public function register(Request $request)
     {
 
-        dd($request->all());
+
         //Validate the incoming request using the already included validator method
         $this->validator($request->all())->validate();
 
@@ -99,7 +99,7 @@ class RegisterController extends Controller
 
         // Pass the QR barcode image to our view
         return view('google2fa.register', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
-    }
+    }*/
 
     /**
      * Get a validator for an incoming registration request.
@@ -128,7 +128,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'google2fa_secret' => $data['google2fa_secret'],
+            'google2fa_secret' => $data['google2fa_secret'] ?? '',
         ]);
     }
 }

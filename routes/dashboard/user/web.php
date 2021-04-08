@@ -15,21 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]] , function () {
 
-    Route::post('/2fa', function () {
+    /*Route::post('/2fa', function () {
         return redirect()->route('panel.panel-home');
-    })->name('2fa')->middleware('2fa');
+    })->name('2fa')->middleware('2fa');*/
 
     Route::resource('projects', 'AddProjectController');
 
     //here put 2fa middleware
 
-    Route::group(['middleware' => ['2fa' , 'userHasProject']] , function () {
+    Route::group(['middleware' => 'userHasProject'] , function () {
 
         Route::group(['prefix' => 'panel' , 'as' => 'panel.'] , function () {
 
-            Route::get('/' , function () {
-                return view('index');
-            })->name('panel-home');
+            Route::get('/' , 'IndexController@index')->name('panel-home');
+            Route::put('/update-event-service/{id}' , 'IndexController@updateService')->name('panel-home-update');
+
+            Route::post('/start-bot' , 'OrderController@startBot')->name('panel-start-bot');
+            Route::post('/restart-bot' , 'OrderController@restartBot')->name('panel-restart-bot');
+            Route::post('/close-bot' , 'OrderController@closeBot')->name('panel-close-bot');
 
             Route::group(['middleware' => 'accessEvent'] , function () {
 

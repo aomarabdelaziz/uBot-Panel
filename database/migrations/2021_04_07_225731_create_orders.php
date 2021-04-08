@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectStatus extends Migration
+class CreateOrders extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateProjectStatus extends Migration
      */
     public function up()
     {
-        Schema::create('project_status', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
             $table->string('project_name')->nullable();
-            $table->tinyint('status' , ['offline' , 'online'])->default('offline');
+            $table->enum('order_key' , ['Launch' , 'Shutdown' , 'Restart']);
+            $table->enum('services' , [0,1])->default(0);
+
         });
     }
 
@@ -27,6 +29,6 @@ class CreateProjectStatus extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_status');
+        Schema::dropIfExists('orders');
     }
 }

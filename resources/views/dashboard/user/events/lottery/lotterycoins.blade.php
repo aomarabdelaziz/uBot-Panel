@@ -154,9 +154,9 @@
 
             </div>
         </div>
-        @endsection
+@endsection
 
-        @push('js')
+@push('js')
 
 
             <script src="{{ asset('adminlte_dashboard/plugins/toastr/toastr.min.js') }}"></script>

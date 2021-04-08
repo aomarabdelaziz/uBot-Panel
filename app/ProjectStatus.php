@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectStatus extends Model
 {
-    protected $fillable =
-        [
-            'project_name',
-            'status'
-        ];
+    protected $table = 'project_status';
+    protected  $guarded = [];
+    public $timestamps = false;
+
+    public function userProjects()
+    {
+        return $this->belongsTo(UserProject::class);
+    }
 }
