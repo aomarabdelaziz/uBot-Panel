@@ -5,78 +5,141 @@ namespace App\Http\Controllers\Dashboard\User;
 use App\Http\Controllers\Controller;
 use App\Order;
 use App\ProjectStatus;
+use App\Services\ConnectionAvailabilityService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class OrderController extends Controller
 {
 
-    public function startBot()
+    public function startBot(Request $request)
     {
 
 
-        $user_Project = auth()->user()->projects->project_name;
-        $status = ProjectStatus::where('project_name' , $user_Project)->first();
 
-        if($status->status !== "offline") {
+        if($request->ajax()) {
 
-            session()->flash('error', 'Bot aleardy active');
-            return redirect()->route('panel.panel-home');
+
+            if(!Gate::allows('access-actions')) {
+                return response([
+                    "error" => 'You have to renew your membership to do this action'
+                ]);
+            }
+
+            if (!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
+
+                return response([
+                        "error" => 'Cannot read any sql connection , please make sure that your connection is correct'
+                    ]);
+            }
+            $user_Project = auth()->user()->projects->project_name;
+            $status = ProjectStatus::where('project_name' , $user_Project)->first();
+
+            if($status->status !== "offline") {
+
+                return response([
+                    "error" => 'Bot aleardy active'
+                ]);
+            }
+
+            Order::updateOrCreate([
+
+                'project_name' => $user_Project,
+                'order_key' => 'Launch',
+                'services' => '0'
+            ]);
+
+            return response([
+                "success" => 'Bot is being to be start'
+            ]);
+
         }
 
-        Order::updateOrCreate([
 
-            'project_name' => $user_Project,
-            'order_key' => 'Launch',
-            'services' => '0'
-        ]);
-
-        session()->flash('success', 'Bot is being to be started');
-        return redirect()->route('panel.panel-home');
 
     }
 
-    public function restartBot()
+    public function restartBot(Request $request)
     {
 
-        $user_Project = auth()->user()->projects->project_name;
-        $status = ProjectStatus::where('project_name' , $user_Project)->first();
-        if($status->status !== "online") {
+        if($request->ajax()) {
 
-            session()->flash('error', 'Bot aleardy in-active, cannot restart in active bot');
-            return redirect()->route('panel.panel-home');
+            if(!Gate::allows('access-actions')) {
+                return response([
+                    "error" => 'You have to renew your membership to do this action'
+                ]);
+            }
+            if (!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
+
+                return response([
+                    "error" => 'Cannot read any sql connection , please make sure that your connection is correct'
+                ]);
+            }
+
+            $user_Project = auth()->user()->projects->project_name;
+            $status = ProjectStatus::where('project_name' , $user_Project)->first();
+            if($status->status !== "online") {
+
+                return response([
+                    "error" => 'Bot aleardy in-active, cannot restart in active bot'
+                ]);
+            }
+
+
+            Order::updateOrCreate([
+
+                'project_name' => $user_Project,
+                'order_key' => 'Restart',
+                'services' => '0'
+            ]);
+
+            return response([
+                "success" => 'Bot is being to be restart'
+            ]);
         }
 
-        Order::updateOrCreate([
-
-            'project_name' => $user_Project,
-            'order_key' => 'Restart',
-            'services' => '0'
-        ]);
-
-        session()->flash('success', 'Bot is being to be restart');
-        return redirect()->route('panel.panel-home');
     }
 
-    public function closeBot()
+    public function closeBot(Request $request)
     {
 
 
-        $user_Project = auth()->user()->projects->project_name;
-        $status = ProjectStatus::where('project_name' , $user_Project)->first();
-        if($status->status !== "online") {
+        if($request->ajax()) {
 
-            session()->flash('error', 'Bot aleardy in-active');
-            return redirect()->route('panel.panel-home');
+            if(!Gate::allows('access-actions')) {
+                return response([
+                    "error" => 'You have to renew your membership to do this action'
+                ]);
+            }
+
+            if (!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
+
+                return response([
+                    "error" => 'Cannot read any sql connection , please make sure that your connection is correct'
+                ]);
+            }
+
+            $user_Project = auth()->user()->projects->project_name;
+            $status = ProjectStatus::where('project_name' , $user_Project)->first();
+            if($status->status !== "online") {
+
+
+                return response([
+                    "error" => 'Bot aleardy in-active'
+                ]);
+            }
+
+            Order::updateOrCreate([
+
+                'project_name' => $user_Project,
+                'order_key' => 'Shutdown',
+                'services' => '0'
+            ]);
+
+            return response([
+                "success" => 'Bot is being to be close'
+            ]);
         }
 
-        Order::updateOrCreate([
-
-            'project_name' => $user_Project,
-            'order_key' => 'Shutdown',
-            'services' => '0'
-        ]);
-
-        session()->flash('success', 'Bot is being to be close');
-        return redirect()->route('panel.panel-home');
     }
 }

@@ -2,6 +2,8 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset('adminlte_dashboard/plugins/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte_dashboard/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminlte_dashboard/plugins/pace-progress/themes/black/pace-theme-flat-top.css') }}">
+
 @endpush()
 @section('title', 'uBot | Dashboard')
 
@@ -69,37 +71,44 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+                @can('access-event')
                 <div class="col-md-12">
 
-                    <form class="d-inline-block" action="{{ route('panel.panel-start-bot') }}" method="POST" >
-                        @csrf
 
-                        <button type="submit"  class="btn btn-app">
-                            <i class="fa fa-play"></i> Start
+                        <form class="d-inline-block" action="#" method="POST"
+                              onclick="event.preventDefault(); startBotAjax();">
+                            @csrf
 
-                        </button>
+                            <button type="submit"  class="btn btn-app">
+                                <i class="fa fa-play"></i> Start
 
-                    </form>
+                            </button>
 
-                    <form class="d-inline-block" action="{{ route('panel.panel-restart-bot') }}" method="POST" >
-                        @csrf
+                        </form>
 
-                        <button type="submit"  class="btn btn-app">
-                            <i class="fa fa-undo"></i> Restart
+                        <form class="d-inline-block" action="#" method="POST"
+                              onclick="event.preventDefault(); restartBotAjax();">
+                            @csrf
 
-                        </button>
+                            <button type="submit"  class="btn btn-app">
+                                <i class="fa fa-undo"></i> Restart
 
-                    </form>
+                            </button>
 
-                    <form class="d-inline-block" action="{{ route('panel.panel-close-bot') }}" method="POST" >
-                        @csrf
+                        </form>
 
-                        <button type="submit"  class="btn btn-app">
-                            <i class="fa fa-times"></i> Close
+                        <form class="d-inline-block" action="#" method="POST"
+                              onclick="event.preventDefault(); closeBotAjax();">
+                            @csrf
 
-                        </button>
+                            <button type="submit"  class="btn btn-app">
+                                <i class="fa fa-times"></i> Close
 
-                    </form>
+                            </button>
+
+                        </form>
+
+
 
 
 
@@ -196,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-
+                @endcan
 
             </div>
         </div>
@@ -215,6 +224,7 @@
 
     <script src="{{ asset('adminlte_dashboard/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('adminlte_dashboard/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('adminlte_dashboard/plugins/pace-progress/pace.min.js') }}"></script>
 
 
     <script>
@@ -226,7 +236,98 @@
                 timer: 3000
             });
 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+
+
+
         });
+
+
+        function startBotAjax() {
+
+            Pace.restart();
+            $.ajax({
+
+                url: "{{ route('panel.panel-start-bot') }}",
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+
+                    if(data.error) {
+                        toastr.error(data.error)
+                    }
+                    else if(data.success) {
+                        toastr.success(data.success)
+                    }
+                },
+                error: function (data) {
+
+                    toastr.error(data.error)
+                }
+
+            });
+
+
+        }
+        function restartBotAjax() {
+
+            Pace.restart();
+            $.ajax({
+
+                url: "{{ route('panel.panel-restart-bot') }}",
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+
+                    if(data.error) {
+                        toastr.error(data.error)
+                    }
+                    else if(data.success) {
+                        toastr.success(data.success)
+                    }
+                },
+                error: function (data) {
+
+                    toastr.error(data.error)
+                }
+
+            });
+
+
+        }
+        function closeBotAjax() {
+
+            Pace.restart();
+            $.ajax({
+
+                url: "{{ route('panel.panel-close-bot') }}",
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+
+
+                    if(data.error) {
+                        toastr.error(data.error)
+                    }
+                    else if(data.success) {
+                        toastr.success(data.success)
+                    }
+
+                },
+                error: function (data) {
+
+                    toastr.error(data.error)
+                }
+
+            });
+
+
+        }
 
 
 

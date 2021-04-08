@@ -11,6 +11,7 @@ use App\Policies\UserAddProjectPolicy;
 use App\Policies\WarpPolicy;
 use App\User;
 use App\UserProject;
+use Carbon\Carbon;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -39,6 +40,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('access-event' , function (User $user) {
 
             return $user->role == 'premium';
+        });
+        Gate::define('access-actions' , function (User $user) {
+
+            return date( 'y-m-d' , strtotime($user->projects->end_license)) > date('y-m-d');
         });
     }
 }

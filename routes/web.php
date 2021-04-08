@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +39,25 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
     Route::get('/done', function () {
 
-        return 'Hey';
+
+
+      /*  if(!Gate::allows('access-actions')) {
+
+
+
+
+        }
+        else {
+           $time = auth()->user()->projects->end_license;
+          //  return $time->toDateTimeString();
+
+
+            $time = strtotime($time);
+            return date( 'y-m-d' , $time);
+           return date('y-m-d');
+            return $time->toDateTimeString();
+            return  \Carbon\Carbon::now();
+        }*/
     });
 
 
