@@ -108,6 +108,17 @@
 
                         </form>
 
+                    <form class="d-inline-block" action="#" method="POST"
+                          onclick="event.preventDefault(); forseCloseBotAjax();">
+                        @csrf
+
+                        <button type="submit"  class="btn btn-app">
+                            <i class="fa fa-times"></i> Force Close
+
+                        </button>
+
+                    </form>
+
 
 
 
@@ -245,9 +256,37 @@
 
 
 
+
         });
 
 
+        /*setInterval(function () {
+            $('.notificaion-count').load(window.location.href + " .notificaion-count")
+        } , 5000)*/
+
+        function readNotifications() {
+
+            $.ajax({
+
+                url: "{{ route('panel.panel-mark-as-read') }}",
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+
+                    $('.notificaion-count').load(window.location.href + " .notificaion-count")
+                    $('.notificaion-content').load(window.location.href + " .notificaion-content")
+
+                },
+                error: function (data) {
+
+                    $('.notificaion-count').load(window.location.href + " .notificaion-count")
+                    $('.notificaion-content').load(window.location.href + " .notificaion-content")
+
+                }
+
+            });
+
+        }
         function startBotAjax() {
 
             Pace.restart();
@@ -328,6 +367,35 @@
 
 
         }
+
+        function forseCloseBotAjax() {
+
+            Pace.restart();
+            $.ajax({
+
+                url: "{{ route('panel.panel-force-close-bot') }}",
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+
+
+                    if(data.error) {
+                        toastr.error(data.error)
+                    }
+                    else if(data.success) {
+                        toastr.success(data.success)
+                    }
+
+                },
+                error: function (data) {
+
+                    toastr.error(data.error)
+                }
+
+            });
+        }
+
+
 
 
 

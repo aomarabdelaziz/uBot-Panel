@@ -37,8 +37,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
     Route::get('/complete', 'PaypalPaymentController@paymentSuccess')->name('success.payment');
 
 
+
+    Route::get('/notification-center' , 'Dashboard\User\NotificaionCenterController@index');
+
     Route::get('/done', function () {
 
+
+
+      //  \Illuminate\Support\Facades\Notification::send(auth()->user() , new \App\Notifications\NotifyUser());
 
 
       /*  if(!Gate::allows('access-actions')) {

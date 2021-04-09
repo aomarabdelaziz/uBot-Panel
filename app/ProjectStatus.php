@@ -9,6 +9,7 @@ class ProjectStatus extends Model
     protected $table = 'project_status';
     protected  $guarded = [];
     public $timestamps = false;
+    protected $primaryKey = 'user_id';
 
     public function userProjects()
     {

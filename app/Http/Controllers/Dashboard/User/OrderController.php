@@ -14,9 +14,6 @@ class OrderController extends Controller
 
     public function startBot(Request $request)
     {
-
-
-
         if($request->ajax()) {
 
 
@@ -128,6 +125,44 @@ class OrderController extends Controller
                     "error" => 'Bot aleardy in-active'
                 ]);
             }
+
+            Order::updateOrCreate([
+
+                'project_name' => $user_Project,
+                'order_key' => 'Shutdown',
+                'services' => '0'
+            ]);
+
+            return response([
+                "success" => 'Bot is being to be close'
+            ]);
+        }
+
+    }
+    public function forceCloseBot(Request $request)
+    {
+
+
+        if($request->ajax()) {
+
+            if(!Gate::allows('access-actions')) {
+                return response([
+                    "error" => 'You have to renew your membership to do this action'
+                ]);
+            }
+
+            if (!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
+
+                return response([
+                    "error" => 'Cannot read any sql connection , please make sure that your connection is correct'
+                ]);
+            }
+
+            $user_Project = auth()->user()->projects->project_name;
+            $status = ProjectStatus::where('project_name' , $user_Project)->first();
+            $status->update([
+                'status' => 'offline'
+            ]);
 
             Order::updateOrCreate([
 

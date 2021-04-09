@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]] , function () {
 
+
     /*Route::post('/2fa', function () {
         return redirect()->route('panel.panel-home');
     })->name('2fa')->middleware('2fa');*/
@@ -33,6 +34,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
             Route::post('/start-bot' , 'OrderController@startBot')->name('panel-start-bot');
             Route::post('/restart-bot' , 'OrderController@restartBot')->name('panel-restart-bot');
             Route::post('/close-bot' , 'OrderController@closeBot')->name('panel-close-bot');
+            Route::post('/force-close-bot' , 'OrderController@forceCloseBot')->name('panel-force-close-bot');
+
+
+            Route::post('/notification-center-mark-as-read' , 'NotificaionCenterController@markAsRead')->name('panel-mark-as-read');
 
             Route::group(['middleware' => 'accessEvent'] , function () {
 
