@@ -35,6 +35,7 @@ return
                 'GMKiller',
                 'Drunk',
                 'LMS',
+                'Survival'
 
             ],
         'rewards' =>
@@ -52,6 +53,13 @@ return
                 'Drunk',
                 'LMS',
             ],
+        'topRewards' =>
+            [
+
+            'Uniques',
+            'Survival'
+
+            ],
         'warps' =>
             [
                 'LuckyStaller',
@@ -67,5 +75,6 @@ return
             'Search And Destroy',
             'Stall',
         ]
+
 
     ];

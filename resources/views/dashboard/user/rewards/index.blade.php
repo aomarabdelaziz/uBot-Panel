@@ -15,10 +15,12 @@
 
 
 @endpush
-@section('title', 'uBot | Warps')
+@section('title', 'uBot | Rewards')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Panel</a></li>
+    <li class="breadcrumb-item"><a href="#">Rewards</a></li>
     <li class="breadcrumb-item active">Rewards</li>
+
 
 @endsection
 @section('content')

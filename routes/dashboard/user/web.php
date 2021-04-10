@@ -106,6 +106,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
                     Route::resource('warps' , 'WarpController');
                     Route::resource('rewards' , 'RewardController');
+                    Route::resource('top-rewards' , 'TopRewardController');
                     Route::resource('track-rewards' , 'TrackRewardController');
                     Route::resource('search-warps-hints' , 'SearchWarpHintController');
                     Route::post('search-warps-hints/add-hint' , 'SearchWarpHintController@saveHint')->name('search-warps-add-hints');

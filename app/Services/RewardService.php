@@ -13,76 +13,41 @@ namespace App\Services;
  */
 class RewardService
 {
-    public static function getRewardType(string $rewardType) : int
+    public static function getRewardType(int $rewardType) : string
     {
-        $rewardNo = 1;
         switch ($rewardType)
         {
-            case "Silk":
-                $rewardNo = 1;
+            case 1 :
+                $rewardType = 'Silk';
+                break;
+            case 2 :
+                $rewardType = 'Gold';
+                break;
+            case 3 :
+                $rewardType = 'Item';
+                break;
+            case 4 :
+                $rewardType = 'All/Other';
                 break;
 
-            case "Gold":
-                $rewardNo = 2;
-                break;
-
-            case "Item":
-                $rewardNo = 3;
-                break;
-
-            case "All/Other":
-                $rewardNo = 4;
-                break;
         }
 
-
-        return  $rewardNo;
+        return  $rewardType;
 
 
     }
-    public static function getRewardControl(string $rewardControl) : int
+    public static function getRewardControl(int $rewardControl) : string
     {
-        $rewardControlNo = 1;
-        switch ($rewardControl)
-        {
-            case "Inventory":
-                $rewardControlNo = 1;
-                break;
-
-            case "Storage":
-                $rewardControlNo = 2;
-                break;
 
 
-        }
-
-
-        return  $rewardControlNo;
+        return $rewardControl = $rewardControl == 1 ? 'Inventory' : 'Storage';
 
 
     }
-    public static function getSilkType(string $silkType) : int
+    public static function getSilkType(int $silkType) : string
     {
-        $silkNo = 1;
-        switch ($silkType)
-        {
-            case "silk_own":
-                $rewardControlNo = 1;
-                break;
 
-            case "silk_gift":
-                $rewardControlNo = 2;
-                break;
-
-            case "silk_point":
-                $rewardControlNo = 3;
-                break;
-
-
-        }
-
-
-        return  $silkNo;
+        return $silkType = ($silkType == 1) ? 'silk_own' : (($silkType == 2) ? 'silk_gift' : 'silk_points');
 
 
     }

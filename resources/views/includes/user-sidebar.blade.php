@@ -31,7 +31,6 @@
         <div class="nav-header">Events</div>
         <li class="nav-item has-treeview">
 
-
             <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-ellipsis-v"></i>
                 <p>
@@ -40,8 +39,6 @@
                     <span class="badge badge-info right">16</span>
                 </p>
             </a>
-
-
 
 
             <!--Trivia -->
@@ -189,7 +186,7 @@
                         <li class="nav-item">
                             <a href="{{ route('panel.event-lotterycoins') }}" class="nav-link">
                                 <i class="far fa-circle-none nav-icon"></i>
-                                <p>Lottery Coints</p>
+                                <p>Lottery Coins</p>
                             </a>
                         </li>
                     </ul>
@@ -214,7 +211,7 @@
                         <li class="nav-item">
                             <a href="{{ route('panel.event-madness') }}" class="nav-link">
                                 <i class="far fa-circle-none nav-icon"></i>
-                                <p>Madness Silk</p>
+                                <p>Madness</p>
                             </a>
 
 
@@ -253,18 +250,52 @@
 
         <!--Start Rewards Events -->
         <div class="nav-header">Rewards</div>
+
         <li class="nav-item has-treeview">
 
-
-            <a href="{{ route('panel.rewards.index') }}" class="nav-link">
+            <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-award"></i>
                 <p>
                     Add Rewards
+                    <i class="right fas fa-angle-left"></i>
+                    <span class="badge badge-info right">16</span>
                 </p>
             </a>
 
 
+            <!--Trivia -->
+            <ul class="nav nav-treeview">
+                <li class="nav-item has-treeview">
+
+                    <a href="{{ route('panel.rewards.index') }}" class="nav-link">
+                        <i class="nav-icon fa"></i>
+                        <p>
+                            Normal Events
+                        </p>
+                    </a>
+
+                </li>
+
+                <li class="nav-item has-treeview">
+
+                    <a href="{{ route('panel.top-rewards.index') }}" class="nav-link">
+                        <i class="nav-icon fa "></i>
+                        <p>
+                            Top Reward Events
+                        </p>
+                    </a>
+
+                </li>
+            </ul>
+
+
+
+
+
         </li>
+
+
+
         <li class="nav-item has-treeview">
 
 

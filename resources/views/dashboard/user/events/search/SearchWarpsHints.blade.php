@@ -600,10 +600,11 @@
                 position: 'top-end',
                 showConfirmButton: false,
                 timer: 3000
+
             });
 
-            $('.select2').select2()
 
+            $('.select2').select2()
 
 
             $('.Add-Warp').on('click' , function () {
