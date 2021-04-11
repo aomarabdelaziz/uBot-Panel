@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Http\ViewComposers\ProjectNameComposer;
 use App\Http\ViewComposers\SqlConnectionAvailabilityComposer;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
        view()->composer('includes.sidebar' , ProjectNameComposer::class);
        view()->composer('index' , SqlConnectionAvailabilityComposer::class);
+
 
 
     }

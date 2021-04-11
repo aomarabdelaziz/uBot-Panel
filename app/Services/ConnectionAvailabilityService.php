@@ -50,6 +50,21 @@ class ConnectionAvailabilityService
     }
 
 
+    public static function checkUserServerConnectionAvailability() : bool
+    {
+
+        try {
+
+            $fp = fsockopen(\auth()->user()->projects->server_host, \auth()->user()->projects->server_port, $errno, $errstr, 1);
+            return  true;
+
+        }
+        catch (\Exception $ex) {
+
+            return  false;
+
+        }
+    }
     public static function checkUserSqlConnectionAvailability() : bool
     {
 

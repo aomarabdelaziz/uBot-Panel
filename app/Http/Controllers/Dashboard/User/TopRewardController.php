@@ -49,13 +49,16 @@ class TopRewardController extends Controller
         ]);
 
         session()->flash('success', 'Rewards has been updated');
-        return redirect()->route('panel.top-rewards.index');
+        return redirect()->back();
+
     }
     public function destroy($eventKey)
     {
 
-        $model = TopReward::where('EventKey' , $eventKey)->delete();
+
+        TopReward::where('EventKey' , $eventKey)->delete();
         session()->flash('success', 'Rewards has been deleted');
-        return redirect()->route('panel.top-rewards.index');
+        return redirect()->back();
+
     }
 }

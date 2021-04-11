@@ -264,6 +264,7 @@
             $('.notificaion-count').load(window.location.href + " .notificaion-count")
         } , 5000)*/
 
+
         function readNotifications() {
 
             $.ajax({

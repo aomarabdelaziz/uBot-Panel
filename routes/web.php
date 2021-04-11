@@ -44,6 +44,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
+
       //  \Illuminate\Support\Facades\Notification::send(auth()->user() , new \App\Notifications\NotifyUser());
 
 

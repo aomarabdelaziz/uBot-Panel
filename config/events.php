@@ -53,6 +53,12 @@ return
                 'Drunk',
                 'LMS',
             ],
+            'sub_events' =>
+                [
+                    'QS',
+                    'LuckyStore'
+
+                ],
         'topRewards' =>
             [
 

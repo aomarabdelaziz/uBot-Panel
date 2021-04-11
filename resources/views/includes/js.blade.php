@@ -36,3 +36,4 @@
 <!--<script src="{{ asset('adminlte_dashboard/dist/js/pages/dashboard.js') }}"></script>-->
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('adminlte_dashboard/dist/js/demo.js') }}"></script>
+

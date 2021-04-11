@@ -16,6 +16,11 @@ class OrderController extends Controller
     {
         if($request->ajax()) {
 
+            if(!ConnectionAvailabilityService::checkUserServerConnectionAvailability()) {
+                return response([
+                    "error" => 'Cannot read any server connection , please make sure that your connection is available'
+                ]);
+            }
 
             if(!Gate::allows('access-actions')) {
                 return response([

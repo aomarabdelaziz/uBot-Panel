@@ -263,7 +263,7 @@
             </a>
 
 
-            <!--Trivia -->
+            <!--Rewards  -->
             <ul class="nav nav-treeview">
                 <li class="nav-item has-treeview">
 
@@ -294,8 +294,6 @@
 
         </li>
 
-
-
         <li class="nav-item has-treeview">
 
 
@@ -321,6 +319,30 @@
         </li>
         <!--End Rewards Events -->
 
+        <div class="nav-header">Events Schedule</div>
+        <li class="nav-item has-treeview">
+
+
+            <a href="{{ route('panel.schedule.index') }}" class="nav-link">
+                <i class="nav-icon fa fa-calendar-alt"></i>
+                <p>
+                    Schedule
+                </p>
+            </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
 
 
 
