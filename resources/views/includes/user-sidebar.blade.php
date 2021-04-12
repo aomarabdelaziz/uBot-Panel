@@ -345,6 +345,32 @@
         </li>
 
 
+        <div class="nav-header">Events Notices</div>
+        <li class="nav-item has-treeview">
+
+
+            <a href="{{ route('panel.notices.index') }}" class="nav-link">
+                <i class="nav-icon fa fa-bell"></i>
+                <p>
+                    Notices
+                </p>
+            </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+
+
 
     @endcan
 @elseif($role === 'admin')

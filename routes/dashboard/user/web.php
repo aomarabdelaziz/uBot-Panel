@@ -114,6 +114,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                     Route::put('search-warps-hints/update-hint/{id}' , 'SearchWarpHintController@updateHint')->name('search-warps-update-hint');
                     Route::delete('search-warps-hints/delete-hint/{id}' , 'SearchWarpHintController@destroyHint')->name('search-warps-delete-hint');
                     Route::resource('schedule' , 'ScheduleController');
+                    Route::resource('notices' , 'NoticeController');
+                    Route::put('notices/update-service/{id}' , 'NoticeController@updateService')->name('notices-update-service');
 
                 });
 

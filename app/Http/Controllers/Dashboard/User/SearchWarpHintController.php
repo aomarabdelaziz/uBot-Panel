@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SaveHintRequest;
 use App\Http\Requests\SearchWarpRequest;
 use App\Models\SearchHint;
 use App\Models\SearchWarp;
@@ -107,14 +108,9 @@ class SearchWarpHintController extends Controller
         return redirect()->route('panel.search-warps-hints.index');
     }
 
-    public function saveHint(Request $request)
+    public function saveHint(SaveHintRequest $request)
     {
-        $request->validate([
 
-            'WarpKey' => ['required' , 'string'],
-            'event_name' => ['required' , 'string'],
-            'HintMessage' => ['required' , 'string']
-        ]);
 
 
         $count = SearchHint::where('WarpKey' , $request->WarpKey)
@@ -168,7 +164,7 @@ class SearchWarpHintController extends Controller
 
         session()->flash('success', 'Warp has been deleted');
 
-        return redirect()->route('panel.search-warps-hints.index');
+        return redirect()->back();
 
     }
 
@@ -190,7 +186,7 @@ class SearchWarpHintController extends Controller
 
 
 
-        return redirect()->route('panel.search-warps-hints.index');
+        return redirect()->back();
 
     }
 }
