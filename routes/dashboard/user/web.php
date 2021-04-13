@@ -28,6 +28,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
         Route::group(['prefix' => 'panel' , 'as' => 'panel.'] , function () {
 
+            Route::view('/succes' , 'dashboard.user.payment.success');
+            Route::get('premium' , 'PremiumController@index')->name('premium-index');
+            Route::get('invoice' , 'InvoiceController@index')->name('invoice-index');
+            Route::get('invoice/cancel' , 'InvoiceController@cancel')->name('invoice-cancel');
+
+            Route::get('payment/error/{id?}' , 'PaypalPaymentController@error')->name('donate-paypal-error');
+            Route::get('payment/success/{id}/{package}' , 'PaypalPaymentController@success')->name('donate-paypal-success');
+            Route::get('payment/closed/' , 'PaypalPaymentController@closed')->name('donate-paypal-invoice-closed');
+
+            Route::get('payment/complete' , 'PaypalPaymentController@complete')->name('donate-paypal-complete');
+            Route::get('payment/notify' , 'PaypalPaymentController@notify')->name('donate-paypal-notify');
+            Route::get('payment/buy' , 'PaypalPaymentController@buy')->name('donate-paypal-buy');
+
+
+
             Route::get('/' , 'IndexController@index')->name('panel-home');
             Route::put('/update-event-service/{id}' , 'IndexController@updateService')->name('panel-home-update');
 
@@ -116,7 +131,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                     Route::resource('schedule' , 'ScheduleController');
                     Route::resource('notices' , 'NoticeController');
                     Route::put('notices/update-service/{id}' , 'NoticeController@updateService')->name('notices-update-service');
-
                 });
 
 

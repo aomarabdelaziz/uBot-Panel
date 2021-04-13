@@ -16,7 +16,7 @@ class CreateProjectStatus extends Migration
         Schema::create('project_status', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('project_name')->nullable();
-            $table->tinyint('status' , ['offline' , 'online'])->default('offline');
+            $table->enum('status' , ['offline' , 'online'])->default('offline');
         });
     }
 

@@ -53,4 +53,26 @@ class User extends Authenticatable
         return decrypt($value);
     }
 
+    public function userBalance()
+    {
+        return $this->hasOne(UserBalance::class , 'user_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::created(function ($model) {
+
+
+            $model->userBalance()->create([
+
+                'user_id' => $model->user_id,
+                'balance' => 0,
+
+            ]);
+
+        });
+
+    }
+
 }
