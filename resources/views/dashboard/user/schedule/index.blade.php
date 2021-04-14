@@ -92,13 +92,14 @@
                             @if($eventName)
                                 <div class="col-md-12">
 
-                                    <a class="Add-Reward btn btn-primary btn-sm"
-                                       data-toggle="modal"
-                                       href="#modal-default1">
-                                        <i class="fas fa-plus">
-                                        </i>
-                                        Add Schedule
-                                    </a>
+
+                                       <a class="Add-Schedule btn btn-primary btn-sm"
+                                          data-toggle="modal"
+                                          href="#modal-default1">
+                                           <i class="fas fa-plus">
+                                           </i>
+                                           Add Schedule
+                                       </a>
                                     <div class="card mt-2">
                                         <div class="card-header">
                                             <h3 class="card-title">All Events Schedule</h3>
@@ -197,13 +198,15 @@
                             @elseif(!$eventName)
                                 <div class="col-md-12">
 
-                                    <a class="Add-Reward btn btn-primary btn-sm"
-                                       data-toggle="modal"
-                                       href="#modal-default1">
-                                        <i class="fas fa-plus">
-                                        </i>
-                                        Add Schedule
-                                    </a>
+                                   @if(!is_null($eventName))
+                                        <a class="Add-Reward btn btn-primary btn-sm"
+                                           data-toggle="modal"
+                                           href="#modal-default1">
+                                            <i class="fas fa-plus">
+                                            </i>
+                                            Add Schedule
+                                        </a>
+                                       @endif
                                     <div class="card mt-2">
                                         <div class="card-header">
                                             <h3 class="card-title">All Events Schedule</h3>

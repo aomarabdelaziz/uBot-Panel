@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function projects()
     {
-        return $this->hasOne(UserProject::class);
+        return $this->hasOne(UserProject::class , 'user_id');
     }
 
     public function setGoogle2faSecretAttribute($value)

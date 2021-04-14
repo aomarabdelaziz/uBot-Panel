@@ -26,7 +26,9 @@ class UserProject extends Model
             'server_accountid',
             'server_accountpw',
             'server_charname',
-            'server_captcha'
+            'server_captcha',
+            'start_license',
+            'end_license'
         ];
 
     public function users()
@@ -57,6 +59,11 @@ class UserProject extends Model
     public function projectStatus()
     {
         return $this->hasOne(ProjectStatus::class , 'user_id');
+    }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class , 'id' , 'id' );
     }
 
     protected static function boot()

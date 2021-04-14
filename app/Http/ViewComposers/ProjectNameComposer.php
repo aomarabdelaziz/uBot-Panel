@@ -19,6 +19,7 @@ class ProjectNameComposer
     public function compose(View $view)
     {
 
+
         $view->with('userProjectName' , auth()->user()->projects->project_name);
 
 

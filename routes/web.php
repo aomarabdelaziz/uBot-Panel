@@ -1,6 +1,9 @@
 <?php
 
+use App\Notifications\NotifyUser;
+use App\UserProject;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +47,27 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
+
+      /*  $users = UserProject::
+        whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
+            ->get();*/
+
+
+
+        $users = \App\User::with(['projects' => function($q)
+        {
+            return $q->whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
+                ->orWhere('end_license' , date('y-m-d'))
+                ->orWhere('end_license' , '<' , date('y-m-d'));
+
+        }])->where('role','premium')->get();
+
+
+
+
+        //Notification::send($users , new NotifyUser('success' , 'membership'));
+
+        return $users;
 
       //  \Illuminate\Support\Facades\Notification::send(auth()->user() , new \App\Notifications\NotifyUser());
 

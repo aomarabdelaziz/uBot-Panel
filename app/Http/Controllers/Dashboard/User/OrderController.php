@@ -22,11 +22,11 @@ class OrderController extends Controller
                 ]);
             }
 
-            if(!Gate::allows('access-actions')) {
+      /*      if(!Gate::allows('access-actions')) {
                 return response([
                     "error" => 'You have to renew your membership to do this action'
                 ]);
-            }
+            }*/
 
             if (!ConnectionAvailabilityService::checkUserSqlConnectionAvailability()) {
 

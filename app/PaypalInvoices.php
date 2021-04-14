@@ -11,6 +11,8 @@ class PaypalInvoices extends Model
     const STATE_CANCELED = 'canceled';
 
     const STATE_PAID = 'paid';
+
+    const PAYPAL_FEES = 5;
     /**
      * @var array
      */

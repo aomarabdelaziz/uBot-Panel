@@ -13,14 +13,22 @@ class InvoiceController extends Controller
     {
 
 
-        $invoice = PaypalInvoices::where('user_id', auth()->user()->id)->where('state' , PaypalInvoices::STATE_PENDING)->first();
+        $request->validate(
+            [
+                'package' => ['required', 'integer']
+            ]);
 
-        $Amount = $invoice->EGP ?? $request->package ;
+
+        $invoice = PaypalInvoices::where('user_id', auth()->user()->id)
+            ->where('state', PaypalInvoices::STATE_PENDING)
+            ->first();
+
+        $Amount = $invoice->EGP ?? $request->package;
         $Price = PackagePrice::getPackagePrice($Amount);
-        $PaypalFees = 5;
+        $PaypalFees = PaypalInvoices::PAYPAL_FEES;
         $Total = ($Price + $PaypalFees);
 
-        if(!$invoice) {
+        if (!$invoice) {
 
             $invoice = PaypalInvoices::firstOrCreate([
                 'user_id' => auth()->user()->id,
@@ -33,9 +41,8 @@ class InvoiceController extends Controller
         }
 
 
-
-        return view('dashboard.user.payment.invoice' ,
-            compact('Amount' , 'Price' , 'PaypalFees' , 'invoice' , 'Total'));
+        return view('dashboard.user.payment.invoice',
+            compact('Amount', 'Price', 'PaypalFees', 'invoice', 'Total'));
     }
 
     public function cancel()

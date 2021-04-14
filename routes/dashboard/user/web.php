@@ -28,15 +28,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
         Route::group(['prefix' => 'panel' , 'as' => 'panel.'] , function () {
 
-            Route::view('/succes' , 'dashboard.user.payment.success');
             Route::get('premium' , 'PremiumController@index')->name('premium-index');
             Route::get('invoice' , 'InvoiceController@index')->name('invoice-index');
             Route::get('invoice/cancel' , 'InvoiceController@cancel')->name('invoice-cancel');
-
             Route::get('payment/error/{id?}' , 'PaypalPaymentController@error')->name('donate-paypal-error');
             Route::get('payment/success/{id}/{package}' , 'PaypalPaymentController@success')->name('donate-paypal-success');
             Route::get('payment/closed/' , 'PaypalPaymentController@closed')->name('donate-paypal-invoice-closed');
-
             Route::get('payment/complete' , 'PaypalPaymentController@complete')->name('donate-paypal-complete');
             Route::get('payment/notify' , 'PaypalPaymentController@notify')->name('donate-paypal-notify');
             Route::get('payment/buy' , 'PaypalPaymentController@buy')->name('donate-paypal-buy');
@@ -150,25 +147,3 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
-Route::get('/test' , function () {
-
-    \App\Services\DBConnectionService::setConnection();
-//   return \App\Models\SearchWarp::whereHas('hints' , function ($q)
-//    {
-//        return $q->where('EventKey' , 'Hide And Seek');
-//
-//    })->get();
-
-
-    return \App\Models\SearchWarp::with('hints')->get();
-
-
-/*    return \App\Models\SearchHint::whereHas('warps' , function ($q)
-    {
-        return $q->where('EventKey' , 'Hide And Seek');
-
-    })->get();*/
-
-
-
-});

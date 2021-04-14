@@ -28,6 +28,7 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+
                 <!-- Content Header and breadcrumb -->
                 @include('partials.breadcrumb')
                 <!-- /.content-header and breadcrumb -->
@@ -35,6 +36,13 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid">
+                        @if(!is_null($remLic))
+                            <div class="alert alert-info alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h5><i class="icon fas fa-info"></i> Hey {{ auth()->user()->name }} </h5>
+                                Remaining {{ $remLic }} that, your membership will be cancelled
+                            </div>
+                        @endif
                         @yield('content')
                     </div><!-- /.container-fluid -->
                 </section>
