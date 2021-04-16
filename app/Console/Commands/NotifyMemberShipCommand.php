@@ -45,8 +45,7 @@ class NotifyMemberShipCommand extends Command
         $users = User::with(['projects' => function($query)
         {
             return $query->whereBetween('end_license' , [Carbon::now() , Carbon::now()->addDays(7)])
-                ->orWhere('end_license' , date('y-m-d'))
-                ->orWhere('end_license' , '<' , date('y-m-d'));
+                ->orWhere('end_license'  , '<=' , date('y-m-d'));
 
         }])->where('role','premium')->get();
 

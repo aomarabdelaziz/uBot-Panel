@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NoticeRequest;
 use App\Models\Notice;
-use App\Services\GetEventKeyNotice;
+use App\Services\GetEventKeyNoticeService;
 use Illuminate\Http\Request;
 
 class NoticeController extends Controller
@@ -22,7 +22,7 @@ class NoticeController extends Controller
         $data = Notice::SearchByEventKey($eventName)->paginate(12);
 
 
-        $targetEvent = GetEventKeyNotice::getEvent($eventName);
+        $targetEvent = GetEventKeyNoticeService::getEvent($eventName);
         $types = config("messagetype.$targetEvent");
 
 

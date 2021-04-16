@@ -194,7 +194,7 @@
             </ul>
             <!--End Lottery Events -->
 
-            <!--Lottery Events -->
+            <!--Uniques Events -->
             <ul class="nav nav-treeview">
 
                 <li class="nav-item">
@@ -226,11 +226,100 @@
                     </ul>
                 </li>
             </ul>
-            <!--End Lottery Events -->
+            <!--End Uniques Events -->
+
+            <!--PVP Events -->
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-stethoscope"></i>
+                        <p>
+                            PVP Events
+                            <i class="right fas fa-angle-left"></i>
+                            <span class="badge badge-info right">3</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-lms') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>LMS</p>
+                            </a>
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-survival') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Survival</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-stall') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>PVP</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-stall') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>STR PVP</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-stall') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>INT PVP</p>
+                            </a>
+                        </li>
 
 
 
 
+
+
+
+                    </ul>
+                </li>
+            </ul>
+            <!--End PVP Events -->
+
+
+            <!--Other Events -->
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-stethoscope"></i>
+                        <p>
+                            Other Events
+                            <i class="right fas fa-angle-left"></i>
+                            <span class="badge badge-info right">2</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-drunk') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>Drunk</p>
+                            </a>
+
+
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('panel.event-gmkiller') }}" class="nav-link">
+                                <i class="far fa-circle-none nav-icon"></i>
+                                <p>GM Killer</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <!--End Other Events -->
 
 
         </li>

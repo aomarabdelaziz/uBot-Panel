@@ -35,33 +35,30 @@ class LicenseNotifyService
         foreach ($this->users as $user) {
 
 
-            if(!is_null($user->projects))
-            {
-                Notification::send($user , new NotifyUser('success' , 'your membership will end'));
+            Notification::send($user, new NotifyUser('success', 'your membership will end'));
 
 
-                $date = date('y-m-d') >= date( 'y-m-d' , strtotime($user->projects->end_license))   ;
+            $date = date('y-m-d') >= date('y-m-d', strtotime($user->projects->end_license));
 
 
-                if($date)
-                {
+            if ($date) {
 
-                    $user->update(
-                        [
-                            'role' => 'user'
-                        ]);
+                $user->update(
+                    [
+                        'role' => 'user'
+                    ]);
 
-                    $user->projects->order()->updateOrCreate(
-                        [
+                $user->projects->order()->updateOrCreate(
+                    [
 
-                            'project_name' => $user->projects->project_name,
-                            'order_key' => 'Shutdown',
-                            'services' => '0'
+                        'project_name' => $user->projects->project_name,
+                        'order_key' => 'Shutdown',
+                        'services' => '0'
 
-                        ]);
+                    ]);
 
-                }
             }
+
 
         }
     }

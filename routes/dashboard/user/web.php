@@ -108,6 +108,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                         Route::get('/events/madness' , 'MadnessController@index')->name('event-madness');
                         Route::post('/events/madness' , 'MadnessController@save')->name('event-madness');
 
+                        Route::get('/events/lms' , 'LMSController@index')->name('event-lms');
+                        Route::post('/events/lms' , 'LMSController@save')->name('event-lms');
+
+                        Route::get('/events/survival' , 'SurvivalController@index')->name('event-survival');
+                        Route::post('/events/survival' , 'SurvivalController@save')->name('event-survival');
+
+                        Route::get('/events/drunk' , 'DrunkController@index')->name('event-drunk');
+                        Route::post('/events/drunk' , 'DrunkController@save')->name('event-drunk');
+
+                        Route::get('/events/gm-killer' , 'GMKillerController@index')->name('event-gmkiller');
+                        Route::post('/events/gm-killer' , 'GMKillerController@save')->name('event-gmkiller');
+
                         Route::resource('/events/uniques' , 'UniqueController');
 
 

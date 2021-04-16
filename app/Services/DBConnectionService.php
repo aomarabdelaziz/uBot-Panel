@@ -47,6 +47,7 @@ class DBConnectionService
     {
         DB::purge('sqlsrv_user');
         $ip_port = explode(',', $host);
+
         config(
             [
                 'database.connections.sqlsrv_user' => [

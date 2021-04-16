@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Requests\Events;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class SurvivalRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+
+            'RegKey' => ['required', 'string'],
+            'MinPlayers' => ['required', 'integer'],
+            'MaxPlayers' => ['required', 'integer'],
+            'ReqLevel' => ['required', 'integer'],
+            'PreventPlayerJoinInSameIPOrHwid' => ['required' , 'integer'],
+            'PPEarnPointsByTime' => ['required', 'integer'],
+            'PPEarnPointsDelay' => ['required', 'integer'],
+            'PPEarnPointsFromCharname' => ['required', 'integer'],
+            'PPEarnPointsFromCharnameTarget' => ['required', 'integer'],
+            'FEventByPoints' => ['required', 'integer'],
+            'FEventTargetPoints' => ['required', 'integer'],
+            'Delay1' => ['required', 'integer'],
+            'Delay2' => ['required', 'integer'],
+        ];
+    }
+}

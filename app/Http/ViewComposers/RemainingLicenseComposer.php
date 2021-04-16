@@ -8,6 +8,7 @@
 namespace App\Http\ViewComposers;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\UserProject;
 
@@ -20,19 +21,19 @@ class RemainingLicenseComposer
     public function compose(View $view)
     {
 
-       $remLic = null;
-       $data = UserProject::where('user_id' , auth()->user()->id)
-            ->whereBetween('end_license' , [Carbon::now() , Carbon::now()->addDays(7)])
+
+        $data = UserProject::where('user_id', auth()->user()->id)
+            ->whereBetween('end_license', [Carbon::now(), Carbon::now()->addDays(7)])
             ->first();
 
-       if($data) {
+        if($data) {
+            $remLic = Carbon::parse($data->end_license)->diffForHumans(Carbon::now());
 
-           $remLic = Carbon::parse($data->end_license)->diffForHumans(Carbon::now());
-       }
+        }
 
 
 
-        $view->with('remLic' , $remLic);
+        $view->with('remLic', $remLic ?? null);
 
 
     }

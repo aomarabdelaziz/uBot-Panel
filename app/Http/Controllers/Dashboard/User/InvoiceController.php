@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
 use App\PaypalInvoices;
-use App\Services\PackagePrice;
+use App\Services\PackagePriceService;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -24,7 +24,7 @@ class InvoiceController extends Controller
             ->first();
 
         $Amount = $invoice->EGP ?? $request->package;
-        $Price = PackagePrice::getPackagePrice($Amount);
+        $Price = PackagePriceService::getPackagePrice($Amount);
         $PaypalFees = PaypalInvoices::PAYPAL_FEES;
         $Total = ($Price + $PaypalFees);
 

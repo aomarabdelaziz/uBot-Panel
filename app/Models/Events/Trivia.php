@@ -13,7 +13,6 @@ class Trivia extends Model
 
     //protected $visible
     protected $fillable = [
-        'id',
         'EventKey',
         'MaxRounds',
         'SendAnswer',

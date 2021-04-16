@@ -11,7 +11,7 @@ namespace App\Services;
  * @Author Abdelaziz Omar <Abdelazizomar851@gmail.com>
  * @package App\Services
  */
-class GetEventKeyNotice
+class GetEventKeyNoticeService
 {
     public static function getEvent($event): string
     {

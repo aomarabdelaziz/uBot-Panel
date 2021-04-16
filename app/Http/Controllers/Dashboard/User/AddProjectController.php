@@ -43,7 +43,6 @@ class AddProjectController extends Controller
             return  redirect()->route('panel.panel-home');
         }
 
-
         if(!ConnectionAvailabilityService::sqlConnectionAvailability($request->sql_host , $request->sql_username , $request->sql_password)) {
             session()->flash('error', 'Cannot read any sql connection , please make sure that your connection is correct');
             return redirect()->route('projects.index')->withInput();

@@ -11,18 +11,17 @@ namespace App\Services;
  * @Author Abdelaziz Omar <Abdelazizomar851@gmail.com>
  * @package App\Services
  */
-class PackagePrice
+class PackagePriceService
 {
-    public static function getPackagePrice(int $amount) : int
+    public static function getPackagePrice(int $amount): int
     {
 
         $price = 0;
 
-        switch ($amount)
-        {
+        switch ($amount) {
 
             case  400 :
-                    $price = 25;
+                $price = 25;
                 break;
             case  1200 :
                 $price = 75;
@@ -40,6 +39,6 @@ class PackagePrice
 
         }
 
-        return  $price ;
+        return $price;
     }
 }
