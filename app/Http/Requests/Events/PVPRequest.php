@@ -4,7 +4,7 @@ namespace App\Http\Requests\Events;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DrunkRequest extends FormRequest
+class PVPRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,8 @@ class DrunkRequest extends FormRequest
             'RegKey' => ['required', 'string'],
             'MinPlayers' => ['required', 'integer'],
             'MaxPlayers' => ['required', 'integer'],
-            'UniqueID' => ['required', 'integer'],
+            'CapeDetection' => ['required', 'integer'],
+            'BattleDelay' => ['required', 'integer'],
             'ReqLevel' => ['required', 'integer'],
             'PreventPlayerJoinInSameIPOrHwid' => ['required' , 'integer'],
             'Delay1' => ['required', 'integer'],

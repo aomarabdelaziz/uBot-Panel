@@ -43,7 +43,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('access-actions' , function (User $user) {
 
-            return date('y-m-d') > date( 'y-m-d' , strtotime($user->projects->end_license))   ;
+            return date('y-m-d') < date('y-m-d', strtotime($user->projects->end_license));
         });
     }
 }

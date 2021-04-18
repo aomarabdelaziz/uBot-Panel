@@ -257,23 +257,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('panel.event-stall') }}" class="nav-link">
+                            <a href="{{ route('panel.event-pvp') }}" class="nav-link">
                                 <i class="far fa-circle-none nav-icon"></i>
                                 <p>PVP</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('panel.event-stall') }}" class="nav-link">
-                                <i class="far fa-circle-none nav-icon"></i>
-                                <p>STR PVP</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('panel.event-stall') }}" class="nav-link">
-                                <i class="far fa-circle-none nav-icon"></i>
-                                <p>INT PVP</p>
-                            </a>
-                        </li>
+
 
 
 

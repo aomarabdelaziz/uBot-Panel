@@ -174,6 +174,51 @@ return
             'dEventAnnouncementRegPlayersCount',
             'dEventAnnouncementRegPlayersNoCount'
         ],
+    'GeneralPVP' =>
+        [
+            'dEventAnnouncementWithReg',
+            'dEventCancelled',
+            'dEventWinnerNotice',
+            'dEventNoWinner',
+            'dEventEnded',
+            'dEventWinnerPM',
+            'dEventStarted',
+            'dEventKillsNotify',
+            'dEventAnnouncementRegPlayersCount',
+            'dEventAnnouncementRegPlayersNoCount',
+            'dEventRules',
+            'dEventIgnoredRules',
+        ],
+    'StrPVP' =>
+        [
+            'dEventAnnouncementWithReg',
+            'dEventCancelled',
+            'dEventWinnerNotice',
+            'dEventNoWinner',
+            'dEventEnded',
+            'dEventWinnerPM',
+            'dEventStarted',
+            'dEventKillsNotify',
+            'dEventAnnouncementRegPlayersCount',
+            'dEventAnnouncementRegPlayersNoCount',
+            'dEventRules',
+            'dEventIgnoredRules',
+        ],
+    'IntPVP' =>
+        [
+            'dEventAnnouncementWithReg',
+            'dEventCancelled',
+            'dEventWinnerNotice',
+            'dEventNoWinner',
+            'dEventEnded',
+            'dEventWinnerPM',
+            'dEventStarted',
+            'dEventKillsNotify',
+            'dEventAnnouncementRegPlayersCount',
+            'dEventAnnouncementRegPlayersNoCount',
+            'dEventRules',
+            'dEventIgnoredRules',
+        ],
     'All' =>
         [
 

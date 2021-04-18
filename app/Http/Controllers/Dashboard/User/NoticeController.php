@@ -48,6 +48,7 @@ class NoticeController extends Controller
     {
 
 
+
         $validate = $request->validated();
 
 

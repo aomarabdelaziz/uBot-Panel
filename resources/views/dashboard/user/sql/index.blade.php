@@ -94,7 +94,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputText">Shard DB</label>
-                            <input type="text" class="form-control  @error('db_shard') is-invalid @enderror" name="db_shard" value="{{ old('db_shard' , $data->db_shard) }}" placeholder="SRO_VT_ACCOUNT">
+                            <input type="text" class="form-control  @error('db_shard') is-invalid @enderror" name="db_shard" value="{{ old('db_shard' , $data->db_shard) }}" placeholder="SRO_VT_SHARD">
                             @error('db_shard')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message  }}</strong>
@@ -104,7 +104,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputText">Shardlog DB</label>
-                            <input type="text" class="form-control  @error('db_shard') is-invalid @enderror" name="db_shardlog" value="{{ old('db_shard' , $data->db_shard) }}" placeholder="SRO_VT_ACCOUNT">
+                            <input type="text" class="form-control  @error('db_shardlog') is-invalid @enderror" name="db_shardlog" value="{{ old('db_shardlog' , $data->db_shardlog) }}" placeholder="SRO_VT_SHARDLOG">
                             @error('db_shard')
                             <span class="invalid-feedback" role="alert">
                               <strong>{{ $message  }}</strong>

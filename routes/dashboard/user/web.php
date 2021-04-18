@@ -120,6 +120,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                         Route::get('/events/gm-killer' , 'GMKillerController@index')->name('event-gmkiller');
                         Route::post('/events/gm-killer' , 'GMKillerController@save')->name('event-gmkiller');
 
+                        Route::get('/events/pvp' , 'PVPController@index')->name('event-pvp');
+                        Route::post('/events/pvp' , 'PVPController@save')->name('event-pvp');
+
                         Route::resource('/events/uniques' , 'UniqueController');
 
 

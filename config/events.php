@@ -35,7 +35,10 @@ return
                 'GMKiller',
                 'Drunk',
                 'LMS',
-                'Survival'
+                'Survival',
+                'GeneralPVP',
+                'StrPVP',
+                'IntPVP'
 
             ],
         'rewards' =>
@@ -52,18 +55,21 @@ return
                 'GMKiller',
                 'Drunk',
                 'LMS',
+                'GeneralPVP',
+                'StrPVP',
+                'IntPVP'
             ],
-            'sub_events' =>
-                [
-                    'QS',
-                    'LuckyStore'
+        'sub_events' =>
+            [
+                'QS',
+                'LuckyStore'
 
-                ],
+            ],
         'topRewards' =>
             [
 
-            'Uniques',
-            'Survival'
+                'Uniques',
+                'Survival'
 
             ],
         'warps' =>

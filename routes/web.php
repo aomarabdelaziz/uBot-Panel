@@ -48,19 +48,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
+
+
       /*  $users = UserProject::
         whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
             ->get();*/
 
 
+        $user = UserProject::where('project_name' , 'Fembria')->first();
 
-        $users = \App\User::withCount(['projects' => function($q)
-        {
-            return $q->whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
-                ->orWhere('end_license' , '<=' , date('y-m-d'));
-
-        }])->where('role','premium')->get();
-
+        return  date('y-m-d') >= date('y-m-d', strtotime($user->end_license));
 
 
 
