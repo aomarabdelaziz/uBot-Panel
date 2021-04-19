@@ -14,7 +14,6 @@
 
             <div class="info">
                 <a href="{{ route('panel.panel-home') }}" class="d-block mb-1">{{$userProjectName}}</a>
-                <a href="{{ route('panel.premium-index') }}" style="color:#FFF;" class=" {{ auth()->user()->role === "premium" ? 'd-none' : '' }}  btn btn-success btn-sm">Upgrade to Premium</a>
             </div>
 
         </div>

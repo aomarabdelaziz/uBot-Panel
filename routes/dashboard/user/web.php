@@ -28,6 +28,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
         Route::group(['prefix' => 'panel' , 'as' => 'panel.'] , function () {
 
+
+            Route::group(['namespace' => 'profile' , 'prefix' => 'profile'] , function () {
+
+                Route::get('/' , 'ProfileController@index')->name('profile-main');
+                Route::post('/profile-transfere-balance' , 'ProfileController@transfereBalance')->name('profile-transfere-balance');
+
+            });
+
             Route::get('premium' , 'PremiumController@index')->name('premium-index');
             Route::get('invoice' , 'InvoiceController@index')->name('invoice-index');
             Route::get('invoice/cancel' , 'InvoiceController@cancel')->name('invoice-cancel');

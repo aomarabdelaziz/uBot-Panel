@@ -25,7 +25,7 @@ class ServerRequest extends FormRequest
     {
         return [
 
-            'server_host' => ['required', 'string' ,'ipv4'],
+            'server_host' => ['required', 'string' ],
             'server_port' => ['required', 'integer'],
             'server_accountid' => ['required', 'string'],
             'server_accountpw' => ['required', 'string'],

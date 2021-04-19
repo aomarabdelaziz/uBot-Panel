@@ -93,7 +93,7 @@
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                <a href="#" class="dropdown-item"> Profile </a>
+                <a href="{{ route('panel.profile-main') }}" class="dropdown-item"> Profile </a>
 
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();

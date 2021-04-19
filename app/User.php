@@ -58,6 +58,7 @@ class User extends Authenticatable
         return $this->hasOne(UserBalance::class , 'user_id');
     }
 
+
     protected static function boot()
     {
         parent::boot();

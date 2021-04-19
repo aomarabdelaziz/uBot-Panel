@@ -80,7 +80,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <script>
 
-                console.log('555555555');
 
                 window.onload = function() {
                     toastr.error("{{ session('error') }}")

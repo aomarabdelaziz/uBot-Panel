@@ -10,6 +10,7 @@ class UserBalance extends Model
     protected $guarded = [];
     protected $primaryKey = 'user_id';
 
+
     public function users()
     {
         return $this->belongsTo(User::class);
