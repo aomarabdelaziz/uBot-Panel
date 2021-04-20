@@ -20,7 +20,7 @@ class ProjectNameComposer
     {
 
 
-        $view->with('userProjectName' , auth()->user()->projects->project_name);
+        $view->with('userProjectName' , auth()->user()->projects->project_name ?? '');
 
 
     }

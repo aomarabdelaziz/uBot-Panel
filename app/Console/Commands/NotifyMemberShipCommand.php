@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Notifications\NotifyUser;
+use App\Notifications\UserNotifications;
 use App\Services\LicenseNotifyService;
 use App\User;
 use App\UserProject;

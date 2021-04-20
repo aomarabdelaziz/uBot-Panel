@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Dashboard\User;
 
 use App\Http\Controllers\Controller;
 use App\EGPBuyList;
-use App\Notifications\NotifyUser;
+use App\Jobs\UserMail;
+use App\Notifications\UserNotifications;
 use App\PaypalInvoices;
 use App\UserBalance;
 use Illuminate\Http\Request;
@@ -19,9 +20,6 @@ class PaypalPaymentController extends Controller
 
     public function buy(Request $request)
     {
-
-
-
 
         $invoice = PaypalInvoices::where( 'user_id' , \auth()->user()->id)
             ->where('state' , PaypalInvoices::STATE_PENDING)->firstOrFail();
@@ -95,7 +93,8 @@ class PaypalPaymentController extends Controller
 
 
                 DB::commit();
-                Notification::send($user , new NotifyUser('success' , "Your payment has been processed successfully with {$invoice->EGP} EGP" ));
+                Notification::send($user , new UserNotifications('success' , "Your payment has been processed successfully with {$invoice->EGP} EGP" ));
+                $this->dispatch( new UserMail($user->email , "Your payment has been processed successfully with {$invoice->EGP} EGP"));
 
                 return redirect()->route('panel.donate-paypal-success' , ['id'=> $data['id'] , 'package' => $invoice->EGP]);
 

@@ -39,11 +39,11 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('access-event' , function (User $user) {
 
-            return $user->role == 'premium';
+            return $user->role !== 'user';
         });
         Gate::define('access-actions' , function (User $user) {
 
-            return date('y-m-d') < date('y-m-d', strtotime($user->projects->end_license));
+            return date('y-m-d') < date('y-m-d', strtotime($user->projects->end_license)) || $user->role == 'admin';
         });
     }
 }

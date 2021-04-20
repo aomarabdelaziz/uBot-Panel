@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaypalInvoices extends Model
 {
+
     const STATE_PENDING = 'pending';
 
     const STATE_CANCELED = 'canceled';

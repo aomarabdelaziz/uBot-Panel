@@ -7,7 +7,7 @@
 
 namespace App\Services;
 
-use App\Notifications\NotifyUser;
+use App\Notifications\UserNotifications;
 use App\Order;
 use App\User;
 use Illuminate\Support\Facades\Notification;
@@ -36,7 +36,7 @@ class LicenseNotifyService
 
             if($user->projects)
             {
-                Notification::send($user, new NotifyUser('success', 'your membership will end'));
+                Notification::send($user, new UserNotifications('success', 'your membership will end'));
 
 
                 $date = date('y-m-d') >= date('y-m-d', strtotime($user->projects->end_license));

@@ -93,6 +93,10 @@
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('dashboard-admin.admin-home') }}" class="dropdown-item"> Admin Dashboard </a>
+                @endif
+
                 <a href="{{ route('panel.profile-main') }}" class="dropdown-item"> Profile </a>
 
                 <a class="dropdown-item" href="{{ route('logout') }}"

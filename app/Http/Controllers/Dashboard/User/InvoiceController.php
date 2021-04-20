@@ -47,7 +47,8 @@ class InvoiceController extends Controller
 
     public function cancel()
     {
-        PaypalInvoices::findorFail(auth()->user()->id)->delete();
+
+        PaypalInvoices::where('user_id',auth()->user()->id)->where('state','pending')->delete();
         session()->flash('success', 'Payment has been deleted');
         return redirect()->route('panel.panel-home');
     }

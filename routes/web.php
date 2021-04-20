@@ -1,11 +1,17 @@
 <?php
 
-use App\Notifications\NotifyUser;
+use App\Jobs\UserMail;
+use App\Notifications\UserNotifications;
+use App\User;
 use App\UserProject;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Controller;
+use App\Mail\UserEmailMailable;
+use App\PaypalInvoices;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]] , function () {
 
+
+    Auth::routes(['verify' => true]);
 
     Route::get(
         '/',
@@ -47,12 +55,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
+        $user = User::findOrFail(1);
+        dispatch( new UserMail($user->email , "Your payment has been processed successfully with 4000 EGP"));
+        return 'Done';
 
 
 
-      /*  $users = UserProject::
-        whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
-            ->get();*/
+        /*  $users = UserProject::
+          whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
+              ->get();*/
 
 
         $user = UserProject::where('project_name' , 'Fembria')->first();

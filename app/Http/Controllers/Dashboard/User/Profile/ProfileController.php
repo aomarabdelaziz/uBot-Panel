@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard\User\Profile;
 
 use App\Http\Controllers\Controller;
-use App\Notifications\NotifyUser;
+use App\Notifications\UserNotifications;
 use App\Rules\EGPBalanceRule;
 use App\UserBalance;
 use App\UserProject;
@@ -44,8 +44,8 @@ class ProfileController extends Controller
                 'balance' => $transfereEGPAmount + $data->balance
             ]);
 
-        Notification::send(auth()->user() , new NotifyUser('success' , "You have transferred {$transfereEGPAmount} EGP to {$request->project_name}"));
-        
+        Notification::send(auth()->user() , new UserNotifications('success' , "You have transferred {$transfereEGPAmount} EGP to {$request->project_name}"));
+
         session()->flash('success' , 'Transfere has been done');
         return redirect()->back();
 

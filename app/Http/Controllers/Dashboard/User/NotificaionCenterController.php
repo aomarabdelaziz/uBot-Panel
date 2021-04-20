@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
-use App\Notifications\NotifyUser;
+use App\Notifications\UserNotifications;
 
 class NotificaionCenterController extends Controller
 {
@@ -14,7 +14,7 @@ class NotificaionCenterController extends Controller
     {
 
         $user = User::find($request->user_id);
-        Notification::send($user , new NotifyUser($request->notify_type , $request->notify_content));
+        Notification::send($user , new UserNotifications($request->notify_type , $request->notify_content));
         return response(
 
             ['data' => 'done']

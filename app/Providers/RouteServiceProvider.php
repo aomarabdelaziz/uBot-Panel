@@ -16,6 +16,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
     protected $user_dashboard_namespace = 'App\Http\Controllers\Dashboard\User';
+    protected $admin_dashboard_namespace = 'App\Http\Controllers\Dashboard\Admin';
 
     /**
      * The path to the "home" route for your application.
@@ -46,6 +47,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapUserDashboardRoutes();
+
+        $this->mapAdminDashboardRoutes();
 
         $this->mapWebRoutes();
 
@@ -78,6 +81,20 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web' , 'auth'])
             ->namespace($this->user_dashboard_namespace)
             ->group(base_path('routes/dashboard/user/web.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAdminDashboardRoutes()
+    {
+        Route::middleware(['web' , 'auth'])
+            ->namespace($this->admin_dashboard_namespace)
+            ->group(base_path('routes/dashboard/admin/web.php'));
     }
 
     /**

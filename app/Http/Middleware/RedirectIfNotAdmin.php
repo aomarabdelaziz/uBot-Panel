@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AccessEvent
+class RedirectIfNotAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,9 @@ class AccessEvent
      */
     public function handle($request, Closure $next)
     {
-        $role = auth()->user()->role ;
-
-        if($role === 'user') {
-            return  redirect()->route('panel.panel-home');
+        if(auth()->user()->role != 'admin')
+        {
+            abort(404 , 'NOT FOUND');
         }
         return $next($request);
     }
