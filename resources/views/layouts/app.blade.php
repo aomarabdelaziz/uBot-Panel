@@ -40,7 +40,7 @@
                             <div class="alert alert-info alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                 <h5><i class="icon fas fa-info"></i> Hey {{ auth()->user()->name }} </h5>
-                                Remaining {{ $remLic }} that, your membership will be cancelled
+                                Remaining {{ $remLic }} day(s) after that, your membership will be cancelled
                             </div>
                         @endif
                         @yield('content')

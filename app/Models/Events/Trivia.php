@@ -3,6 +3,7 @@
 namespace App\Models\Events;
 
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Void_;
 
 class Trivia extends Model
 {
@@ -23,6 +24,17 @@ class Trivia extends Model
         'Delay1',
         'Delay2'
     ];
+
+    public function setWinLimitAttribute($value)
+    {
+
+        if($this->PreventAfterLimit)
+        {
+             $this->attributes['WinLimit'] = $value == 0 ? 1 : $value;
+
+        }
+    }
+
 
 /*    //protected $hidden
     protected $hidden = [

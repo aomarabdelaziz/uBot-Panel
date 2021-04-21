@@ -17,7 +17,6 @@ class LotteryGold extends Model
         'EventKey',
         'MaxRounds',
         'RegKey',
-        'WinLimit',
         'MinPlayers',
         'MaxPlayers',
         'InTown',

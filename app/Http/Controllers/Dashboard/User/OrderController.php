@@ -22,7 +22,7 @@ class OrderController extends Controller
                 ]);
             }
 
-           if(!Gate::allows('access-actions')) {
+           if(!Gate::allows('access-event')) {
                 return response([
                     "error" => 'You have to renew your membership to do this action'
                 ]);
@@ -66,7 +66,7 @@ class OrderController extends Controller
 
         if($request->ajax()) {
 
-            if(!Gate::allows('access-actions')) {
+            if(!Gate::allows('access-event')) {
                 return response([
                     "error" => 'You have to renew your membership to do this action'
                 ]);
@@ -108,7 +108,7 @@ class OrderController extends Controller
 
         if($request->ajax()) {
 
-            if(!Gate::allows('access-actions')) {
+            if(!Gate::allows('access-event')) {
                 return response([
                     "error" => 'You have to renew your membership to do this action'
                 ]);
@@ -150,7 +150,7 @@ class OrderController extends Controller
 
         if($request->ajax()) {
 
-            if(!Gate::allows('access-actions')) {
+            if(!Gate::allows('access-event')) {
                 return response([
                     "error" => 'You have to renew your membership to do this action'
                 ]);

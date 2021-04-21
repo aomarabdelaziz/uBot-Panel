@@ -23,6 +23,17 @@ class HideAndSeek extends Model
         'Delay2'
     ];
 
+    public function setWinLimitAttribute($value)
+    {
+
+        if($this->PreventAfterLimit)
+        {
+
+            $this->attributes['WinLimit'] = $value == 0 ? 1 : $value;
+
+        }
+    }
+
     //protected $hidden
 /*    protected $hidden = [
         'RegKey',

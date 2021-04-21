@@ -7,9 +7,12 @@
 
 namespace App\Services;
 
+use App\Jobs\UserMail;
 use App\Notifications\UserNotifications;
 use App\Order;
 use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 
 /**
@@ -36,13 +39,12 @@ class LicenseNotifyService
 
             if($user->projects)
             {
-                Notification::send($user, new UserNotifications('success', 'your membership will end'));
-
-
-                $date = date('y-m-d') >= date('y-m-d', strtotime($user->projects->end_license));
-
-
+                $days =  Carbon::parse($user->projects->end_license)->diffInDays( Carbon::now()->format('y-m-d'));
+                $date =  Carbon::now()->format('y-m-d') >= Carbon::parse($user->projects->end_license)->format('y-m-d');;
                 if ($date) {
+
+                    dispatch(new UserMail($user->email , "Your membership has been ended"));
+                    Notification::send($user, new UserNotifications('success', "Your membership has been ended"));
 
                     $user->update(
                         [
@@ -59,6 +61,12 @@ class LicenseNotifyService
                         ]);
 
                 }
+                else
+                    {
+                        Notification::send($user, new UserNotifications('success', "Your membership will end in {$days} day(s)"));
+                        dispatch(new UserMail($user->email , "Your membership will end in {$days} day(s)"));
+
+                    }
 
             }
 

@@ -27,7 +27,7 @@ class RemainingLicenseComposer
             ->first();
 
         if($data) {
-            $remLic = Carbon::parse($data->end_license)->diffForHumans(Carbon::now());
+            $remLic = Carbon::parse($data->end_license)->diffInDays(Carbon::now()->format('y-m-d'));
 
         }
 

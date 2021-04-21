@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Mail;
 Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]] , function () {
 
 
+
+    Route::view('/docs' , 'docs.index');
     Auth::routes(['verify' => true]);
 
     Route::get(

@@ -39,11 +39,9 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('access-event' , function (User $user) {
 
-            return $user->role !== 'user';
-        });
-        Gate::define('access-actions' , function (User $user) {
+            return Carbon::now()->format('y-m-d') < Carbon::parse($user->projects->end_license)->format('y-m-d') || $user->role == 'admin';
 
-            return date('y-m-d') < date('y-m-d', strtotime($user->projects->end_license)) || $user->role == 'admin';
         });
+
     }
 }
