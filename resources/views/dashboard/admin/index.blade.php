@@ -8,7 +8,7 @@
 @endpush
 @section('title', 'Admin | Dashboard')
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('panel.panel-home') }}">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('dashboard-admin.admin-home') }}">Dashboard</a></li>
     <li class="breadcrumb-item active">Home</li>
 
 
@@ -125,7 +125,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header border-transparent">
-                    <h3 class="card-title">All Registered Members</h3>
+                    <h3 class="card-title">Latest Donators</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -144,20 +144,20 @@
                             <tr>
                                 <th>UserID</th>
                                 <th>Name</th>
-                                <th>ProjectName</th>
-                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>EGP</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($allMembers as $member)
+                            @foreach($latestDonators as $donator)
                                 <tr>
-                                    <td><a href="#">{{ $member->id }}</a></td>
-                                    <td>{{ $member->name }}</td>
+                                    <td><a href="#">{{ $donator->id }}</a></td>
+                                    <td>{{ $donator->name }}</td>
                                     <td>
-                                        {{ $member->projects->project_name ?? '' }}
+                                        {{ $donator->EGP}} EGP
                                     </td>
-                                    <td><span class="badge {{ ( $member->email_verified_at != null ? 'badge-success' : 'badge-danger') }}">
-                                            {{ $member->email_verified_at != null ? 'Verfied' : 'Not Verfied' }}
+                                    <td><span class="">
+                                            {{ $donator->price }} USD
                                     </span></td>
 
                                 </tr>
@@ -194,7 +194,31 @@
                     });
 
                 });
+                function readNotifications() {
+
+                    $.ajax({
+
+                        url: "{{ route('panel.panel-mark-as-read') }}",
+                        type: "post",
+                        dataType: "json",
+                        success: function (data) {
+
+                            $('.notificaion-count').load(window.location.href + " .notificaion-count")
+                            $('.notificaion-content').load(window.location.href + " .notificaion-content")
+
+                        },
+                        error: function (data) {
+
+                            $('.notificaion-count').load(window.location.href + " .notificaion-count")
+                            $('.notificaion-content').load(window.location.href + " .notificaion-content")
+
+                        }
+
+                    });
+
+                }
             </script>
+
 
 
 

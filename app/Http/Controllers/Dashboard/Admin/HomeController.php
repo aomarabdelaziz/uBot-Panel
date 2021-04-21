@@ -7,6 +7,7 @@ use App\Jobs\UserMail;
 use App\Mail\UserEmailMailable;
 use App\PaypalInvoices;
 use App\User;
+use App\UserProject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -19,10 +20,10 @@ class HomeController extends Controller
         $unPremiumCount = User::where('role' , 'user')->count();
         $incomeUSD = PaypalInvoices::where('state' , 'paid')->sum('price');
         $latestMembers = User::orderBy('created_at' , 'desc')->where('role' , '!=' , 'admin')->limit(5)->get();
-        $allMembers = User::with(['projects'])->where('role' , '!=' , 'admin')->get();
+        $latestDonators = PaypalInvoices::orderBy('created_at')->where('state' , 'paid')->limit(5)->get();
 
         return view('dashboard.admin.index' , compact('usersCount' , 'premiumCount'
-        ,'unPremiumCount' , 'incomeUSD' , 'latestMembers' ,'allMembers'));
+        ,'unPremiumCount' , 'incomeUSD' , 'latestMembers' ,'latestDonators'));
     }
 
     public function users()
@@ -32,14 +33,10 @@ class HomeController extends Controller
 
     }
 
-    public function verfiyUser($id)
+    public function projects()
     {
-        $string = "ahmed";
-        $user = User::findOrFail($id);
-        $this->dispatch( new UserMail($user->email , "Your payment has been processed successfully with 4000 EGP"));
-
-
-        return 'Done';
+        $allProjects = UserProject::all();
+        return view('dashboard.admin.projects' , compact('allProjects'));
     }
 
 }

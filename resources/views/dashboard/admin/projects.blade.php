@@ -9,7 +9,7 @@
 @section('title', 'Admin | Users')
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ route('dashboard-admin.admin-home') }}">Dashboard</a></li>
-    <li class="breadcrumb-item active">users</li>
+    <li class="breadcrumb-item active">Projects</li>
 
 
 @endsection
@@ -23,7 +23,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header border-transparent">
-                    <h3 class="card-title">All Registered Members</h3>
+                    <h3 class="card-title">All Projects</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -41,22 +41,20 @@
                             <thead>
                             <tr>
                                 <th>UserID</th>
-                                <th>Name</th>
-                                <th>Status</th>
+                                <th>ProjectName</th>
+                                <th>End License</th>
 
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($allMembers as $member)
+                            @foreach($allProjects as $project)
                                 <tr>
-                                    <td><a href="#">{{ $member->id }}</a></td>
-                                    <td>{{ $member->name }}</td>
+                                    <td><a href="#">{{ $project->user_id }}</a></td>
+                                    <td>{{ $project->project_name }}</td>
                                     <td>
-                                        {{ $member->projects->project_name ?? '' }}
+                                       {{ $project->end_license }}
                                     </td>
-                                    <td><span class="badge {{ ( $member->email_verified_at != null ? 'badge-success' : 'badge-danger') }}">
-                                            {{ $member->email_verified_at != null ? 'Verfied' : 'Not Verfied' }}
-                                    </span></td>
+
 
 
                                 </tr>
