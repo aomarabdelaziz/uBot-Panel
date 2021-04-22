@@ -28,13 +28,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
-    Route::view('/docs' , 'docs.index');
+    Route::view('/docs' , 'docs.index')->name('ubot-doc');
     Auth::routes(['verify' => true]);
 
     Route::get(
         '/',
         function () {
-            return view('welcome');
+            return redirect()->route('panel.panel-home');
         }
     );
     Route::get('/complete-registration', 'Auth\RegisterController@completeRegistration');

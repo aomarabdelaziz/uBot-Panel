@@ -59,10 +59,9 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector('#mode').addEventListener('click',()=>{
-            document.querySelector('html').classList.toggle('dark');
-        })
+        document.querySelector('html').classList.toggle('dark');
     });
+
 
 
 </script>
@@ -91,8 +90,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="big-title text-center">
-                        <h1>Your ThemeForest item Name</h1>
-                        <p class="lead">Your awesome theme / template documentation version 1.0</p>
+                        <h1>uBot Documentation</h1>
+                        <p class="lead">Your uBot documentation version 1.7</p>
                     </div>
                     <!-- end title -->
                 </div>
@@ -106,32 +105,35 @@
         <!-- end section -->
 
         <div class="row">
-
-
             <div class="col-md-3">
                 <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
                     <ul class="nav">
                         <li><a href="#line1">Getting Started</a></li>
-                        <li><a href="#line2">How to Install WordPress</a></li>
-                        <li><a href="#line3">How to Install Theme</a></li>
-                        <li><a href="#line4">Necessary Plugins</a></li>
-                        <li><a href="#line5">Creating Blog Pages</a></li>
-                        <li><a href="#line6">Revolution Slider</a></li>
-                        <li><a href="#line7">How to Use Option Panel</a>
+                        <li><a href="#line2">How to Install uBot</a></li>
+                        <li><a href="#line3">Integration With MaxiGuard</a></li>
+                        <li><a href="#line4">uBot Events</a>
                             <ul class="nav">
-                                <li><a href="#line7_1">General Options</a></li>
-                                <li><a href="#line7_2">Style Options</a></li>
-                                <li><a href="#line7_3">Header Options</a></li>
-                                <li><a href="#line7_4">Font Options</a></li>
-                                <li><a href="#line7_5">Slider Options</a></li>
-                                <li><a href="#line7_6">Page Options</a></li>
-                                <li><a href="#line7_7">Import & Export</a></li>
+                                <li><a href="#line4_1">Questions And Answers</a></li>
+                                <li><a href="#line4_2">Lucky Store</a></li>
+                                <li><a href="#line4_3">Lucky Party Number</a></li>
+                                <li><a href="#line4_4">Lucky Party Member</a></li>
+                                <li><a href="#line4_5">Lottery Events</a></li>
+                                <li><a href="#line4_6">Madness</a></li>
+                                <li><a href="#line4_7">Uniques</a></li>
+                                <li><a href="#line4_8">PVP</a></li>
+                                <li><a href="#line4_9">Search Events</a></li>
+                                <li><a href="#line4_10">Drunk</a></li>
+                                <li><a href="#line4_11">GM Killer</a></li>
+                                <li><a href="#line4_12">Alchemy</a></li>
+                                <li><a href="#line4_13">Random Action</a></li>
+
+
+
                             </ul>
                         </li>
-                        <li><a href="#line8">Support Desk</a></li>
-                        <li><a href="#line9">Files & Sources</a></li>
-                        <li><a href="#line10">Version History (Changelog)</a></li>
-                        <li><a href="#line11">Copyright and license</a></li>
+                        <li><a href="#line5">Support Desk</a></li>
+                        <li><a href="#line6">Version History (Changelog)</a></li>
+                        <li><a href="#line7">Copyright and license</a></li>
                     </ul>
                 </nav >
             </div>
@@ -146,33 +148,51 @@
                                 <div class="col-md-12 full">
                                     <div class="intro1">
                                         <ul>
-                                            <li><strong>Item Name : </strong>Gather Responsive Event Template</li>
-                                            <li><strong>Item Version : </strong> v 1.0</li>
-                                            <li><strong>Author  : </strong> <a href="http://themeforest.net/user/surjithctly" target="_blank">Surjith S M</a></li>
-                                            <li><strong>Support Forum : </strong> <a href="https://support.surjithctly.in/forums" target="_blank">https://support.surjithctly.in/forums</a></li>
+                                            <li><strong>Bot Name : </strong>uBot Automatic Events</li>
+                                            <li><strong>Bot Version : </strong> v 1.7</li>
+                                            <li><strong>Author  : </strong> <a href="https://www.facebook.com/Abdelaziz.Omar93/" target="_blank">Abdelaziz Omar</a></li>
+                                            <li><strong>Discord Server : </strong> <a href="https://discord.gg/eGhKUQfWkU" target="_blank">https://discord.gg/eGhKUQfWkU</a></li>
                                             <li><strong>License : </strong> <a href="#" target="_blank">Un License</a></li>
                                         </ul>
                                     </div>
 
                                     <hr>
                                     <div>
-                                        <p>First of all, Thank you so much for purchasing this template and for being my loyal customer.
+                                        <p>First of all, Thank you so much for purchasing my bot and for being my loyal customer.
                                             <strong>You are awesome!</strong>
-                                            <br> You are entitled to get free lifetime updates to this product + exceptional support from the author directly.
+                                            <br> You are entitled to get free lifetime updates to this product + exceptional support from the developer directly.
                                         </p>
 
-                                        <p>This documentation is to help you regarding each step of customization. Please go through the documentation carefully to understand how this template is made and how to edit this properly. Basic HTML and CSS knowledge is required to customize this template. You may learn basics <a href="http://www.w3schools.com/" target="_blank">here</a>, <a href="https://developer.mozilla.org/" target="_blank">here</a> and <a href="http://learn.shayhowe.com/html-css/building-your-first-web-page/" target="_blank">here</a>. </p>
+                                        <p>This documentation is to help you regarding each step of customization.
+                                            Please go through the documentation carefully to understand how this bot is work and how to edit the configurations properly. basic <strong>Brain.exe</strong> is
+                                            required to configurate the bot. </p>
 
                                         <h4>Requirements</h4>
-                                        <p>You will need the following sofwares to customize this template.</p>
+                                        <p>You will need the following sofwares to configurate the bot.</p>
                                         <ol>
-                                            <li>Code Editing Software (eg: Dreamweaver, Sublime Text or Notepad)</li>
-                                            <li>Web Browser for testing (eg: Google Chrome or Mozilla Firefox)</li>
-                                            <li>FTP Tool to upload files to Server (eg: <a href="https://filezilla-project.org/download.php?type=client" target="_blank">FileZilla</a>) </li>
+                                            <li>Microsoft SQL SERVER </li>
+                                            <li>Web Browser to configurate (eg: Google Chrome or Mozilla Firefox)</li>
+                                            <li>Don't forget <strong>Brain.exe</strong> </li>
                                         </ol>
                                         <div class="intro2 clearfix">
-                                            <p><i class="fa fa-exclamation-triangle"></i> Be careful while editing the template. If not edited properly, the design layout may break completely.
-                                                <br> No support is provided for faulty customization.
+                                            <p><i class="fa fa-exclamation-triangle"></i> Be careful while editing the bot settings. If not edited properly, the bot may break completely.
+                                                <br> Don't panic there is a support is provided for faulty customization.
+                                            </p>
+                                        </div>
+
+                                        <hr>
+                                        <h4>Features</h4>
+                                        <ol>
+                                            <li>Cheap <strong>25$</strong> per month</li>
+                                            <li>uBot contains <strong>28</strong> event</li>
+                                            <li>uBot <strong>MaxiGuard</strong> filter integration , to allow you to customize more interesting things</li>
+                                            <li>Auto Relog</li>
+                                            <li>Discord Weebhook</li>
+                                            <li>Fully control of different settings <strong>Rounds , Limits include(HWID/IP) , Delays , Rewards , Notices , log , etc...</strong></li>
+                                            <li>More features will be introduced at <a href="#">events</a> section</li>
+                                        </ol>
+                                        <div class="intro2 clearfix">
+                                            <p><i class="fa fa-info"></i> If you a MaxiGuard user , you are lucky , you can learn how to integrate uBot with the filter at filter integration section
                                             </p>
                                         </div>
 
@@ -197,51 +217,21 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                            <h4>Normal uBot Database</h4>
+                            <p>You will need one of the following uBot.bak database or uBot.script to configurate the bot.</p>
+                            <ol>
+                                <li><a href="">Database</a></li>
+                                <li><a href="$">Script</a></li>
+                                <li>Don't forget <strong>Brain.exe</strong> </li>
+                            </ol>
 
-                            <h4>Bootstrap Grid System</h4>
-
-                            <pre class="brush: html; highlight: [2,4]">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        YOUR CODES GOES HERE
-                                    </div>
-                                </div>
-                            </div></pre>
-
-                            <p>Our you can use the grid system with 2 columns like this;</p>
-
-                            <pre class="brush: html">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        YOUR CODES GOES HERE
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        YOUR CODES GOES HERE
-                                    </div>
-                                </div>
-                            </div>
-                         </pre>
-
-                            <p>Our you can use the grid system with 3 columns like this;</p>
-
-                            <pre class="brush: html">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        YOUR CODES GOES HERE
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        YOUR CODES GOES HERE
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        YOUR CODES GOES HERE
-                                    </div>
-                                </div>
-                            </div>
-                         </pre>
+                            <h4>uBot Database With MaxiGuard filter</h4>
+                            <p>You will need one of the following uBot.bak database or uBot.script to configurate the bot with <strong>MaxiGuard Filter</strong>.</p>
+                            <ol>
+                                <li><a href="">Database</a></li>
+                                <li><a href="$">Script</a></li>
+                                <li>Also don't forget <strong>Brain.exe</strong> </li>
+                            </ol>
                         </div>
                         <!-- end col -->
                     </div>
@@ -254,25 +244,21 @@
 
                     <div class="row">
                         <div class="col-md-12 left-align">
-                            <h2 class="dark-text">How to Install WordPress <hr></h2>
+                            <h2 class="dark-text">How to Install uBot <hr></h2>
                         </div>
                         <!-- end col -->
                     </div>
                     <!-- end row -->
 
                     <div class="intro2 clearfix">
-                        <p><i class="fa fa-wordpress"></i> Lorem the It is a long established fact that a reader will be distracted..
-                            <br> Please read more about WordPress here. <a href="#">WordPress Installation via FTP.</a> </p>
+                        <p><i class="fa fa-warning"></i> Be careful while you install the bot.
+                        <p>You must forwded this ip to your firewall / filter (127.0.0.1) </p>
                     </div>
 
                     <hr>
 
-                    <h4>Upload via WordPress Admin</h4>
-
-                    <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-
-                    <a href="#" class="btn btn-primary">Get a Installation Service</a> <a href="#" class="btn btn-info">Ask a Question</a>
-                    <hr>
+                    <h4>After you finished your first step of installation</h4>
+                    <h4>Watch this video installation</h4>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="media">
@@ -289,308 +275,394 @@
 
                     <div class="row">
                         <div class="col-md-12 left-align">
-                            <h2 class="dark-text">How to Install Theme <hr></h2>
+                            <h2 class="dark-text">Integration with MaxiGuad Filter <hr></h2>
                         </div>
                         <!-- end col -->
                     </div>
                     <!-- end row -->
 
-                    <h4>Upload via WordPress Admin</h4>
+                    <h4>Install uBot with MaxiGuard Filter</h4>
 
-                    <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <p>Let me to inform you that uBot can integrate with maxiguard to give you an experince to control the events with your server <br>
+                    <ol>
+                        <li>Kill Counter</li>
+                        <li>Timer</li>
+                        <li>Notices, Global color</li>
+                        <li>And more you will discover this features with your self at the end of the documentation , it's a <strong>Surpise!!</strong></li>
+                    </ol>
+                    </p>
 
-                    <a href="#" class="btn btn-primary">Get a Installation Service</a> <a href="#" class="btn btn-info">Ask a Question</a>
 
-                    <hr>
 
-                    <h4>Upload via FTP Server</h4>
 
-                    <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
 
-                    <a href="#" class="btn btn-primary">Get a Installation Service</a> <a href="#" class="btn btn-info">Ask a Question</a>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="media">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/yQnQyI5WlKs" frameborder="0" allowfullscreen></iframe>
-                            </div>
-
-                        </div>
-                        <div class="col-md-6">
-                            <div class="media">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/z0kEVwJB_go" frameborder="0" allowfullscreen></iframe>
-                            </div>
-
-                        </div>
-                    </div>
 
                 </section>
                 <!-- end section -->
+
 
                 <section id="line4" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
-                            <h2 class="dark-text">Necessary Plugins <hr></h2>
+                            <h2 class="dark-text">uBot Events Features<hr></h2>
                         </div>
                         <!-- end col -->
                     </div>
                     <!-- end row -->
 
                     <div class="row">
-                        <div class="col-md-4">
-                            <img src="{{ asset('images/upload/plugin1.png') }}" alt="" class="img-responsive img-thumbnail">
-                            <h4>Plugin name #1</h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_1">Questons and Answers Events </h4>
+                            <p>  <strong>1. Trivia</strong> It's an event that requires an interpretation and distinguishing skills, The bot will write a notice asking
+                                a question, and the players have to pm BOT with the correct answer, of course the fastest player will be the winner.</p>
+                            <hr>
+                            <p> <strong>2. Choose</strong> It's an event that requires an interpretation and distinguishing skills, The bot will write a notice asking a question with some multiple choices, and the players have to pm BOT with the correct answer, ofcourse the fastest message will be the winner.</p>
+                            <hr>
+                            <p> <strong>3. Viceversa</strong> It's an event that requires an interpretation and distinguishing skills, The bot will write a random word and you have to capitalize the small letters and smallize the capital letters as <a href="#">example the word (ReAsOnAbLe) the correct answer of it is (rEaSoNaBlE)</a> and opposite</p>
+                            <hr>
+                            <p> <strong>4. Convert The Word</strong> It's an event that requires an interpretation and distinguishing skills, The bot will write a random word and you have to convert it from/to capital/small as <a href="#">example of the word (reasonable) the correct answer of it is (REASONABLE)</a> and opposite</p>
+                            <hr>
+                            <p> <strong>5. Reverse The Word</strong> It's an event that requires an interpretation and distinguishing skills, The bot will write a random combination of letters and you have to make up a correct word of those letters as <a href="#">example (butoa) the correct answer word of it is (about)</a></p>
+                            <p> <strong>6. Re-Arrange the letters</strong> It's an event that requires an interpretation and distinguishing skills, The bot will write a random word and you have to reverse the letters arrangement as a <a href="#">example (reasonable) the correct word is (elbanosaer).</a></p>
+
+
+
+
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Contains (Trivia , Choose , Viceversa , Convert , Reverse , ReArrange) events</li>
+                                <li>Unlimted Rounds</li>
+                                <li>Able to send the answer of the question after the question is <strong>answred</strong></li>
+                                <li><strong>Winner limitaion: </strong> You can prevent player to participate at the event , if he had exceed the limit of win </li>
+                                <li><strong>Incorrect answer limitation:</strong> You can prevent player from answering anymore , if he had exceed the number of incorrect answer </li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                            </ol>
                         </div>
                         <!-- end col -->
-
-                        <div class="col-md-4">
-                            <img src="{{ asset('images/upload/plugin2.png') }}" alt="" class="img-responsive img-thumbnail">
-                            <h4>Plugin name #2</h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-md-4">
-                            <img src="{{ asset('images/upload/plugin3.png') }}" alt="" class="img-responsive img-thumbnail">
-                            <h4>Plugin name #3</h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-md-12">
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-
-                            <div class="text-center">
-                                <a href="#" class="btn btn-primary">Get a Installation Service</a> <a href="#" class="btn btn-info">Ask a Question</a>
-                            </div>
-                        </div>
                     </div>
                     <!-- end row -->
+
+                    <hr>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_2"> Lucky Store Events </h4>
+                            <p>
+                                <strong>7. Lucky PM</strong> In this event, the bot will start a notice/global to announce the start of the event. To participate in the event all you have to do is to
+                                send a random message to the bot, the bot will register you automatically,
+                                and when the event ends, the bot will announce the winner and give him the reward.
+
+                            <hr>
+
+                            <strong>8. Lucky Global</strong> In this event, the bot will start a notice/global to announce the start of the event. To participate in the event all you have to do is to send
+                            a random message in a global chat, the bot will register you automatically, and when the event ends, the bot will announce the winner and give him the reward.
+
+                            <hr>
+
+                            <strong>9. Lucky Staller</strong> In this event, the bot will start a notice/global to announce the start of the event. To participate in the event all you have to do is to open a stall nearby to the bot , the bot will register you automatically, and when the event ends, the bot will announce the winner and give him the reward.
+                            </p>
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Contains (Lucky PM , Lucky Global , Lucky Staller) events</li>
+                                <li>Unlimted Rounds</li>
+                                <li><strong>Winner limitaion: </strong> You can prevent player to participate at the event , if he had exceed the limit of win </li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <hr>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_3">10. LPN (Lucky Party Number) </h4>
+                            <p>
+                                The event is totally based on calculation and luck, the bot is going to write a specific number, and you have to create parties insanely until you reach the required number, the one that has the desired party's number will be the winner.
+                            </p>
+
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Unlimted Rounds</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <hr>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+
+                            <h4 id="line4_4">11. Lucky Party Member </h4>
+                            <p>
+                                The event is totally based on luck, the bot is going to create a party matching with a specific number, and you have to join the bot party, and the bot will choose one of members randomly to be the winner.
+                            </p>
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Unlimted Rounds</li>
+                                <li><strong>Winner limitaion: </strong> You can prevent player to participate at the event , if he had exceed the limit of win </li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <hr>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+
+                            <h4 id="line4_4">12. Lucky Critical</h4>
+                            <p>
+                                This event is totaly brings alot of fun, the bot will start a notice/global to announce the start of the event to participate at the event you have to a send a register key to the bot, after that the bot will recall all registered players to x region, and check if all players wear a white cape and unwear all items, then the bot will start hiting all registered player who will recieve a critical will be kicked out , also who will wear anything during the event or moved away will kicked out xD!
+                            </p>
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Registration with <strong>/reg</strong> key</li>
+                                <li>Min & Max players can be participate</li>
+                                <li>Cape Detection <strong>If you have a filter can auto cape the players at region enable this feature from filter and disable it from the bot</strong></li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <hr>
+
+                    <div class="row">
+
+                        <h4 id="line4_5">Lottery Events</h4>
+                        <p>
+                            <strong>13. Lottery Silk </strong>this event the bot will start saying send register to me to register in the lottery and start gathering silk from people who registered then picks a random one and give him all the silk he gathered, of course the player can cancel his registeration and return back his silk but in the registeration perion only.
+
+                        </p>
+                        <hr>
+                        <p>
+                            <strong>14. Lottery Coins </strong> in this event the bot will start saying send register to me to register in the lottery and start gathering coins from people who registered then picks a random one and give him all the coins he gathered, of course the player can cancel his registeration and return back his coins but in the registeration perion only.
+
+                        </p>
+                        <hr>
+                        <p>
+                            <strong>15. Lottery Gold </strong>n this event the bot will start saying send register to me to register in the lottery and start gathering gold from people who registered then picks a random one and give him all the gold he gathered, of course the player can cancel his registeration and return back his gold but in the registeration perion only.
+
+                        </p>
+                        <h1>Event Features</h1>
+                        <ol>
+                            <li>Contains (Lottery Silk , Lottery Gold , Lottery Coins) events</li>
+                            <li>Unlimted Rounds</li>
+                            <li>Registration with <strong>/reg</strong> key</li>
+                            <li>Min & Max players can be participate</li>
+                            <li>Lottery amount registration</li>
+                            <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                        </ol>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <hr>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+
+                            <h4 id="line4_6">16. Madness</h4>
+                            <p>
+                                In this event the bot will go to x region and he will start a notice/global to announce the start of the event to participate at the event you have to send a register key to the bot,after that he will recall all registered players to the x region ofcourse who will in job time and in pk time will be not recalled, the players have to wear a cape and start kill the unique that will be spawned the first who will kill the unique he will be the winner                                </p>
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Registration with <strong>/reg</strong> key</li>
+                                <li>Min & Max players can be participate</li>
+                                <li>Required level to  can be participate</li>
+                                <li>Able to set a uniqueID to be spawn</li>
+                                <li>Cape Detection <strong>If you have a filter can auto cape the players at region enable this feature from filter and disable it from the bot</strong></li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+
+                            <h4 id="line4_7">17. Uniques</h4>
+                            <p>
+                                In this event the bot will go to x region and will start a spawn a sequance of uniques , who will get higher points he will be the winner
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Able to set Priority of spawned uniques</li>
+                                <li>Able to set count , delay of each unique</li>
+                                <li>Able to set a points for each unique</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+
+                            <h4 id="line4_8">PVP Events</h4>
+                            <p>
+                                <strong>18. LMS </strong> LMS (Last Man Standing) event means that AutoEvent will start saying that LMS event is starting in XXX (XXX is time) and to register send a pm to BOT with Register, you get teleported and start killing other players, the one lasts to the end wins.
+                            </p>
+                            <hr>
+                            <p>
+                                <strong>19. Survival </strong> Survival arena is one of the most intense events in Silkroad, you will be able to fight against other players, the bot will announce the start of the event, all you have to do it send PM to the bot to register at the event, when the survival arena starts, the bot will recall you all. You will find a timer countdown in the screen shows how much time left. The player who get the most kills will be the winner.
+                            </p>
+                            <hr>
+
+                            <p>
+                                <strong>20. PVP</strong> PVP is one of the most intense events in Silkroad, you will be able to fight against other players (1 VS 1) , until one will be remaining and he will be the winner
+                            </p>
+                            <hr>
+                            <p>
+                                <strong>21. STR PVP </strong> As the same of PVP event but for str players only
+                            </p>
+                            <hr>
+                            <p>
+                                <strong>22. INT PVP </strong> As the same of PVP event but for int players only
+                            </p>
+
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Registration with <strong>/reg</strong> key</li>
+                                <li>Min & Max players can be participate</li>
+                                <li>Required level to  can be participate</li>
+                                <li>PlayMethod (Cape, PK) for LMS event only</li>
+                                <li>Cape Detection <strong>If you have a filter can auto cape the players at region enable this feature from filter and disable it from the bot</strong></li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                                <li>Prevent player to earn more poins from same player for a time (Survival event only)</li>
+                                <li>Prevent player to earn more poitns from same player if he killed him to much (Survival event only)</li>
+                                <li>The ability to finish the event by poins (Survival event only)</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_9">Search Events </h4>
+                            <p> <strong>23. Hide And Seek</strong> An old event which has a great taste of using your intuition, The bot is going to hide and he will ask you to find them, It will reveal some details(hints) about it's location , and you will have to know where is the bot hidden, the first one that exchange him will will be the winner.</p>
+                            <hr>
+                            <p> <strong>24. Search And Destroy</strong> An old event which has a great taste of using your intuition, The bot is going to hide and spawn certain unique and he will ask you to find the him, It will reveal some details(hints) about it's location , and you will have to know where is the unique location, the first one that kill the unique will be the winner. </p>
+                            <hr>
+                            <p> <strong>25. Stall </strong>An old event which has a great taste of using your intuition, The bot is going to hide and open a stall with an item and he will ask you to find the him, It will reveal some details(hints) about it's location , and you will have to know where is the bot location, the first one that buy the item from the stall will be the winner.</p>
+
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Contains (Hide And Seek , Search And Destroy , Stall) events</li>
+                                <li>Unlimted Rounds</li>
+                                <li>Able to send the answer of the question after the question is <strong>answred</strong></li>
+                                <li><strong>Winner limitaion: </strong> You can prevent player to participate at the event , if he had exceed the limit of win (HnS Only) </li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_10">26. Drunk Event </h4>
+                            <p>
+                                The bot will recall all players to x region , then will spawn a strong unique will kill the players with one hit , the players have to run the last one will be the winner
+                            </p>
+
+
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Registration with <strong>/reg</strong> key</li>
+                                <li>Min & Max players can be participate</li>
+                                <li>Required level to  can be participate</li>
+                                <li><strong>PC Limitation: </strong>You can prevent same PC (HWID/IP) to participate at the event</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_11">27. GMKiller Event </h4>
+                            <p>
+                                You are not called for registering in this event, The event will take place at x region, You have to run there as soon as you see the notice that will be written by our bot, the bot is going to appear and will be in PK Mode, you got to sorely attack the BOT that appears in order to kill him as fast as possible, once he is dead, the bot is going to announce the wage earner.
+                            </p>
+
+
+                            <h1>Event Features</h1>
+                            <ol>
+                                <li>Unlimted rounds</li>
+                                <li>Bot can recover his hp before every round</li>
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_12">28. Alchemy Event </h4>
+                            <p>
+                                It is an event where everything is based on your fortune, a lot of players like to try their luck, so we have made an event that provides a fantastic challenge that proves your luck and enchanting skill, Our bot will write an announcement as soon as the event begins, the event will be held with 4 rounds only each round with a different item (Wep,Shield,Acc,Pro) then start attempting to enchant the item that you are required to enchant, the one that gets the wanted enchantment level first will be announced as the fastest one to fulfill the event's request and that player will be the winner.
+                            </p>
+
+
+                            <h1>Event Features</h1>
+                            <ol>
+
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line4_13">29. Random Action Event </h4>
+                            <p>
+                                In this event the bot will go to x region and will start order the players to do something who will do it fisrt will be the winner
+
+                            </p>
+
+
+                            <h1>Event Features</h1>
+                            <ol>
+
+                            </ol>
+                        </div>
+                        <!-- end col -->
+                    </div>
 
                 </section>
                 <!-- end section -->
 
                 <section id="line5" class="section">
-
-                    <div class="row">
-                        <div class="col-md-12 left-align">
-                            <h2 class="dark-text">Creating Blog Pages <hr></h2>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <div class="row">
-
-                        <div class="col-md-12">
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        </div>
-
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            <h4 id="line5_1">WordPress Blog Page -</h4>
-                            <ul>
-                                <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                            </ul>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            <h4 id="line5_2">Blog Post Sections -</h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                            <ul>
-                                <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                            </ul>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            <h4 id="line5_3">Create Blog Gallery -</h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                            <ul>
-                                <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                            </ul>
-                        </div>
-                        <!-- end col -->
-
-                    </div>
-                    <!-- end row -->
-
-                </section>
-                <!-- end section -->
-
-                <section id="line6" class="section">
-
-                    <div class="row">
-                        <div class="col-md-12 left-align">
-                            <h2 class="dark-text">How to Install Revolution Slider <hr></h2>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <div class="row">
-
-                        <div class="col-md-12">
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        </div>
-
-                        <div class="col-md-6">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            <h4>Installation Slider</h4>
-                            <ul>
-                                <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                            </ul>
-                        </div>
-                        <!-- end col -->
-
-                        <div class="col-md-6">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            <h4>Updating Slider</h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                            <ul>
-                                <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                            </ul>
-                        </div>
-                        <!-- end col -->
-
-                    </div>
-                    <!-- end row -->
-
-                </section>
-                <!-- end section -->
-
-                <section id="line7" class="section">
-
-                    <div class="row">
-                        <div class="col-md-12 left-align">
-                            <h2 class="dark-text">How to Use Option Panel <hr></h2>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_1">General Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_2">Style Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_3">Header Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_4">Font Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_5">Slider Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_6">Page Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <hr>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                        </div>
-
-                        <div class="col-md-8">
-                            <h4 id="line7_7">Import & Export Options - </h4>
-                            <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                </section>
-                <!-- end section -->
-
-                <section id="line8" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
@@ -602,21 +674,12 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Please remember you have purchased a very affordable theme and you have not paid for a full-time web design agency. Occasionally we will help with small tweaks, but these requests will be put on a lower priority due to their nature. Support is also 100% optional and we provide it for your connivence, so please be patient, polite and respectful.</p>
+                            <p>Please remember you have purchased a very affordable bot and you have not to pay for any upcoming-updates.
+                                Occasionally we will help you to build a custom feature, but these requests will be put on a lower priority due to their nature.
+                                Support is also 100% optional and we provide it for your connivence, so please be patient, polite and respectful.</p>
 
-                            <p>Please visit our <a href="http://themeforest.net/user/yourusername"><strong>profile page</strong></a> or ask question <a href="mailto:yourusername@gmail.com">@yourusername</a></p>
+                            <p>Please visit my <a href="https://www.facebook.com/Abdelaziz.Omar93/"><strong>profile page</strong></a> or ask question <a href="mailto:abdelazizomar851@gmail.com">@abdelazizomar</a></p>
 
-                            <strong>Support for my items includes:</strong>
-                            <ul>
-                                <li>* Responding to questions or problems regarding the item and its features</li>
-                                <li>* Fixing bugs and reported issues</li>
-                                <li>* Providing updates to ensure compatibility with new software versions</li>
-                            </ul>
-                            <strong>Item support does not include:</strong>
-                            <ul>
-                                <li>* Customization and installation services</li>
-                                <li>* Support for third party software and plug-ins</li>
-                            </ul>
 
                         </div>
 
@@ -625,11 +688,10 @@
                             <ul>
                                 <li>* Make sure your question is a valid Theme Issue and not a customization request.</li>
                                 <li>* Make sure you have read through the documentation and any related video guides before asking support on how to accomplish a task.</li>
-                                <li>* Make sure to double check the theme FAQs.</li>
+                                <li>* Make sure to double check the bot FAQs.</li>
                                 <li>* Try disabling any active plugins to make sure there isn't a conflict with a plugin. And if there is this way you can let us know.</li>
-                                <li>* If you have customized your theme and now have an issue, back-track to make sure you didn't make a mistake. If you have made changes and can't find the issue, please provide us with your changelog.</li>
-                                <li>* Almost 80% of the time we find that the solution to people's issues can be solved with a simple "Google Search". You might want to try that before seeking support. You might be able to fix the issue yourself much quicker than we can respond to your request.</li>
-                                <li>* Make sure to state the name of the theme you are having issues with when requesting support via ThemeForest.</li>
+                                <li>* If you have customized your bot and now have an issue, back-track to make sure you didn't make a mistake. If you have made changes and can't find the issue, please provide us with your changelog.</li>
+                                <li>* Almost 80% of the time we find that the solution to people's issues can be solved with a simple "Brain.exe". You might want to try that before seeking support. You might be able to fix the issue yourself much quicker than we can respond to your request.</li>
                             </ul>
                         </div>
                     </div>
@@ -638,67 +700,8 @@
                 </section>
                 <!-- end section -->
 
-                <section id="line9" class="section">
 
-                    <div class="row">
-                        <div class="col-md-12 left-align">
-                            <h2 class="dark-text">Files & Sources <hr></h2>
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <strong>Included Stylesheets</strong>
-
-                            <p>These are the primary CSS files used for general front-end styling. Use these to customize your theme even further. All included JavaScript codes under <strong>yourthemename/css/</strong></p>
-
-                            <ul>
-                                <li>1. style.css - Primary stylesheet</li>
-                                <li>2. bootstrap.css - Bootstrap stylesheet</li>
-                                <li>3. owl-carousel.css - OWL Carousel</li>
-                                <li>4. fontawesome.css - FontAwesome Font Icons stylesheet</li>
-                                <li>5. custom.css - Pathos Color Schemes stylesheet</li>
-                                <li>6. prettyPhoto.css - Lightbox effect css file</li>
-                                <li>7. flexslider.css - Flexslider css file</li>
-                                <li>8. et-line.css - Elegant icons css file</li>
-                                <li>9. carousel.css - OWL Carousel css file</li>
-                                <li>10. animate.css - CSS3 animations css file</li>
-                            </ul>
-
-                        </div>
-
-                        <div class="col-md-6">
-                            <strong>Included JavaScript</strong>
-
-                            <p>These are the various attribution inks to the Javascript files included or modified to work with in this theme. All included JavaScript codes under <strong>yourthemename/js/</strong></p>
-
-                            <ul>
-                                <li>1. bootstrap.js - Bootstrap JavaScript</li>
-                                <li>2. custom.js - All JavaScript Plugins</li>
-                                <li>3. retina.js - Retina JavaScript</li>
-                                <li>4. jquery.js - Base JavaScript</li>
-                                <li>5. prettyPhoto.js - Lightbox JavaScript</li>
-                                <li>6. owl-carousel.js - Lightbox JavaScript</li>
-                                <li>7. revslider.js - Revolution Slider JavaScript</li>
-                                <li>8. flexslider.js - Flexslider JavaScript</li>
-                                <li>9. awesome-grid.nin.js - Awesome grid portfolio JavaScript</li>
-                                <li>10. circle.js - Coming soon page JavaScript</li>
-                                <li>11. contact.js - Contact form validate JavaScript</li>
-                                <li>12. isotope.js - Masonry Portfolio JavaScript</li>
-                                <li>13. progress.js - Progress bar JavaScript</li>
-                                <li>14. rotate.js - Text rotate effect JavaScript</li>
-                                <li>15. wow.js - CSS3 animation JavaScript</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end row -->
-
-                </section>
-                <!-- end section -->
-
-                <section id="line10" class="section">
+                <section id="line6" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
@@ -712,8 +715,9 @@
                         <div class="col-md-12">
 
                             <p>You can find the version history (changelog.txt) file on <strong>yourthemename-full.zip</strong> folder or you can check changelog on theme sale page.</p>
-                            <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
-
+                            <p>Once again, thank you so much for purchasing this bot. As I said at the beginning,
+                                I'd be glad to help you if you have any questions relating to this bot. No guarantees,
+                                but I'll do my best to assist. If you have a more general question relating to the bot, you might consider visiting the discord and asking your question in the "Item Discussion" channel.</p>
                             <hr>
 
                             <h4>Changelog</h4>
@@ -721,47 +725,14 @@
                             <pre class="brush: html">
 
                                         -----------------------------------------------------------------------------------------
-                                        Version 3.8.4 - May 7th, 2015
+                                        Version 1.0.7 - April 22th, 2021
                                         -----------------------------------------------------------------------------------------
 
-                                        - new revolution slider plugin version
-                                        - fixed security issue with xss vulnerability
-                                        - improved demo importer for certain server environments
-                                        - updated WooCommerce template files for the outdated message in system status
-                                        - added suhosin check in system status
-                                        - added information that explains ZipArchive is required on your server for importing demos
-                                        - portfolio Grid template improvement
-                                        - added more information to demo popup message for individual demo requirements
-                                        - RTL style improvements
-                                        - breadcrumb function improved for various areas
+                                        - uBot has been published
 
-                                        -----------------------------------------------------------------------------------------
-                                        Version 3.8.3 - May 7th, 2015
-                                        -----------------------------------------------------------------------------------------
-                                        - fixed responsive / retina issue for larger logos
-                                        - fusion slider now uses responsive headings all the time
-                                        - dropped custom Avada styles for select boxes in IE since it is not supported
-                                        - fixed compatibility issue with Category Order and Taxonomy Terms Order plugin
-                                        - fixed issue of full width background being affected by padding options
-                                        - tested and fixed hellobar issue
-                                        - typography settings now apply to single post pages
-                                        - improved smooth scroll in certain situations
-                                        - youtube & vimeo videos will show at normal size in light box as long as video embed link is not used
-                                        - fixed issue of â€œfixedâ€ featured image mode not working for carousels / recent work
-                                        - fixed issue of header tagline font not working with font options
 
-                                        -----------------------------------------------------------------------------------------
-                                        Version 3.8.2 - May 7th, 2015
-                                        -----------------------------------------------------------------------------------------
-                                        - fixed formatting issues with Turkish language files
-                                        - letter spacing menu option improvement
-                                        - improved fusion slider max content width setting
-                                        - removed the â€œdisable first featured image on productsâ€ setting since it does not apply
-                                        - improved portfolio featured image loading
-                                        - removed encoding from tracking code, space before head, space before body, and custom CSS to stop it from parsing code within TO and removing special characters e.g. +
-                                        - woo login box now shows login fields for logged out users
-                                        - woo cart / my account links now show on mobile
-                                        - fixed button styling issue with gravity forms
+
+
 
 
                                       </pre>
@@ -773,7 +744,7 @@
                 </section>
                 <!-- end section -->
 
-                <section id="line11" class="section">
+                <section id="line7" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
