@@ -30,7 +30,7 @@ class DBConnectionService
                     'driver' => 'sqlsrv',
                     "host" => $ip_port[0],
                     "port" => $ip_port[1],
-                    "database" => 'uBot3',
+                    "database" => env("UBOT_DATABASE"),
                     "username" => auth()->user()->projects->sql_username,
                     "password" => auth()->user()->projects->sql_password
                 ]
@@ -54,7 +54,7 @@ class DBConnectionService
                     'driver' => 'sqlsrv',
                     "host" => $ip_port[0],
                     "port" => $ip_port[1],
-                    "database" => 'uBot3',
+                    "database" => env("UBOT_DATABASE"),
                     "username" => $username,
                     "password" => $password,
                 ]

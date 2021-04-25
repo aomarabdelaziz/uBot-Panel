@@ -12,6 +12,8 @@ use App\Mail\UserEmailMailable;
 use App\PaypalInvoices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,47 +59,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
 
 
 
-        $user = User::findOrFail(1);
-        dispatch( new UserMail($user->email , "Your payment has been processed successfully with 4000 EGP"));
-        return 'Done';
+        $response = Http::get('https://opentdb.com/api.php',
+            [
+                'amount' => 1
+            ])['results'];
 
 
 
-        /*  $users = UserProject::
-          whereBetween('end_license' , [\Illuminate\Support\Carbon::now() , \Illuminate\Support\Carbon::now()->addDays(7)])
-              ->get();*/
+        return $response[0];
 
 
-        $user = UserProject::where('project_name' , 'Fembria')->first();
-
-        return  date('y-m-d') >= date('y-m-d', strtotime($user->end_license));
-
-
-
-        //Notification::send($users , new NotifyUser('success' , 'membership'));
-
-        return $users;
-
-      //  \Illuminate\Support\Facades\Notification::send(auth()->user() , new \App\Notifications\NotifyUser());
-
-
-      /*  if(!Gate::allows('access-actions')) {
-
-
-
-
-        }
-        else {
-           $time = auth()->user()->projects->end_license;
-          //  return $time->toDateTimeString();
-
-
-            $time = strtotime($time);
-            return date( 'y-m-d' , $time);
-           return date('y-m-d');
-            return $time->toDateTimeString();
-            return  \Carbon\Carbon::now();
-        }*/
     });
 
 
