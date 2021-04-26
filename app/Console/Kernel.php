@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\DatabaseBackUp;
 use App\Console\Commands\NotifyMemberShipCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        NotifyMemberShipCommand::class
+        NotifyMemberShipCommand::class,
+        DatabaseBackUp::class
     ];
 
     /**
@@ -27,7 +29,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('notify:users')->daily();
-
+        $schedule->command('backup:run')->dailyAt("00:05:00");
     }
 
     /**

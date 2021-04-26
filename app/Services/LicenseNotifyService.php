@@ -37,11 +37,15 @@ class LicenseNotifyService
     {
         foreach ($this->users as $user) {
 
+
             if($user->projects)
             {
+
                 $days =  Carbon::parse($user->projects->end_license)->diffInDays( Carbon::now()->format('y-m-d'));
                 $date =  Carbon::now()->format('y-m-d') >= Carbon::parse($user->projects->end_license)->format('y-m-d');;
+
                 if ($date) {
+
 
                     dispatch(new UserMail($user->email , "Your membership has been ended"));
                     Notification::send($user, new UserNotifications('success', "Your membership has been ended"));
@@ -63,6 +67,7 @@ class LicenseNotifyService
                 }
                 else
                     {
+
                         Notification::send($user, new UserNotifications('success', "Your membership will end in {$days} day(s)"));
                         dispatch(new UserMail($user->email , "Your membership will end in {$days} day(s)"));
 

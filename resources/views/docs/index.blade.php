@@ -131,9 +131,33 @@
 
                             </ul>
                         </li>
-                        <li><a href="#line5">Support Desk</a></li>
-                        <li><a href="#line6">Version History (Changelog)</a></li>
-                        <li><a href="#line7">Copyright and license</a></li>
+                        <li><a href="#line6">uBot Procedures</a>
+                            <ul class="nav">
+                                <li><a href="#line6_1">_AddEventSchedule</a></li>
+                                <li><a href="#line6_2">_CheckAvatarSlot</a></li>
+                                <li><a href="#line6_3">_CheckDC</a></li>
+                                <li><a href="#line6_4">_CheckItemSlot</a></li>
+                                <li><a href="#line6_5">_CheckJob</a></li>
+                                <li><a href="#line6_6">_CheckPK</a></li>
+                                <li><a href="#line6_7">_ChecReqLevel</a></li>
+                                <li><a href="#line6_8">_ExecReward</a></li>
+                                <li><a href="#line6_9">_FetchKills</a></li>
+                                <li><a href="#line6_10">_GetHWIDIP</a></li>
+                                <li><a href="#line6_11">_Init</a></li>
+                                <li><a href="#line6_12">_Lottery</a></li>
+                                <li><a href="#line6_13">_IncreaseKillCount</a></li>
+                                <li><a href="#line6_14">_NoticeControl</a></li>
+                                <li><a href="#line6_15">_OnEventStart</a></li>
+                                <li><a href="#line6_16">_OnEventEnd</a></li>
+
+
+
+
+                            </ul>
+                        </li>
+                        <li><a href="#line8">Support Desk</a></li>
+                        <li><a href="#line9">Version History (Changelog)</a></li>
+                        <li><a href="#line10">Copyright and license</a></li>
                     </ul>
                 </nav >
             </div>
@@ -662,7 +686,254 @@
                 </section>
                 <!-- end section -->
 
-                <section id="line5" class="section">
+                <section id="line6" class="section">
+
+
+                    <div class="row">
+                        <div class="col-md-12 left-align">
+                            <h2 class="dark-text">uBot Procedures<hr></h2>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_1"> _AddEventSchedule </h4>
+                            <p>
+                                This procedure is able to add an event schedule manually
+                            </p>
+
+
+
+
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_2"> _CheckAvatarSlot </h4>
+                            <p>
+                                This procedure is responsible for check if the character is wearing any avatar or not for Lucky Critical Event (aslo you can change the return message)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_3"> _CheckDC </h4>
+                            <p>
+                                This procedure is responsible for check if the character is disconnectd or not
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_4"> _CheckItemSlot </h4>
+                            <p>
+                                This procedure is responsible for check if the character is wearing anyitem or not for Lucky Critical Event (aslo you can change the return message)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_5"> _CheckJob </h4>
+                            <p>
+                                This procedure is responsible for check if the player is in jobtime or not before event registration ( also you can change the returned message)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_6"> _CheckPK </h4>
+                            <p>
+                                This procedure is responsible for check if the player is in pk or not before event registration ( also you can change the returned message)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_7"> _ChecReqLevel </h4>
+                            <p>
+                                This procedure is responsible for check the required level for the charname before the event registration (aslo you can change the returned message)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_8"> _ExecReward </h4>
+                            <p>
+                                This procedure is responsible for giving the players the rewards and log it into the table to make sure that the player got the reward
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_9"> _FetchKills </h4>
+                            <p>
+                                This procedure is responsible for log all kills in events (LMS , SURVIVAL , PVP , GMKiller , Drunk)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_10"> _GetHWIDIP </h4>
+                            <p>
+                                This procedure is responsible for return the HWID/IP for the charname if your filter is provide this feature , to prevent duplicate PC/IP players to participate at the event
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_11"> _Init </h4>
+                            <p>
+                                This procedure is executed before event starting and event ending
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_12"> _Lottery </h4>
+                            <p>
+                                This procedure is responsible for lottery events
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_13"> _IncreaseKillCount </h4>
+                            <p>
+                                This procedure is responsible for increasing kill counters , using MaxiGuardfilter
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_14"> _NoticeControl </h4>
+                            <p>
+                                This procedure is responsible for in-game notices events, you can control the messages (Ignore to send the notice by bot and send it by filter, change color of the notice if your filter support this , send notices at x region only, etc..)
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_15"> _OnEventStart </h4>
+                            <p>
+                                This procedure is excuted while bot says [ Event has been started] , aslo you can use this procedure to add a KillCounter at survival arena using MaxiGuard Filter
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="row">
+
+
+                        <div class="col-md-8">
+                            <h4 id="line6_16"> _OnEventENd </h4>
+                            <p>
+                                This procedure is excuted while bot says [ Event has been ended]
+                            </p>
+
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
+                </section>
+                <!-- end section -->
+
+
+
+
+                <section id="line8" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
@@ -686,7 +957,7 @@
                         <div class="col-md-6">
                             <strong>Before seeking support, please...</strong>
                             <ul>
-                                <li>* Make sure your question is a valid Theme Issue and not a customization request.</li>
+                                <li>* Make sure your question is a valid bot Issue and not a customization request.</li>
                                 <li>* Make sure you have read through the documentation and any related video guides before asking support on how to accomplish a task.</li>
                                 <li>* Make sure to double check the bot FAQs.</li>
                                 <li>* Try disabling any active plugins to make sure there isn't a conflict with a plugin. And if there is this way you can let us know.</li>
@@ -701,7 +972,7 @@
                 <!-- end section -->
 
 
-                <section id="line6" class="section">
+                <section id="line9" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
@@ -714,7 +985,6 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <p>You can find the version history (changelog.txt) file on <strong>yourthemename-full.zip</strong> folder or you can check changelog on theme sale page.</p>
                             <p>Once again, thank you so much for purchasing this bot. As I said at the beginning,
                                 I'd be glad to help you if you have any questions relating to this bot. No guarantees,
                                 but I'll do my best to assist. If you have a more general question relating to the bot, you might consider visiting the discord and asking your question in the "Item Discussion" channel.</p>
@@ -744,7 +1014,7 @@
                 </section>
                 <!-- end section -->
 
-                <section id="line7" class="section">
+                <section id="line10" class="section">
 
                     <div class="row">
                         <div class="col-md-12 left-align">
@@ -758,8 +1028,9 @@
                         <div class="col-md-12">
 
                             <p>Code released under the <a href="#" target="_blank">Un License</a> License.</p>
-                            <p>For more information about copyright and license check <a href="https://choosealicense.com/" target="_blank">choosealicense.com</a>.</p>
 
+                            <!--                                 <p>For more information about copyright and license check <a href="https://choosealicense.com/" target="_blank">choosealicense.com</a>.</p>
+-->
                         </div>
                     </div>
                     <!-- end row -->
@@ -776,7 +1047,6 @@
     <!-- // end container -->
 
 </div>
-<!-- end wrapper -->
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>

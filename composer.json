@@ -22,7 +22,8 @@
         "mews/captcha": "^3.2",
         "omnipay/paypal": "^3.0",
         "pragmarx/google2fa-laravel": "^1.4",
-        "spatie/laravel-analytics": "^3.11"
+        "spatie/laravel-analytics": "^3.11",
+        "spatie/laravel-backup": "^6.16"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

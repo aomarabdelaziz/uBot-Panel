@@ -40,7 +40,7 @@ return [
             'url' =>  '',
             'host' => '',
             'port' => '',
-            "database" => env("UBOT_DATABASE"),
+            "database" => "uBot",
             'username' => '',
             'password' =>  '',
             'charset' => 'utf8',
