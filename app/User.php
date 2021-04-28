@@ -44,14 +44,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(UserProject::class , 'user_id');
     }
 
-    public function setGoogle2faSecretAttribute($value)
+   /* public function setGoogle2faSecretAttribute($value)
     {
         $this->attributes['google2fa_secret'] = encrypt($value);
     }
     public function getGoogle2faSecretAttribute($value)
     {
         return decrypt($value);
-    }
+    }*/
 
     public function userBalance()
     {

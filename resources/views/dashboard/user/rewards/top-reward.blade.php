@@ -80,7 +80,7 @@
 
                                     <a class="Add-Reward btn btn-primary btn-sm"
                                        data-toggle="modal"
-                                        href="#modal-default1">
+                                       href="#modal-default1">
                                         <i class="fas fa-plus">
                                         </i>
                                         Add Reward
@@ -182,7 +182,7 @@
 
 
 
-<!--                                                            <a  data-event_key="{{ $eventReward->EventKey }}"
+                                                        <!--                                                            <a  data-event_key="{{ $eventReward->EventKey }}"
                                                                 data-id="{{ $eventReward->id }}"
                                                                 data-reward_type="{{ $eventReward->RewardType }}"
                                                                 data-reward_control="{{$eventReward->RewardControl}}"
@@ -228,130 +228,130 @@
 
 
         <!-- Modals -->
-            <div class="modal fade" id="modal-default1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Add new Reward</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form class="form-route" action="{{ route('panel.top-rewards.store') }}" method="POST">
-                            @csrf
+        <div class="modal fade" id="modal-default1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add new Reward</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form class="form-route" action="{{ route('panel.top-rewards.store') }}" method="POST">
+                        @csrf
 
-                            <div class="modal-body">
+                        <div class="modal-body">
 
-                                <input type="hidden" value="{{$eventName}}" name="event">
-                                <div class="form-group">
-                                    <label for="exampleInputText">Reward Type</label>
+                            <input type="hidden" value="{{$eventName}}" name="event">
+                            <div class="form-group">
+                                <label for="exampleInputText">Reward Type</label>
 
-                                    <select class="form-control" name="RewardType">
-                                        <option value="1"> Silk </option>
-                                        <option value="2"> Gold </option>
-                                        <option value="3"> Item </option>
-                                        <option value="4"> All\Other </option>
-                                    </select>
-                                    @error('RewardType')
-                                    <span class="invalid-feedback" role="alert">
+                                <select class="form-control" name="RewardType">
+                                    <option value="1"> Silk </option>
+                                    <option value="2"> Gold </option>
+                                    <option value="3"> Item </option>
+                                    <option value="4"> All\Other </option>
+                                </select>
+                                @error('RewardType')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message  }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputText">Reward Control</label>
+                            <div class="form-group">
+                                <label for="exampleInputText">Reward Control</label>
 
-                                    <select class="form-control" name="RewardControl">
-                                        <option value="1"> Inventory </option>
-                                        <option value="2"> Storage </option>
-                                    </select>
-                                    @error('RewardControl')
-                                    <span class="invalid-feedback" role="alert">
+                                <select class="form-control" name="RewardControl">
+                                    <option value="1"> Inventory </option>
+                                    <option value="2"> Storage </option>
+                                </select>
+                                @error('RewardControl')
+                                <span class="invalid-feedback" role="alert">
                                        <strong>{{ $message  }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
+                            </div>
 
 
-                                <div class="form-group">
-                                    <label for="exampleInputText">Silk Type</label>
+                            <div class="form-group">
+                                <label for="exampleInputText">Silk Type</label>
 
-                                    <select class="form-control" name="SilkType">
-                                        <option value="1"> silk_own </option>
-                                        <option value="2"> silk_gift </option>
-                                        <option value="3"> silk_point </option>
-                                    </select>
-                                    @error('SilkType')
-                                    <span class="invalid-feedback" role="alert">
+                                <select class="form-control" name="SilkType">
+                                    <option value="1"> silk_own </option>
+                                    <option value="2"> silk_gift </option>
+                                    <option value="3"> silk_point </option>
+                                </select>
+                                @error('SilkType')
+                                <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message  }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Silk Amount</label>
-                                    <input type="number" class="form-control @error('SilkAmount') is-invalid @enderror" name="SilkAmount" value="{{ old('SilkAmount' , '') }}" placeholder="1">
-                                    @error('SilkAmount')
-                                    <span class="invalid-feedback" role="alert">
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Silk Amount</label>
+                                <input type="number" class="form-control @error('SilkAmount') is-invalid @enderror" name="SilkAmount" value="{{ old('SilkAmount' , '0') }}" placeholder="1">
+                                @error('SilkAmount')
+                                <span class="invalid-feedback" role="alert">
                                        <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
+                                @enderror
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Gold Amount</label>
-                                    <input type="number" class="form-control @error('GoldAmount') is-invalid @enderror" name="GoldAmount" value="{{ old('GoldAmount' , '') }}" placeholder="1">
-                                    @error('GoldAmount')
-                                    <span class="invalid-feedback" role="alert">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Gold Amount</label>
+                                <input type="number" class="form-control @error('GoldAmount') is-invalid @enderror" name="GoldAmount" value="{{ old('GoldAmount' , '0') }}" placeholder="1">
+                                @error('GoldAmount')
+                                <span class="invalid-feedback" role="alert">
                                        <strong>{{ $message }}</strong>
                                     </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">ItemCodeName</label>
-                                    <input type="text" class="form-control @error('ItemCodeName128') is-invalid @enderror" name="ItemCodeName128" value="{{ old('ItemCodeName128' , '') }}" placeholder="1">
-                                    @error('ItemCodeName128')
-                                    <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Item Plus</label>
-                                    <input type="number" class="form-control @error('ItemPlus') is-invalid @enderror" name="ItemPlus" value="{{ old('ItemPlus' , '') }}" placeholder="1">
-                                    @error('ItemPlus')
-                                    <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Item Amount</label>
-                                    <input type="number" class="form-control @error('ItemAmount') is-invalid @enderror" name="ItemAmount" value="{{ old('ItemAmount' , '') }}" placeholder="1">
-                                    @error('ItemAmount')
-                                    <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
+                                @enderror
                             </div>
 
-
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">ItemCodeName</label>
+                                <input type="text" class="form-control @error('ItemCodeName128') is-invalid @enderror" name="ItemCodeName128" value="{{ old('ItemCodeName128' , 'DUMMY') }}" placeholder="1">
+                                @error('ItemCodeName128')
+                                <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
-                        </form>
 
-                    </div>
-                    <!-- /.modal-content -->
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Item Plus</label>
+                                <input type="number" class="form-control @error('ItemPlus') is-invalid @enderror" name="ItemPlus" value="{{ old('ItemPlus' , '0') }}" placeholder="1">
+                                @error('ItemPlus')
+                                <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Item Amount</label>
+                                <input type="number" class="form-control @error('ItemAmount') is-invalid @enderror" name="ItemAmount" value="{{ old('ItemAmount' , '0') }}" placeholder="1">
+                                @error('ItemAmount')
+                                <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+
                 </div>
-                <!-- /.modal-dialog -->
+                <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
+        </div>
     </div>
 
 @endsection

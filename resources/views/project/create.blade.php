@@ -44,11 +44,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a href="#" class="nav-link">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+
+
 
                 </ul>
 
 
             </div>
+
 
 
         </div>
@@ -86,9 +98,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 }
 
             </script>
-        @endif
+    @endif
 
-        <!-- Main content -->
+    <!-- Main content -->
         <div class="content ">
             <div class="container ">
 
@@ -122,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">SQL Host</label>
-                                                    <input type="text" class="form-control @error('sql_host') is-invalid @enderror" name="sql_host" value="{{ old('sql_host') }}" placeholder="127.0.0.1,15779">
+                                                    <input type="text" class="form-control @error('sql_host') is-invalid @enderror" name="sql_host" value="{{ old('sql_host') }}" placeholder="127.0.0.1,1433 - your SQLIP,SQLPort">
                                                     @error('sql_host')
                                                     <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message  }}</strong>

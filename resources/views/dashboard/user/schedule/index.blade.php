@@ -26,6 +26,7 @@
 
     <div class="wrapper">
 
+
         @if(session('success'))
             <script>
 
@@ -36,23 +37,30 @@
             </script>
         @endif
 
-            @if($errors->any())
-                <script>
+        @if($errors->any())
+            <script>
 
 
-                    window.onload = function() {
-                        toastr.error("{{ $errors->first() }}")
-                    }
+                window.onload = function() {
+                    toastr.error("{{ $errors->first() }}")
+                }
 
-                </script>
-            @endif
+            </script>
+        @endif
         <section class="content">
             <div class="container-fluid">
+
                 <div class="row">
+
                     <div class="col-md-10 offset-md-1">
                         <div class="row">
 
                             <div class="col-md-6">
+                                <div class="alert alert-info alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <h5><i class="icon fas fa-info"></i> The schedule server time is according to (UTC+01:00) Amsterdam , Berlin , Bern , Rome , Stockholm , Vienna </h5>
+
+                                </div>
                                 <div class="form-group">
 
                                     <form action="{{ route('panel.schedule.index') }}" method="GET">
@@ -93,13 +101,13 @@
                                 <div class="col-md-12">
 
 
-                                       <a class="Add-Schedule btn btn-primary btn-sm"
-                                          data-toggle="modal"
-                                          href="#modal-default1">
-                                           <i class="fas fa-plus">
-                                           </i>
-                                           Add Schedule
-                                       </a>
+                                    <a class="Add-Schedule btn btn-primary btn-sm"
+                                       data-toggle="modal"
+                                       href="#modal-default1">
+                                        <i class="fas fa-plus">
+                                        </i>
+                                        Add Schedule
+                                    </a>
                                     <div class="card mt-2">
                                         <div class="card-header">
                                             <h3 class="card-title">All Events Schedule</h3>
@@ -165,17 +173,17 @@
 
 
 
-                                                        <a  data-event_key="{{ $event->EventName }}"
-                                                                                            data-id="{{ $event->id }}"
-                                                                                            data-event_day="{{ $event->Day }}"
-                                                                                            data-event_time="{{$event->Time}}"
+                                                            <a  data-event_key="{{ $event->EventName }}"
+                                                                data-id="{{ $event->id }}"
+                                                                data-event_day="{{ $event->Day }}"
+                                                                data-event_time="{{$event->Time}}"
 
-                                                                                            data-toggle="modal"
-                                                                                            class="Edit-Schedule btn btn-warning btn-sm" href="#modal-default3">
-                                                                                            <i class=" fas fa-edit">
-                                                                                            </i>
-                                                                                            Edit
-                                                                                        </a>
+                                                                data-toggle="modal"
+                                                                class="Edit-Schedule btn btn-warning btn-sm" href="#modal-default3">
+                                                                <i class=" fas fa-edit">
+                                                                </i>
+                                                                Edit
+                                                            </a>
 
 
                                                         </td>
@@ -198,7 +206,7 @@
                             @elseif(!$eventName)
                                 <div class="col-md-12">
 
-                                   @if(!is_null($eventName))
+                                    @if(!is_null($eventName))
                                         <a class="Add-Reward btn btn-primary btn-sm"
                                            data-toggle="modal"
                                            href="#modal-default1">
@@ -206,7 +214,7 @@
                                             </i>
                                             Add Schedule
                                         </a>
-                                       @endif
+                                    @endif
                                     <div class="card mt-2">
                                         <div class="card-header">
                                             <h3 class="card-title">All Events Schedule</h3>
@@ -275,17 +283,17 @@
 
 
 
-                                                        <a  data-event_key="{{ $event->EventName }}"
-                                                                                            data-id="{{ $event->id }}"
-                                                                                            data-event_day="{{ $event->Day }}"
-                                                                                            data-event_time="{{$event->Time}}"
+                                                            <a  data-event_key="{{ $event->EventName }}"
+                                                                data-id="{{ $event->id }}"
+                                                                data-event_day="{{ $event->Day }}"
+                                                                data-event_time="{{$event->Time}}"
 
-                                                                                            data-toggle="modal"
-                                                                                            class="Edit-Schedule btn btn-warning btn-sm" href="#modal-default3">
-                                                                                            <i class=" fas fa-edit">
-                                                                                            </i>
-                                                                                            Edit
-                                                                                        </a>
+                                                                data-toggle="modal"
+                                                                class="Edit-Schedule btn btn-warning btn-sm" href="#modal-default3">
+                                                                <i class=" fas fa-edit">
+                                                                </i>
+                                                                Edit
+                                                            </a>
 
 
                                                         </td>
@@ -391,77 +399,77 @@
             <!-- /.modal-dialog -->
         </div>
         <div class="modal fade" id="modal-default3">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Edit {{ $eventName }} event Schedule </h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <form class="form-route" action="#" method="POST">
-                            @csrf
-                            @method('put')
-                            <div class="modal-body">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit {{ $eventName }} event Schedule </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form class="form-route" action="#" method="POST">
+                        @csrf
+                        @method('put')
+                        <div class="modal-body">
 
-                                <input type="hidden" value="{{$eventName}}" name="EventName">
-                                <input type="hidden" class="oldTime" value="" name="oldTime">
-                                <input type="hidden" class="oldDay" name="oldDay">
+                            <input type="hidden" value="{{$eventName}}" name="EventName">
+                            <input type="hidden" class="oldTime" value="" name="oldTime">
+                            <input type="hidden" class="oldDay" name="oldDay">
 
 
-                                <div class="form-group">
-                                    <label for="exampleInputText">Day</label>
+                            <div class="form-group">
+                                <label for="exampleInputText">Day</label>
 
-                                    <select class="form-control EventDay" name="Day">
-                                        <option value="Daily"> Daily </option>
-                                        <option value="Sunday"> Sunday </option>
-                                        <option value="Monday"> Monday </option>
-                                        <option value="Tuesday"> Tuesday </option>
-                                        <option value="Wednesday"> Wednesday </option>
-                                        <option value="Thursday"> Thursday </option>
-                                        <option value="Friday"> Friday </option>
-                                        <option value="Saturday"> Saturday </option>
-                                    </select>
-                                    @error('Day')
-                                    <span class="invalid-feedback" role="alert">
+                                <select class="form-control EventDay" name="Day">
+                                    <option value="Daily"> Daily </option>
+                                    <option value="Sunday"> Sunday </option>
+                                    <option value="Monday"> Monday </option>
+                                    <option value="Tuesday"> Tuesday </option>
+                                    <option value="Wednesday"> Wednesday </option>
+                                    <option value="Thursday"> Thursday </option>
+                                    <option value="Friday"> Friday </option>
+                                    <option value="Saturday"> Saturday </option>
+                                </select>
+                                @error('Day')
+                                <span class="invalid-feedback" role="alert">
                                        <strong>{{ $message  }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Time picker</label>
+
+                                <div class="input-group date" id="timepicker" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input EventTime" name="Time" data-target="#timepicker">
+                                    <div class="input-group-append " data-target="#timepicker" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                    </div>
+                                    @error('Time')
+                                    <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message  }}</strong>
                                     </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>Time picker</label>
 
-                                    <div class="input-group date" id="timepicker" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input EventTime" name="Time" data-target="#timepicker">
-                                        <div class="input-group-append " data-target="#timepicker" data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                        </div>
-                                        @error('Time')
-                                        <span class="invalid-feedback" role="alert">
-                                      <strong>{{ $message  }}</strong>
-                                    </span>
-                                        @enderror
-                                    </div>
-
-                                    <!-- /.input group -->
-                                </div>
-
-
-
+                                <!-- /.input group -->
                             </div>
 
 
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </form>
 
-                    </div>
-                    <!-- /.modal-content -->
+                        </div>
+
+
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+
                 </div>
-                <!-- /.modal-dialog -->
+                <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
+        </div>
     </div>
 
 @endsection
