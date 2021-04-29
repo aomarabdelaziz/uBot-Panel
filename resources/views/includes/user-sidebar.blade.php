@@ -366,7 +366,7 @@
                     <p>
                         Add Rewards
                         <i class="right fas fa-angle-left"></i>
-                        <span class="badge badge-info right">16</span>
+                        <span class="badge badge-info right">2</span>
                     </p>
                 </a>
 
@@ -471,6 +471,53 @@
 
 
 
+
+
+
+
+
+            </li>
+
+
+
+            <div class="nav-header">Discord</div>
+
+            <li class="nav-item has-treeview">
+
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fab fa-discord"></i>
+                    <p>
+                        Discord
+                        <i class="right fas fa-angle-left"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+
+
+                <!--Rewards  -->
+                <ul class="nav nav-treeview">
+                    <li class="nav-item has-treeview">
+
+                        <a href="{{ route('panel.discord.index') }}" class="nav-link">
+                            <i class="nav-icon fa"></i>
+                            <p>
+                                Discord WeebHook
+                            </p>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item has-treeview">
+
+                        <a href="{{ route('panel.top-rewards.index') }}" class="nav-link">
+                            <i class="nav-icon fa "></i>
+                            <p>
+                                Discord Schedule
+                            </p>
+                        </a>
+
+                    </li>
+                </ul>
 
 
 

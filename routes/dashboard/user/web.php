@@ -153,6 +153,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale() , 'middleware' => [ '
                         Route::resource('schedule' , 'ScheduleController');
                         Route::resource('notices' , 'NoticeController');
                         Route::put('notices/update-service/{id}' , 'NoticeController@updateService')->name('notices-update-service');
+                        Route::resource('discord' , 'DiscordController');
+                        Route::resource('discord-schedule' , 'DiscordScheduleController');
                     });
 
 
