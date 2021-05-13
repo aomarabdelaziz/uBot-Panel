@@ -80,7 +80,8 @@ return
                 'Uniques',
                 'GMKiller',
                 'Drunk',
-                'LMS'
+                'LMS',
+				'Survival'
             ],
         'search_warps' => [
             'Hide And Seek',

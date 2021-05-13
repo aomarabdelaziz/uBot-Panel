@@ -489,7 +489,7 @@
                     <p>
                         Discord
                         <i class="right fas fa-angle-left"></i>
-                        <span class="badge badge-info right">2</span>
+                        <span class="badge badge-info right">1</span>
                     </p>
                 </a>
 
@@ -507,7 +507,7 @@
 
                     </li>
 
-                    <li class="nav-item has-treeview">
+<!--                    <li class="nav-item has-treeview">
 
                         <a href="{{ route('panel.top-rewards.index') }}" class="nav-link">
                             <i class="nav-icon fa "></i>
@@ -516,7 +516,7 @@
                             </p>
                         </a>
 
-                    </li>
+                    </li>-->
                 </ul>
 
 
